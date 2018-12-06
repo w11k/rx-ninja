@@ -17,6 +17,10 @@ export function notNil<T>(x: T | null | undefined): x is T {
     return x !== null && x !== undefined;
 }
 
+export function isNil<T>(x: T | null | undefined): x is null | undefined {
+    return x === null || x === undefined;
+}
+
 export function notNull<T>(x: T | null): x is T {
     return x !== null;
 }
