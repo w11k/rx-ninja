@@ -1,5 +1,5 @@
-import {combineLatest, Observable, of, timer} from "rxjs";
-import {filter, flatMap, map, mapTo, materialize, pairwise, startWith, switchMap, take} from "rxjs/operators";
+import { combineLatest, Observable, of, timer } from 'rxjs';
+import { filter, flatMap, map, mapTo, materialize, pairwise, startWith, switchMap, take } from 'rxjs/operators';
 
 export function entries<T>(obj: any): [string, T][] {
     const ownProps = Object.keys(obj);
@@ -189,6 +189,16 @@ export function onCompletionContinueWith<T, O>(continueWith: (lastValue: T) => O
                     return value.toObservable();
                 }
             })
+        );
+    };
+}
+
+export function skipUntilCompletionAndContinueWith<T, O>(continueWith: () => Observable<O>): (input: Observable<T>) => Observable<O> {
+    return (input: Observable<T>) => {
+        return input.pipe(
+          materialize(),
+          filter((value: any) => value.kind === 'C'),
+          flatMap(() => continueWith()),
         );
     };
 }
