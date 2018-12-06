@@ -1,6 +1,6 @@
-import {assert} from "chai";
-import {NEVER, of, Subject} from "rxjs";
-import {take, tap} from "rxjs/operators";
+import { assert } from 'chai';
+import { NEVER, Observable, of, Subject } from 'rxjs';
+import { map, take, tap } from 'rxjs/operators';
 import {
     debounceIf,
     entries,
@@ -12,8 +12,9 @@ import {
     skipPropertyNull,
     skipPropertyUndefined,
     skipSomePropertyNil,
-    skipUndefined
-} from "./index";
+    skipUndefined,
+    skipUntilCompletionAndContinueWith
+} from './index';
 
 describe("functions", function () {
 
@@ -231,6 +232,58 @@ describe("onCompletionContinueWith", function () {
         ).pipe(take(3)).subscribe();
 
         assert.isFalse(continueWithFnCalled);
+    });
+
+});
+
+describe('skipUntilCompletionAndContinueWith', () => {
+
+    it('should return values of second observable if first has completed', () => {
+        const first$: Observable<number> = of(1, 2, 3);
+        const second$: Observable<string> = of('Hello World!');
+
+        const values: Array<number | string> = [];
+
+        first$.pipe(
+          skipUntilCompletionAndContinueWith(() => second$)
+        ).subscribe((value: string) => {
+            values.push(value);
+        });
+
+        assert.deepEqual(values, ['Hello World!']);
+    });
+
+    it('should continue even if first observable crashes', (done) => {
+        const first$ = of(1, 2, 3);
+        const second$ = of('foo');
+
+        first$.pipe(
+          map((v) => {
+              if (v === 2) throw new Error('ERROR'); else return v;
+          }),
+          skipUntilCompletionAndContinueWith(() => second$)
+        ).subscribe((value => {
+            assert.equal(value, 'foo');
+        }), () => {
+            assert.fail('', '', 'Should not end here!');
+        }, () => {
+            done();
+        });
+    });
+
+    it('should work with second observable emitting multiple values', () => {
+        const first$: Observable<number> = of(1, 2, 3);
+        const second$: Observable<string> = of('Hello World!', 'Hi again!');
+
+        const values: Array<number | string> = [];
+
+        first$.pipe(
+          skipUntilCompletionAndContinueWith(() => second$)
+        ).subscribe((value: string) => {
+            values.push(value);
+        });
+
+        assert.deepEqual(values, ['Hello World!', 'Hi again!']);
     });
 
 });
