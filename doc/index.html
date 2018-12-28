@@ -102,9 +102,10 @@
 				<p>This rule triggers if <code>Observable#subscribe()</code> is called and then enforces that </p>
 				<ul>
 					<li><code>.pipe()</code> is called directly before <code>.subscribe()</code></li>
-					<li>and that <code>takeUntil()</code> is called as the last pipe operator</li>
+					<li>and that either <code>takeUntil()</code> or one of a specified terminator operator is called as the last pipe operator</li>
 				</ul>
-				<p><strong>rx-ninja-subscribe-in-subscribe</strong></p>
+				<p><em>Configuration:</em></p>
+				<pre><code><span class="hljs-string">"rx-ninja-subscribe-takeuntil"</span>: [<span class="hljs-literal">true</span>, <span class="hljs-string">"takeUntil"</span>, <span class="hljs-string">"customOperator"</span>, <span class="hljs-string">"anotherOperator"</span>]</code></pre><p><strong>rx-ninja-subscribe-in-subscribe</strong></p>
 				<p>This rule triggers if <code>Observable#subscribe()</code> is called inside of another <code>Observable#subscribe()</code> call, e.g.</p>
 				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> {of} <span class="hljs-keyword">from</span> <span class="hljs-string">"rxjs"</span>;
 
@@ -147,6 +148,12 @@ of(<span class="hljs-number">1</span>).subscribe(<span class="hljs-function"><sp
 						<a href="modules/_maptovalueandchangedproperties_test_.html">"map<wbr>ToValue<wbr>And<wbr>Changed<wbr>Properties.test"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="modules/_tslint_rules_rxninjasubscribeinsubscriberule_.html">"tslint_<wbr>rules/rx<wbr>Ninja<wbr>Subscribe<wbr>InSubscribe<wbr>Rule"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_tslint_rules_rxninjasubscribetakeuntilrule_.html">"tslint_<wbr>rules/rx<wbr>Ninja<wbr>Subscribe<wbr>Takeuntil<wbr>Rule"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="modules/_tslint_rules_subscribe_in_subscribe_badcode_.html">"tslint_<wbr>rules/subscribe-<wbr>in-<wbr>subscribe/bad<wbr>Code"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -157,12 +164,6 @@ of(<span class="hljs-number">1</span>).subscribe(<span class="hljs-function"><sp
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_tslint_rules_util_.html">"tslint_<wbr>rules/util"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_tslint_rules_w11krxjssubscribeinsubscriberule_.html">"tslint_<wbr>rules/w11k<wbr>Rxjs<wbr>Subscribe<wbr>InSubscribe<wbr>Rule"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_tslint_rules_w11krxjssubscribetakeuntilrule_.html">"tslint_<wbr>rules/w11k<wbr>Rxjs<wbr>Subscribe<wbr>Takeuntil<wbr>Rule"</a>
 					</li>
 				</ul>
 			</nav>
