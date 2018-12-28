@@ -34,8 +34,8 @@ debounceIf|Debounce values on the stream if the predicate returns true
     "node_modules/@w11k/rx-ninja/dist/tslint_rules"
   ],
   "rules": {
-    "w11k-rxjs-subscribe-takeuntil": true,
-    "w11k-rxjs-subscribe-in-subscribe": true
+    "rx-ninja-subscribe-takeuntil": true,
+    "rx-ninja-subscribe-in-subscribe": true
   }
 }
 ```
@@ -48,7 +48,7 @@ tslint -p tsconfig.json -t verbose
 
 ### Rule descriptions
 
-**w11k-rxjs-subscribe-takeuntil**
+**rx-ninja-subscribe-takeuntil**
 
 This rule triggers if `Observable#subscribe()` is called and then enforces that 
 
@@ -56,7 +56,7 @@ This rule triggers if `Observable#subscribe()` is called and then enforces that
 - and that `takeUntil()` is called as the last pipe operator
 
 
-**w11k-rxjs-subscribe-in-subscribe**
+**rx-ninja-subscribe-in-subscribe**
 
 This rule triggers if `Observable#subscribe()` is called inside of another `Observable#subscribe()` call, e.g.
 

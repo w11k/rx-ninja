@@ -1,4 +1,12 @@
 
+# Version 1.8.0
+
+- renamed lint rules
+    - `w11k-rxjs-subscribe-in-subscribe` to `rx-ninja-subscribe-in-subscribe`
+    - `w11k-rxjs-subscribe-takeuntil` to `rx-ninja-subscribe-takeuntil`
+- Added configuration option to lint rule `rx-ninja-subscribe-takeuntil` to allow custom terminator operators 
+
+
 # Version 1.7.0 - new name rx-ninja
 
 - added operator onCompletionContinueWith

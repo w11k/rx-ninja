@@ -12,7 +12,7 @@ export class Rule extends Lint.Rules.TypedRule {
         options: null,
         optionsDescription: "Not configurable.",
         requiresTypeInfo: true,
-        ruleName: "w11k-rxjs-subscribe-in-subscribe",
+        ruleName: "rx-ninja-subscribe-in-subscribe",
         type: "style",
         typescriptOnly: true
     };

@@ -9,10 +9,6 @@ class SomeClass {
 // Error
 of(1).pipe(map(i => i)).subscribe();
 
-// Ok
-// tslint:disable-next-line:w11k-rxjs-subscribe-takeuntil
-of(1).pipe(map(i => i)).subscribe();
-
 function test() {
     // Error
     of(1).pipe(map(i => i)).subscribe();
@@ -49,9 +45,6 @@ class BadClass {
         this.observable.lift(scoped()).subscribe();
 
         // OK
-        this.observable.pipe(untilComponentDestroyed()).subscribe();
-
-        // OK
         this.observable.pipe(
             map(i => i),
             takeUntil(this.stop),
@@ -65,6 +58,10 @@ class BadClass {
 
         // OK
         new SomeClass().subscribe();
+
+        // Ok
+        // tslint:disable-next-line:w11k-rxjs-subscribe-takeuntil
+        of(1).pipe(map(i => i)).subscribe();
     }
 
 }
