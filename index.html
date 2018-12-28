@@ -93,18 +93,18 @@
     <span class="hljs-string">"node_modules/@w11k/rx-ninja/dist/tslint_rules"</span>
   ],
   <span class="hljs-attr">"rules"</span>: {
-    <span class="hljs-attr">"w11k-rxjs-subscribe-takeuntil"</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">"w11k-rxjs-subscribe-in-subscribe"</span>: <span class="hljs-literal">true</span>
+    <span class="hljs-attr">"rx-ninja-subscribe-takeuntil"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"rx-ninja-subscribe-in-subscribe"</span>: <span class="hljs-literal">true</span>
   }
 }</code></pre><p><strong>Run tslint with type info</strong></p>
 				<pre><code>tslint -<span class="hljs-selector-tag">p</span> tsconfig<span class="hljs-selector-class">.json</span> -t verbose</code></pre><h3 id="rule-descriptions">Rule descriptions</h3>
-				<p><strong>w11k-rxjs-subscribe-takeuntil</strong></p>
+				<p><strong>rx-ninja-subscribe-takeuntil</strong></p>
 				<p>This rule triggers if <code>Observable#subscribe()</code> is called and then enforces that </p>
 				<ul>
 					<li><code>.pipe()</code> is called directly before <code>.subscribe()</code></li>
 					<li>and that <code>takeUntil()</code> is called as the last pipe operator</li>
 				</ul>
-				<p><strong>w11k-rxjs-subscribe-in-subscribe</strong></p>
+				<p><strong>rx-ninja-subscribe-in-subscribe</strong></p>
 				<p>This rule triggers if <code>Observable#subscribe()</code> is called inside of another <code>Observable#subscribe()</code> call, e.g.</p>
 				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> {of} <span class="hljs-keyword">from</span> <span class="hljs-string">"rxjs"</span>;
 
@@ -148,6 +148,9 @@ of(<span class="hljs-number">1</span>).subscribe(<span class="hljs-function"><sp
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_tslint_rules_subscribe_in_subscribe_badcode_.html">"tslint_<wbr>rules/subscribe-<wbr>in-<wbr>subscribe/bad<wbr>Code"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_tslint_rules_subscribe_takeuntil_config_badclass_.html">"tslint_<wbr>rules/subscribe-<wbr>takeuntil-<wbr>config/<wbr>Bad<wbr>Class"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_tslint_rules_subscribe_takeuntil_badclass_.html">"tslint_<wbr>rules/subscribe-<wbr>takeuntil/<wbr>Bad<wbr>Class"</a>
