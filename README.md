@@ -53,7 +53,13 @@ tslint -p tsconfig.json -t verbose
 This rule triggers if `Observable#subscribe()` is called and then enforces that 
 
 - `.pipe()` is called directly before `.subscribe()`
-- and that `takeUntil()` is called as the last pipe operator
+- and that either `takeUntil()` or one of a specified terminator operator is called as the last pipe operator
+
+*Configuration:*
+
+```
+"rx-ninja-subscribe-takeuntil": [true, "takeUntil", "customOperator", "anotherOperator"]
+```
 
 
 **rx-ninja-subscribe-in-subscribe**
