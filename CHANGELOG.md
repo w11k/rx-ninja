@@ -1,4 +1,9 @@
 
+# Version 1.8.1
+
+- fixed wrong linter file names
+
+
 # Version 1.8.0
 
 - renamed lint rules
