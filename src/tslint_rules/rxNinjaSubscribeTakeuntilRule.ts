@@ -49,7 +49,7 @@ export class Rule extends Lint.Rules.TypedRule {
 
     applyWithProgram(sourceFile: ts.SourceFile, program: ts.Program): Lint.RuleFailure[] {
         let ruleArguments = this.getOptions().ruleArguments;
-        const allowedTerminators: string[] = ruleArguments.length === 0 ? ["takeUntil"] : ruleArguments;
+        const allowedTerminators: string[] = ruleArguments.length === 0 ? ["takeUntil", "untilComponentDestroyed"] : ruleArguments;
 
         const failures: Lint.RuleFailure[] = [];
         // let relevantClasses: ts.Node[] = tsquery(sourceFile, "ClassDeclaration");
