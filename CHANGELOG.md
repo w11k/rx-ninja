@@ -1,4 +1,9 @@
 
+# Version 1.8.2
+
+- fixed bug in `notUndefined`
+
+
 # Version 1.8.1
 
 - fixed wrong linter file names

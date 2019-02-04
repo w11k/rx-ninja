@@ -26,7 +26,7 @@ export function notNull<T>(x: T | null): x is T {
 }
 
 export function notUndefined<T>(x: T | undefined): x is T {
-    return x !== null;
+    return x !== undefined;
 }
 
 export const skipUndefined = <T>(source: Observable<T | undefined>) => {
