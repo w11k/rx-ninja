@@ -1,7 +1,7 @@
 import * as assert from "assert";
 import {ReplaySubject, Subject} from "rxjs";
 import {map} from "rxjs/operators";
-import {createTransformingSubject} from "./TransformingSubject";
+import {createTransformingSubject} from "./transforming-subject";
 
 describe("TransformingSubject", function () {
 

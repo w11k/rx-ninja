@@ -33,14 +33,31 @@ function delegateAllProperties(target: any, source: any) {
     }
 }
 
+/**
+ * TODO: add documentation
+ */
 export type CallableSubject<I, O> = I extends undefined
     ? (() => void) & Observable<undefined> & Observer<undefined>
     : ((value: I) => void) & Observable<O> & Observer<I>;
 
+/**
+ * TODO: add documentation
+ */
 export function createCallableSubject<I>(): CallableSubject<I, I>;
+
+/**
+ * TODO: add documentation
+ */
 export function createCallableSubject<I, O>(base: Subject<I>): CallableSubject<I, I>;
+
+/**
+ * TODO: add documentation
+ */
 export function createCallableSubject<I, O>(base: Subject<I>, operator: OperatorFunction<I, O>): CallableSubject<I, O>;
 
+/**
+ * TODO: add documentation
+ */
 export function createCallableSubject<I, O>(subject: Subject<I> = new Subject(),
                                             operator: OperatorFunction<I, O> = identity as any): CallableSubject<I, O> {
 
@@ -66,6 +83,9 @@ export function createCallableSubject<I, O>(subject: Subject<I> = new Subject(),
     return callable as any;
 }
 
+/**
+ * TODO: add documentation
+ */
 export function createSignalSubject() {
     return createCallableSubject<undefined>();
 }

@@ -2,6 +2,12 @@ import {Observable, Observer, OperatorFunction, Subject} from "rxjs";
 
 export type TransformingSubject<I, O> = Observer<I> & Observable<O>;
 
+/**
+ * TODO: add documentation
+ *
+ * @param subject
+ * @param operator
+ */
 export function createTransformingSubject<I, O>(subject: Subject<I>,
                                                 operator: OperatorFunction<I, O>): TransformingSubject<I, O> {
 

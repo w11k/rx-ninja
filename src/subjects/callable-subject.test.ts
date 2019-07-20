@@ -1,7 +1,7 @@
 import * as assert from "assert";
 import {ReplaySubject, Subject} from "rxjs";
 import {map, takeUntil} from "rxjs/operators";
-import {createCallableSubject, createSignalSubject} from "./CallableSubject";
+import {createCallableSubject, createSignalSubject} from "./callable-subject";
 
 describe("CallableSubject", function () {
 
