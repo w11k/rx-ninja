@@ -2,11 +2,15 @@ import { Observable } from "rxjs";
 import { mapTo, startWith, switchMap } from "rxjs/operators";
 
 /**
- * Replays the last value on the stream of 'input' whenever 'signal' emits a value.
+ * Replays the last value of 'source' whenever 'signal' emits a value.
+ *
+ * source: -a---b---c---|
+ * signal: ------1----2-|
+ * result: -a---bb--c-c-|
  */
 export function replayOn<T>(signal: Observable<any>) {
-  return (input: Observable<T>) =>
-      input.pipe(
+  return (source: Observable<T>) =>
+      source.pipe(
           switchMap((value: T) =>
               signal.pipe(
                   mapTo(value),

@@ -3,6 +3,8 @@ import { mapTo, pairwise, startWith, switchMap, take } from "rxjs/operators";
 
 /**
  * Debounce values on the stream if the predicate returns true.
+ *
+ * TODO: add marble diagram
  */
 export function debounceIf<T>(debounceTimeInMs: number,
                               predicate: (previous: T | undefined, last: T) => boolean,

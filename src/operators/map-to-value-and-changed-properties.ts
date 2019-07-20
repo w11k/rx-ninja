@@ -1,6 +1,9 @@
 import {Observable} from "rxjs";
 import {map, pairwise, startWith} from "rxjs/operators";
 
+/**
+ * TODO: add documentation with marble diagram or textual example
+ */
 export function mapToValueAndChangedProperties<T>(): (source: Observable<T>) => Observable<[T, Partial<T>]> {
     return source => source.pipe(
         startWith({}),
