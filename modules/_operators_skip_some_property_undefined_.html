@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;mapToValueAndChangedProperties&quot; | @w11k/rx-ninja</title>
+	<title>&quot;operators/skip-some-property-undefined&quot; | @w11k/rx-ninja</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -40,8 +40,6 @@
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
 							<input type="checkbox" id="tsd-filter-externals" checked />
 							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -56,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_maptovalueandchangedproperties_.html">&quot;mapToValueAndChangedProperties&quot;</a>
+					<a href="_operators_skip_some_property_undefined_.html">&quot;operators/skip-some-property-undefined&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;mapToValueAndChangedProperties&quot;</h1>
+			<h1>External module &quot;operators/skip-some-property-undefined&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +71,8 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_maptovalueandchangedproperties_.html#maptovalueandchangedproperties" class="tsd-kind-icon">map<wbr>ToValue<wbr>And<wbr>Changed<wbr>Properties</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_operators_skip_some_property_undefined_.html#propertiesnotundefined" class="tsd-kind-icon">properties<wbr>Not<wbr>Undefined</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_operators_skip_some_property_undefined_.html#skipsomepropertyundefined" class="tsd-kind-icon">skip<wbr>Some<wbr>Property<wbr>Undefined</a></li>
 							</ul>
 						</section>
 					</div>
@@ -82,43 +81,87 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-					<a name="maptovalueandchangedproperties" class="tsd-anchor"></a>
-					<h3>map<wbr>ToValue<wbr>And<wbr>Changed<wbr>Properties</h3>
+					<a name="propertiesnotundefined" class="tsd-anchor"></a>
+					<h3>properties<wbr>Not<wbr>Undefined</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">map<wbr>ToValue<wbr>And<wbr>Changed<wbr>Properties&lt;T&gt;<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
+						<li class="tsd-signature tsd-kind-icon">properties<wbr>Not<wbr>Undefined&lt;T&gt;<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/26c63c7/src/mapToValueAndChangedProperties.ts#L4">mapToValueAndChangedProperties.ts:4</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/5c351e6/src/operators/skip-some-property-undefined.ts#L18">operators/skip-some-property-undefined.ts:18</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Type guard function, checking if any property of the given object is not undefined.
+									Narrows the type of all properties within the object type from T | undefined to just T.</p>
+								</div>
+								<p>Example:</p>
+								<p>incoming type is { a: number | undefined, b: string | undefined }</p>
+								<p>outgoing type is { a: number, b: string }</p>
+							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
 									<h4>T</h4>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
+							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
-								<li class="tsd-parameter-siganture">
-									<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></li>
-									</ul>
-									<ul class="tsd-descriptions">
-										<li class="tsd-description">
-											<h4 class="tsd-parameters-title">Parameters</h4>
-											<ul class="tsd-parameters">
-												<li>
-													<h5>source: <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-												</li>
-											</ul>
-											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></h4>
-										</li>
-									</ul>
+								<li>
+									<h5>obj: <span class="tsd-signature-type">T</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>object to check</p>
+									</div>
 								</li>
 							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
+					<a name="skipsomepropertyundefined" class="tsd-anchor"></a>
+					<h3>skip<wbr>Some<wbr>Property<wbr>Undefined</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">skip<wbr>Some<wbr>Property<wbr>Undefined&lt;T&gt;<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/5c351e6/src/operators/skip-some-property-undefined.ts#L45">operators/skip-some-property-undefined.ts:45</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Skips / filters values which contains undefined for any property.
+									Narrows the type of all properties within the object type from T | undefined to just T.</p>
+								</div>
+								<p>Example:</p>
+								<pre><code class="language-ts"><span class="hljs-keyword">const</span> x: Observable&lt;{ a: <span class="hljs-built_in">number</span> | <span class="hljs-literal">undefined</span>, b: <span class="hljs-built_in">string</span> | <span class="hljs-literal">undefined</span> }&gt;;
+
+<span class="hljs-keyword">const</span> z: Observable&lt;{ a: <span class="hljs-built_in">number</span>, b: <span class="hljs-built_in">string</span> }&gt; = x.pipe(
+  skipSomePropertyUndefined
+);</code></pre>
+								<p>value { a: 1, b: &#39;foo&#39; } will pass through</p>
+								<p>value { a: 1, b: undefined } will be skipped</p>
+								<p>value { a: undefined, b: &#39;foo&#39; } will be skipped</p>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>source: <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -130,57 +173,18 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_callablesubject_.html">"<wbr>Callable<wbr>Subject"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_callablesubject_test_.html">"<wbr>Callable<wbr>Subject.test"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_transformingsubject_.html">"<wbr>Transforming<wbr>Subject"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_transformingsubject_test_.html">"<wbr>Transforming<wbr>Subject.test"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_functions_.html">"functions"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_functions_test_.html">"functions.test"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_index_.html">"index"</a>
-					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_maptovalueandchangedproperties_.html">"map<wbr>ToValue<wbr>And<wbr>Changed<wbr>Properties"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_maptovalueandchangedproperties_test_.html">"map<wbr>ToValue<wbr>And<wbr>Changed<wbr>Properties.test"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_tslint_rules_rxninjasubscribeinsubscriberule_.html">"tslint_<wbr>rules/rx<wbr>Ninja<wbr>Subscribe<wbr>InSubscribe<wbr>Rule"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_tslint_rules_rxninjasubscribetakeuntilrule_.html">"tslint_<wbr>rules/rx<wbr>Ninja<wbr>Subscribe<wbr>Takeuntil<wbr>Rule"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_tslint_rules_subscribe_in_subscribe_badcode_.html">"tslint_<wbr>rules/subscribe-<wbr>in-<wbr>subscribe/bad<wbr>Code"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_tslint_rules_subscribe_takeuntil_config_badclass_.html">"tslint_<wbr>rules/subscribe-<wbr>takeuntil-<wbr>config/<wbr>Bad<wbr>Class"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_tslint_rules_subscribe_takeuntil_badclass_.html">"tslint_<wbr>rules/subscribe-<wbr>takeuntil/<wbr>Bad<wbr>Class"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_tslint_rules_util_.html">"tslint_<wbr>rules/util"</a>
+						<a href="_operators_skip_some_property_undefined_.html">"operators/skip-<wbr>some-<wbr>property-<wbr>undefined"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="_maptovalueandchangedproperties_.html#maptovalueandchangedproperties" class="tsd-kind-icon">map<wbr>ToValue<wbr>And<wbr>Changed<wbr>Properties</a>
+						<a href="_operators_skip_some_property_undefined_.html#propertiesnotundefined" class="tsd-kind-icon">properties<wbr>Not<wbr>Undefined</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="_operators_skip_some_property_undefined_.html#skipsomepropertyundefined" class="tsd-kind-icon">skip<wbr>Some<wbr>Property<wbr>Undefined</a>
 					</li>
 				</ul>
 			</nav>
@@ -199,6 +203,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
@@ -247,7 +252,7 @@
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
