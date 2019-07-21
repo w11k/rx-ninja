@@ -37,15 +37,16 @@
   "scripts": {
     "clean": "del-cli dist",
     "build": "npm run clean ; tsc -p tsconfig.json && tsc -p tsconfig.dist.es2015.json",
-    "prepublishOnly": "npm test && npm run build && npm run typedoc",
-    "postpublish": "npm run typedoc_deploy && git push",
+    "prepublishOnly": "npm test && npm run build && npm run doc",
+    "postpublish": "npm run doc:deploy && git push",
     "test": "mocha --opts spec/mocha.opts src/**/*test.ts",
     "test_tslint_prepare": "npm run clean && tsc",
     "test_tslint_subscribe_takeuntil": "tslint -p tsconfig.json -t verbose -c src/tslint_rules/subscribe-takeuntil/rule.json src/tslint_rules/subscribe-takeuntil/*.ts",
     "test_tslint_subscribe_takeuntil_config": "tslint -p tsconfig.json -t verbose -c src/tslint_rules/subscribe-takeuntil-config/rule.json src/tslint_rules/subscribe-takeuntil-config/*.ts",
     "test_tslint_subscribe_in_subscribe": "tslint -p tsconfig.json -t verbose -c src/tslint_rules/subscribe-in-subscribe/rule.json src/tslint_rules/subscribe-in-subscribe/*.ts",
     "test_tslint": "npm run test_tslint_prepare && npm run test_tslint_subscribe_takeuntil ;npm run test_tslint_subscribe_takeuntil_config ; npm run test_tslint_subscribe_in_subscribe",
-    "typedoc": "typedoc --excludeNotExported --excludePrivate --excludeProtected --exclude \"**/*+(.test).ts\" --out doc/ src && echo \"\" > doc/.nojekyll && git add . && git commit -m 'generated typedoc'",
-    "typedoc_deploy": "gh-pages -t --dotfiles -d doc"
+    "doc": "npm run doc:generate && echo \"\" > doc/.nojekyll && git add . && git commit -m 'generated documentation'",
+    "doc:generate": "typedoc --excludeNotExported --excludePrivate --exclude \"**/*+(.test).ts\" --out doc/ src",
+    "doc:deploy": "gh-pages -t --dotfiles -d doc"
   }
 }
