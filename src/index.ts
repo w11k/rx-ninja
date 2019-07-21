@@ -3,7 +3,6 @@ export * from "./operators/debounce-if";
 export * from "./operators/execute-latest-on-idle";
 export * from "./operators/just-instance-of";
 export * from "./operators/map-to-value-and-changed-properties";
-export * from "./operators/observe-property";
 export * from "./operators/on-completion-continue-with";
 export * from "./operators/replay-on";
 export * from "./operators/skip-nil";
