@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;tslint_rules/rxNinjaSubscribeInSubscribeRule&quot; | @w11k/rx-ninja</title>
+	<title>&quot;operators/skip-property-nil&quot; | @w11k/rx-ninja</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -40,8 +40,6 @@
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
 							<input type="checkbox" id="tsd-filter-externals" checked />
 							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -56,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_tslint_rules_rxninjasubscribeinsubscriberule_.html">&quot;tslint_rules/rxNinjaSubscribeInSubscribeRule&quot;</a>
+					<a href="_operators_skip_property_nil_.html">&quot;operators/skip-property-nil&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;tslint_rules/rxNinjaSubscribeInSubscribeRule&quot;</h1>
+			<h1>External module &quot;operators/skip-property-nil&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -71,12 +69,110 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Classes</h3>
+							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-class tsd-parent-kind-external-module"><a href="../classes/_tslint_rules_rxninjasubscribeinsubscriberule_.rule.html" class="tsd-kind-icon">Rule</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_operators_skip_property_nil_.html#propertynotnil" class="tsd-kind-icon">property<wbr>Not<wbr>Nil</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_operators_skip_property_nil_.html#skippropertynil" class="tsd-kind-icon">skip<wbr>Property<wbr>Nil</a></li>
 							</ul>
 						</section>
 					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
+					<a name="propertynotnil" class="tsd-anchor"></a>
+					<h3>property<wbr>Not<wbr>Nil</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">property<wbr>Not<wbr>Nil&lt;T, P&gt;<span class="tsd-signature-symbol">(</span>property<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">(Anonymous function)</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/5c351e6/src/operators/skip-property-nil.ts#L17">operators/skip-property-nil.ts:17</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a type guard function, which receives an object and checks if the given property is neither null nor
+									undefined. Narrows the type of the given property within the object type from T | null | undefined to just T.</p>
+								</div>
+								<p>Example:</p>
+								<p>incoming type is { a: number, b: string | null | undefined }</p>
+								<p>outgoing type of returned type guard from propertyNotNil(&#39;b&#39;) is { a: number, b: string }</p>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+								<li>
+									<h4>P<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">keyof T</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>property: <span class="tsd-signature-type">P</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>name of the property to check</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">(Anonymous function)</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
+					<a name="skippropertynil" class="tsd-anchor"></a>
+					<h3>skip<wbr>Property<wbr>Nil</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">skip<wbr>Property<wbr>Nil&lt;T, P&gt;<span class="tsd-signature-symbol">(</span>prop<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">operateFunction</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/5c351e6/src/operators/skip-property-nil.ts#L47">operators/skip-property-nil.ts:47</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Skips / filters values which contains null or undefined for the given property.
+									Narrows the type of the given property within the object type from T | null | undefined to just T.</p>
+								</div>
+								<p>Example:</p>
+								<pre><code class="language-ts"><span class="hljs-keyword">const</span> x: Observable&lt;{ a: <span class="hljs-built_in">number</span>, b: <span class="hljs-built_in">string</span> | <span class="hljs-literal">null</span> | <span class="hljs-literal">undefined</span> }&gt;;
+
+<span class="hljs-keyword">const</span> z: Observable&lt;{ a: <span class="hljs-built_in">number</span>, b: <span class="hljs-built_in">string</span> }&gt; = x.pipe(
+  skipPropertyNil(<span class="hljs-string">'b'</span>)
+);</code></pre>
+								<p>value { a: 1, b: &#39;foo&#39; } will pass through</p>
+								<p>value { a: 1, b: null } will be skipped</p>
+								<p>value { a: 1, b: undefined } will be skipped</p>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+								<li>
+									<h4>P<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">keyof T</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>prop: <span class="tsd-signature-type">P</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>name of the property to check</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">operateFunction</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -86,57 +182,18 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_callablesubject_.html">"<wbr>Callable<wbr>Subject"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_callablesubject_test_.html">"<wbr>Callable<wbr>Subject.test"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_transformingsubject_.html">"<wbr>Transforming<wbr>Subject"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_transformingsubject_test_.html">"<wbr>Transforming<wbr>Subject.test"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_functions_.html">"functions"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_functions_test_.html">"functions.test"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_index_.html">"index"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_maptovalueandchangedproperties_.html">"map<wbr>ToValue<wbr>And<wbr>Changed<wbr>Properties"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_maptovalueandchangedproperties_test_.html">"map<wbr>ToValue<wbr>And<wbr>Changed<wbr>Properties.test"</a>
-					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_tslint_rules_rxninjasubscribeinsubscriberule_.html">"tslint_<wbr>rules/rx<wbr>Ninja<wbr>Subscribe<wbr>InSubscribe<wbr>Rule"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_tslint_rules_rxninjasubscribetakeuntilrule_.html">"tslint_<wbr>rules/rx<wbr>Ninja<wbr>Subscribe<wbr>Takeuntil<wbr>Rule"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_tslint_rules_subscribe_in_subscribe_badcode_.html">"tslint_<wbr>rules/subscribe-<wbr>in-<wbr>subscribe/bad<wbr>Code"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_tslint_rules_subscribe_takeuntil_config_badclass_.html">"tslint_<wbr>rules/subscribe-<wbr>takeuntil-<wbr>config/<wbr>Bad<wbr>Class"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_tslint_rules_subscribe_takeuntil_badclass_.html">"tslint_<wbr>rules/subscribe-<wbr>takeuntil/<wbr>Bad<wbr>Class"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_tslint_rules_util_.html">"tslint_<wbr>rules/util"</a>
+						<a href="_operators_skip_property_nil_.html">"operators/skip-<wbr>property-<wbr>nil"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_tslint_rules_rxninjasubscribeinsubscriberule_.rule.html" class="tsd-kind-icon">Rule</a>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="_operators_skip_property_nil_.html#propertynotnil" class="tsd-kind-icon">property<wbr>Not<wbr>Nil</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="_operators_skip_property_nil_.html#skippropertynil" class="tsd-kind-icon">skip<wbr>Property<wbr>Nil</a>
 					</li>
 				</ul>
 			</nav>
@@ -155,6 +212,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
@@ -203,7 +261,7 @@
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>

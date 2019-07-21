@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;tslint_rules/subscribe-takeuntil-config/BadClass&quot; | @w11k/rx-ninja</title>
+	<title>&quot;operators/combine-latest-to-map&quot; | @w11k/rx-ninja</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,16 +54,89 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_tslint_rules_subscribe_takeuntil_config_badclass_.html">&quot;tslint_rules/subscribe-takeuntil-config/BadClass&quot;</a>
+					<a href="_operators_combine_latest_to_map_.html">&quot;operators/combine-latest-to-map&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;tslint_rules/subscribe-takeuntil-config/BadClass&quot;</h1>
+			<h1>External module &quot;operators/combine-latest-to-map&quot;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_operators_combine_latest_to_map_.html#combinelatesttomap" class="tsd-kind-icon">combine<wbr>Latest<wbr>ToMap</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
+					<a name="combinelatesttomap" class="tsd-anchor"></a>
+					<h3>combine<wbr>Latest<wbr>ToMap</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">combine<wbr>Latest<wbr>ToMap&lt;T&gt;<span class="tsd-signature-symbol">(</span>obsMap<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/5c351e6/src/operators/combine-latest-to-map.ts#L41">operators/combine-latest-to-map.ts:41</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Combines latest values from given source observables, like the original combineLatest does.
+									Unlike combineLatest this variant expects a object (map) instead of an array and delivers a object instead of an array.</p>
+								</div>
+								<p>A map instead of an array helps to avoid issues with reading wrong array index.
+									If you have an array with one number-observable and one string-observable, typescript is able to tell you which
+									array element is the number and which the string.
+									But imagine an array of two string-observable. Typescript just can tell you that both are strings. It is your
+								challenge to not mix up the order. A map with key instead of index based access helps to avoid this mix up.</p>
+								<p>Example:
+								source: { a: Observable<string>, b: Observable<string> }</p>
+								<p>result: Observable&lt;{ a: string, b: string}&gt;</p>
+								<pre><code><span class="hljs-comment">sourceA:</span> <span class="hljs-literal">-</span><span class="hljs-comment">a</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">b</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">c</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">|</span>
+<span class="hljs-comment">sourceB:</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">x</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">y</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">z</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">|</span>
+<span class="hljs-comment">result:</span>  <span class="hljs-literal">-</span><span class="hljs-comment">1</span><span class="hljs-literal">-</span><span class="hljs-comment">2</span><span class="hljs-literal">-</span><span class="hljs-comment">3</span><span class="hljs-literal">-</span><span class="hljs-comment">4</span><span class="hljs-literal">-</span><span class="hljs-comment">5</span><span class="hljs-literal">-</span><span class="hljs-comment">6</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">|</span></code></pre><p>with</p>
+								<p>1 = { a: &#39;a&#39;, b: undefined }</p>
+								<p>2 = { a: &#39;a&#39;, b: &#39;x&#39; }</p>
+								<p>3 = { a: &#39;b&#39;, b: &#39;x&#39; }</p>
+								<p>4 = { a: &#39;b&#39;, b: &#39;y&#39; }</p>
+								<p>5 = { a: &#39;c&#39;, b: &#39;y&#39; }</p>
+								<p>6 = { a: &#39;c&#39;, b: &#39;z&#39; }</p>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>obsMap: <span class="tsd-signature-type">object</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>source observables</p>
+									</div>
+									<ul class="tsd-parameters">
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
@@ -72,12 +145,15 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_tslint_rules_subscribe_takeuntil_config_badclass_.html">"tslint_<wbr>rules/subscribe-<wbr>takeuntil-<wbr>config/<wbr>Bad<wbr>Class"</a>
+						<a href="_operators_combine_latest_to_map_.html">"operators/combine-<wbr>latest-<wbr>to-<wbr>map"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="_operators_combine_latest_to_map_.html#combinelatesttomap" class="tsd-kind-icon">combine<wbr>Latest<wbr>ToMap</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
