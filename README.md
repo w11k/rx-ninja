@@ -4,23 +4,34 @@
 
 # rx-ninja
 
-Utilities for RxJS. Additional operators and tslint rules.
-
-**Patrons**
-
-❤️ [W11K - The Web Engineers](https://www.w11k.de/)
-
-❤️ [theCodeCampus - Trainings for Angular and TypeScript](https://www.thecodecampus.de/)
-
+Utilities for RxJS. Provides additional operators as well as tslint rules to avoid common mistakes.
 
 ## API Documentation
 
-🗄 [TypeDoc online API documentation](https://w11k.github.io/rx-ninja/modules/_index_.html)
+Please see [API documentation](https://w11k.github.io/rx-ninja/modules/_index_.html)
 
-Operator | Description
+## Operators
 
-* debounceIf | Debounce values on the stream if the predicate returns true
+* combineLatestToMap
+* debounceIf
+* executeLatestOnIdle
+* justInstanceOf
+* mapToValueAndChangedProperties
+* onCompletionContinueWith
+* replayOn
+* skipNil
+* skipNull
+* skipPropertyNil
+* skipPropertyNull
+* skipPropertyUndefined
+* skipSomePropertyNil
+* skipSomePropertyNull
+* skipSomePropertyUndefined
+* skipUndefined
+* skipUntilCompletionAndContinueWith
 
+Please use the API documentation for an always up-to-date list of all included operators.
+The API documentation also contains detailed descriptions, examples and marble diagrams. 
 
 ## TSLint rules
 
@@ -73,3 +84,9 @@ of(1).subscribe(() => {
     of(2).subscribe(); // <-- error
 });
 ```
+
+**Patrons**
+
+❤️ [W11K - The Web Engineers](https://www.w11k.de/)
+
+❤️ [theCodeCampus - Trainings for Angular and TypeScript](https://www.thecodecampus.de/)
