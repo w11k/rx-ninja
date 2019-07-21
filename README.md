@@ -4,7 +4,7 @@
 
 # rx-ninja
 
-Utilities for RxJS
+Utilities for RxJS. Additional operators and tslint rules.
 
 **Patrons**
 
@@ -17,9 +17,9 @@ Utilities for RxJS
 
 🗄 [TypeDoc online API documentation](https://w11k.github.io/rx-ninja/modules/_index_.html)
 
-Operator|Description
---|--
-debounceIf|Debounce values on the stream if the predicate returns true
+Operator | Description
+
+* debounceIf | Debounce values on the stream if the predicate returns true
 
 
 ## TSLint rules
