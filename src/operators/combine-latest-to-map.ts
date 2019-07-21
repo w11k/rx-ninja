@@ -13,18 +13,27 @@ import { map } from "rxjs/operators";
  *
  * Example:
  * source: { a: Observable<string>, b: Observable<string> }
+ *
  * result: Observable<{ a: string, b: string}>
  *
+ * ```
  * sourceA: -a---b---c--|
  * sourceB: ---x---y---z---|
  * result:  -1-2-3-4-5-6---|
+ * ```
  *
  * with
+ *
  * 1 = { a: 'a', b: undefined }
+ *
  * 2 = { a: 'a', b: 'x' }
+ *
  * 3 = { a: 'b', b: 'x' }
+ *
  * 4 = { a: 'b', b: 'y' }
+ *
  * 5 = { a: 'c', b: 'y' }
+ *
  * 6 = { a: 'c', b: 'z' }
  *
  * @param obsMap source observables

@@ -7,7 +7,9 @@ import { filter } from "rxjs/operators";
  * Narrows the type of the given property within the object type from T | null to just T.
  *
  * Example:
+ *
  * incoming type is { a: number, b: string | null }
+ *
  * outgoing type of returned type guard from propertyNotNull('b') is { a: number, b: string }
  *
  * @param property name of the property to check
@@ -25,19 +27,23 @@ export function propertyNotNull<T, P extends keyof T>(property: P) {
  * Narrows the type of the given property within the object type from T | null to just T.
  *
  * Example:
+ *
+ * ```ts
  * const x: Observable<{ a: number, b: string | null }>;
  *
  * const z: Observable<{ a: number, b: string }> = x.pipe(
  *   skipPropertyNull('b')
  * );
+ * ```
  *
  * value { a: 1, b: 'foo' } will pass through
+ *
  * value { a: 1, b: null } will be skipped
  *
  * @param prop name of the property to check
  */
 export function skipPropertyNull<T, P extends keyof T>(prop: P) {
-  return function (source: Observable<T>) {
+  return function operateFunction(source: Observable<T>) {
     return source.pipe(filter(propertyNotNull(prop)));
   };
 }

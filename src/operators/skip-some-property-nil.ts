@@ -9,6 +9,7 @@ import { entries } from "../utils/functions";
  *
  * Example:
  * incoming type is { a: number | null, b: string | undefined }
+ *
  * outgoing type is { a: number, b: string }
  *
  * @param obj object to check
@@ -25,14 +26,19 @@ export function propertiesNotNil<T>(obj: T): obj is { [P in keyof T]: NonNil<T[P
  * Narrows the type of all properties within the object type from T | null | undefined to just T.
  *
  * Example:
+ *
+ * ```ts
  * const x: Observable<{ a: number | null, b: string | undefined }>;
  *
  * const z: Observable<{ a: number, b: string }> = x.pipe(
  *   skipSomePropertyNil
  * );
+ * ```
  *
  * value { a: 1, b: 'foo' } will pass through
+ *
  * value { a: 1, b: undefined } will be skipped
+ *
  * value { a: null, b: 'foo' } will be skipped
  */
 export function skipSomePropertyNil<T>(source: Observable<T>) {

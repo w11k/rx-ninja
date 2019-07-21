@@ -66,10 +66,10 @@ export function createCallableSubject<I, O>(subject: Subject<I> = new Subject(),
     };
 
     const observable: Observable<O> = subject.asObservable().pipe(operator);
-    const fnMethods: Partial<Function> = {
-        bind: callable.bind.bind(callable),
-        apply: callable.apply.bind(callable),
-        call: callable.call.bind(callable),
+    const fnMethods = {
+        bind: callable.bind.bind(callable as any),
+        apply: callable.apply.bind(callable as any),
+        call: callable.call.bind(callable as any),
         length: callable.length,
         name: callable.name
     };

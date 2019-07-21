@@ -2,7 +2,7 @@ import {
   ErrorEvent,
   executeLatestOnIdle,
   ExecuteLatestOnIdleEvent,
-  ExecuteLatestOnIdleOperatorFunction,
+  OperateFunction,
   FinishedEvent,
   SkippedEvent,
   StartedEvent,
@@ -149,7 +149,7 @@ describe("executeLatestOnIdle", () => {
     const executorFun = async () => { throw new Error(errorMessage); };
     const test = setup(executorFun);
 
-    const onNext = spy((x) => x);
+    const onNext = spy((x: any) => x);
     const onComplete = spy(noop);
 
     test.processed.subscribe(onNext, expectNoCall, onComplete);
@@ -175,7 +175,7 @@ describe("executeLatestOnIdle", () => {
     const errorMessage = "simulated error in executor function";
     const test = setupWithTriggeredExecuteFun();
 
-    const onError = spy(x => x);
+    const onError = spy((x: any) => x);
 
     test.processed.subscribe(expectNoCall, onError, expectNoCall);
 
@@ -242,6 +242,6 @@ function setup(executeFun: (x: number) => Promise<void>) {
   };
 }
 
-async function resolveOnIdle(operatorFun: ExecuteLatestOnIdleOperatorFunction<any, any>) {
+async function resolveOnIdle(operatorFun: OperateFunction<any, any>) {
   await operatorFun.idle.pipe(filter(x => x), take(1)).toPromise();
 }

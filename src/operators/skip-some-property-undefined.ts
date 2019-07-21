@@ -8,7 +8,9 @@ import { entries } from "../utils/functions";
  * Narrows the type of all properties within the object type from T | undefined to just T.
  *
  * Example:
+ *
  * incoming type is { a: number | undefined, b: string | undefined }
+ *
  * outgoing type is { a: number, b: string }
  *
  * @param obj object to check
@@ -25,14 +27,19 @@ export function propertiesNotUndefined<T>(obj: T): obj is { [P in keyof T]: NonU
  * Narrows the type of all properties within the object type from T | undefined to just T.
  *
  * Example:
+ *
+ * ```ts
  * const x: Observable<{ a: number | undefined, b: string | undefined }>;
  *
  * const z: Observable<{ a: number, b: string }> = x.pipe(
  *   skipSomePropertyUndefined
  * );
+ * ```
  *
  * value { a: 1, b: 'foo' } will pass through
+ *
  * value { a: 1, b: undefined } will be skipped
+ *
  * value { a: undefined, b: 'foo' } will be skipped
  */
 export function skipSomePropertyUndefined<T>(source: Observable<T>) {

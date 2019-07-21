@@ -7,13 +7,15 @@ import { flatMap, materialize } from "rxjs/operators";
  * Resulting observable continues with emitted values of this observable provided by the continueWith function.
  *
  * source:                 -a-b-c-|
+ *
  * return of continueWith:        --d-e-f-|
+ *
  * result:                 -a-b-c---d-e-f-|
  *
  * @param continueWith function that delivers an observable to continue with
  */
 export function onCompletionContinueWith<T, O>(continueWith: (lastValue: T) => Observable<O>) {
-  return function (source: Observable<T>): Observable<T | O> {
+  return function operateFunction(source: Observable<T>): Observable<T | O> {
     let lastValue: T;
 
     return source.pipe(

@@ -19,7 +19,7 @@ export function instanceOf<A>(clazz: Newable<A>) {
  * @param clazz which instances are passed through
  */
 export function justInstanceOf<A>(clazz: Newable<A>) {
-  return function<B>(source: Observable<A | B>) {
+  return function operateFunction<B>(source: Observable<A | B>) {
     return source.pipe(filter(instanceOf(clazz)));
   };
 }

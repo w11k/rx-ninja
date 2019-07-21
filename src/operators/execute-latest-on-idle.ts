@@ -9,44 +9,56 @@ export class SkippedEvent<T> { constructor(public readonly input: T) {} }
 export class FinishedEvent<T, R> { constructor(public readonly input: T, public readonly output: R) {} }
 export class ErrorEvent<T> { constructor(public readonly input: T, public readonly error: any) {} }
 
-export type ExecuteLatestOnIdleOperatorFunction<T, R> = {(obs: Observable<T>): Observable<ExecuteLatestOnIdleEvent<T, R>>, readonly idle: Observable<boolean> }
+export type OperateFunction<T, R> = {(obs: Observable<T>): Observable<ExecuteLatestOnIdleEvent<T, R>>, readonly idle: Observable<boolean> };
 
 /**
  * Calls the given execute function with the latest value from the source observable as soon as a running call of executeFun finished.
  *
- * ## Example:
+ * Example:
+ *
  * - source emitted 1 -> emit StartedEvent 1 to subscriber, call executeFun with 1
+ *
  * - executeFun finished 1 -> emit FinishedEvent 1 to subscriber
+ *
  * - source emitted 2 -> emit StartedEvent 2 to subscriber, call executeFun with 2
+ *
  * - source emitted 3 -> cache 3 because executeFun didn't finished for 2 yet
+ *
  * - executeFun finished 2 -> emit FinishedEvent 2 to subscriber, emit StartedEvent 3 to subscriber, call executeFun with 3
+ *
  * - source emitted 4 -> cache 4 because executeFun didn't finished for 3 yet
+ *
  * - source emitted 5 -> emit SkippedEvent for 4 and cache 5 because executeFun didn't finished for 3 yet
+ *
  * - executeFun finished 3 -> emit FinishedEvent 3 to subscriber, emit StartedEvent 5 to subscriber, call executeFun with 5
+ *
  * - source completed -> executeFun didn't finished for 5 yet, delay completion
+ *
  * - executeFun finished 5 -> emit FinishedEvent 6 to subscriber, complete subscriber
  *
- * ## Error Handling:
+ * Error Handling:
+ *
  * - For errors caused by the execute function, an ErrorEvent will be emitted to the subscriber.
+ *
  * - Errors of the source observable will be passed through.
  *
  * @param executeFun Function to execute with latest value from source observable.
  *   Can return something synchronously or asynchronously. Returned value will be included in FinishedEvent.
  */
-export function executeLatestOnIdle<T, R = void>(executeFun: (t: T) => Promise<R> | R): ExecuteLatestOnIdleOperatorFunction<T, R> {
+export function executeLatestOnIdle<T, R = void>(executeFun: (t: T) => Promise<R> | R): OperateFunction<T, R> {
   const operator = new ExecuteLatestOnIdleOperator(executeFun);
 
-  function operatorFunction(obs: Observable<T>): Observable<ExecuteLatestOnIdleEvent<T, R>> {
+  function operateFunction(obs: Observable<T>): Observable<ExecuteLatestOnIdleEvent<T, R>> {
     return obs.lift(operator);
   }
 
-  Object.defineProperty(operatorFunction, 'idle', {
+  Object.defineProperty(operateFunction, 'idle', {
     get(): Observable<boolean> {
       return operator.idle;
     }
   });
 
-  return operatorFunction as ExecuteLatestOnIdleOperatorFunction<T, R>;
+  return operateFunction as OperateFunction<T, R>;
 }
 
 class ExecuteLatestOnIdleOperator<T, R> implements Operator<T, ExecuteLatestOnIdleEvent<T, R>> {

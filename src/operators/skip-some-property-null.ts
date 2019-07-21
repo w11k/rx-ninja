@@ -8,7 +8,9 @@ import { entries } from "../utils/functions";
  * Narrows the type of all properties within the object type from T | null to just T.
  *
  * Example:
+ *
  * incoming type is { a: number | null, b: string | null }
+ *
  * outgoing type is { a: number, b: string }
  *
  * @param obj object to check
@@ -25,14 +27,19 @@ export function propertiesNotNull<T>(obj: T): obj is { [P in keyof T]: NonNull<T
  * Narrows the type of all properties within the object type from T | null to just T.
  *
  * Example:
+ *
+ * ```ts
  * const x: Observable<{ a: number | null, b: string | null }>;
  *
  * const z: Observable<{ a: number, b: string }> = x.pipe(
  *   skipSomePropertyNull
  * );
+ * ```
  *
  * value { a: 1, b: 'foo' } will pass through
+ *
  * value { a: 1, b: null } will be skipped
+ *
  * value { a: null, b: 'foo' } will be skipped
  */
 export function skipSomePropertyNull<T>(source: Observable<T>) {
