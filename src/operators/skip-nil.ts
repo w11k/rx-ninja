@@ -12,6 +12,16 @@ export function notNil<T>(x: T | null | undefined): x is T {
 }
 
 /**
+ * Type guard checking a value is null or undefined.
+ * Narrows the type from T | null | undefined to null | undefined.
+ *
+ * @param x value to check
+ */
+export function isNil<T>(x: T | null | undefined): x is null | undefined {
+  return x === null || x === undefined;
+}
+
+/**
  * Filters null and undefined values.
  * Narrows the type from Observable<T | null | undefined> to just Observable<T>.
  *
