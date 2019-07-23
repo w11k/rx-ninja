@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;operators/map-to-value-and-changed-properties&quot; | @w11k/rx-ninja</title>
+	<title>AsyncPrioritizedQueue | @w11k/rx-ninja</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,48 +54,109 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_operators_map_to_value_and_changed_properties_.html">&quot;operators/map-to-value-and-changed-properties&quot;</a>
+					<a href="../modules/_utils_async_prioritized_queue_.html">&quot;utils/async-prioritized-queue&quot;</a>
+				</li>
+				<li>
+					<a href="_utils_async_prioritized_queue_.asyncprioritizedqueue.html">AsyncPrioritizedQueue</a>
 				</li>
 			</ul>
-			<h1>External module &quot;operators/map-to-value-and-changed-properties&quot;</h1>
+			<h1>Class AsyncPrioritizedQueue</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>An asynchronous, prioritized, observable and removable queue of worker functions.</p>
+					</div>
+					<p>Async - Workers are async functions. Next worker will be started when promise returned by previous worker resolves or rejects.</p>
+					<p>Prioritized - Each worker has a priority. 0 is highest, higher numbers means lower priority.
+					Worker with higher priority will be executed first.</p>
+					<p>Observable - Calling the add method returns an observable. The worker will be queued on subscribing this observable.
+						Multiple subscriptions lead to multiple executions of the worker.
+						This observable will emit the result of the finished worker and then will complete immediately.
+					It will send an error if the worker throws an error or rejects the returned promise.</p>
+					<p>Removable - The worker will be removed from the queue if the subscriber unsubscribes early, before the worker is started.
+						If the subscriber unsubscribes late (the worker was already called but hasn&#39;t finished yet), it will not be cancelled.
+					The caller will just miss the result.</p>
+					<p>Unhandled Errors - An error thrown by a worker will be passed through to the observable subscriber.
+						If the subscriber unsubscribes during the execution of the worker, and the worker throws an error the error will be passed the the
+					unhandledErrors observable (together with the worker function as a hint who throws that error).</p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">AsyncPrioritizedQueue</span>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Functions</h3>
+							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_operators_map_to_value_and_changed_properties_.html#maptovalueandchangedproperties" class="tsd-kind-icon">map<wbr>ToValue<wbr>And<wbr>Changed<wbr>Properties</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_utils_async_prioritized_queue_.asyncprioritizedqueue.html#unhandlederrors" class="tsd-kind-icon">unhandled<wbr>Errors</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="_utils_async_prioritized_queue_.asyncprioritizedqueue.html#add" class="tsd-kind-icon">add</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-					<a name="maptovalueandchangedproperties" class="tsd-anchor"></a>
-					<h3>map<wbr>ToValue<wbr>And<wbr>Changed<wbr>Properties</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">map<wbr>ToValue<wbr>And<wbr>Changed<wbr>Properties&lt;T&gt;<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="unhandlederrors" class="tsd-anchor"></a>
+					<h3>unhandled<wbr>Errors</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> unhandledErrors<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/5699589/src/operators/map-to-value-and-changed-properties.ts#L7">operators/map-to-value-and-changed-properties.ts:7</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/5699589/src/utils/async-prioritized-queue.ts#L35">utils/async-prioritized-queue.ts:35</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+					<a name="add" class="tsd-anchor"></a>
+					<h3>add</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">add&lt;T&gt;<span class="tsd-signature-symbol">(</span>worker<span class="tsd-signature-symbol">: </span><a href="../modules/_utils_async_prioritized_queue_.html#worker" class="tsd-signature-type">Worker</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, priority<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/5699589/src/utils/async-prioritized-queue.ts#L50">utils/async-prioritized-queue.ts:50</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>TODO: add documentation with marble diagram or textual example</p>
+									<p>Creates an Observable for queuing the given worker with the given priority.
+										Subscribe to add the worker to the queue. Multiple subscriptions will add the worker multiple times.
+									Unsubscribe before completion to remove the worker from the queue.</p>
 								</div>
+								<p>Observable emits the result of the worker and then completes immediately.
+								Observable mirrors any error thrown by the worker.</p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -103,25 +164,18 @@
 									<h4>T</h4>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
+							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
-								<li class="tsd-parameter-siganture">
-									<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></li>
-									</ul>
-									<ul class="tsd-descriptions">
-										<li class="tsd-description">
-											<h4 class="tsd-parameters-title">Parameters</h4>
-											<ul class="tsd-parameters">
-												<li>
-													<h5>source: <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-												</li>
-											</ul>
-											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></h4>
-										</li>
-									</ul>
+								<li>
+									<h5>worker: <a href="../modules/_utils_async_prioritized_queue_.html#worker" class="tsd-signature-type">Worker</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>priority: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -134,14 +188,29 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_operators_map_to_value_and_changed_properties_.html">"operators/map-<wbr>to-<wbr>value-<wbr>and-<wbr>changed-<wbr>properties"</a>
+						<a href="../modules/_utils_async_prioritized_queue_.html">"utils/async-<wbr>prioritized-<wbr>queue"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="_operators_map_to_value_and_changed_properties_.html#maptovalueandchangedproperties" class="tsd-kind-icon">map<wbr>ToValue<wbr>And<wbr>Changed<wbr>Properties</a>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-external-module">
+						<a href="_utils_async_prioritized_queue_.asyncprioritizedqueue.html" class="tsd-kind-icon">Async<wbr>Prioritized<wbr>Queue</a>
+						<ul>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="_utils_async_prioritized_queue_.asyncprioritizedqueue.html#unhandlederrors" class="tsd-kind-icon">unhandled<wbr>Errors</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+								<a href="_utils_async_prioritized_queue_.asyncprioritizedqueue.html#add" class="tsd-kind-icon">add</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="../modules/_utils_async_prioritized_queue_.html#worker" class="tsd-kind-icon">Worker</a>
 					</li>
 				</ul>
 			</nav>
