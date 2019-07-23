@@ -46,7 +46,7 @@
     "test_tslint_subscribe_in_subscribe": "tslint -p tsconfig.json -t verbose -c src/tslint_rules/subscribe-in-subscribe/rule.json src/tslint_rules/subscribe-in-subscribe/*.ts",
     "test_tslint": "npm run test_tslint_prepare && npm run test_tslint_subscribe_takeuntil ;npm run test_tslint_subscribe_takeuntil_config ; npm run test_tslint_subscribe_in_subscribe",
     "doc": "npm run doc:generate && echo \"\" > doc/.nojekyll && git add . && git commit -m 'generated documentation'",
-    "doc:generate": "typedoc --excludeNotExported --excludePrivate --exclude \"**/*+(.test).ts\" --out doc/ src",
+    "doc:generate": "typedoc --options ./typedoc.js src",
     "doc:deploy": "gh-pages -t --dotfiles -d doc"
   }
 }
