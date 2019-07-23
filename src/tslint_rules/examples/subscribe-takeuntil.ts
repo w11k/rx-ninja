@@ -17,7 +17,7 @@ function test() {
 declare const scoped: any;
 declare const untilComponentDestroyed: any;
 
-class BadClass {
+class SubscribeTakeuntil {
 
     observable = of(1);
     stop = of(1);

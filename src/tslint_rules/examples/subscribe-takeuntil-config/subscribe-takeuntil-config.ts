@@ -7,7 +7,7 @@ const customTerminator = () => <T>(source: Observable<T>) => {
 };
 
 
-class BadClass {
+class SubscribeTakeuntilConfig {
 
     observable = of(1);
     stop = of(1);
