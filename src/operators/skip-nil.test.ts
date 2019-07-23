@@ -1,7 +1,6 @@
 import { assert } from "chai";
 import { of } from "rxjs";
 import { tap } from "rxjs/operators";
-import { skipNull } from "./skip-null";
 import { skipNil } from "./skip-nil";
 
 describe("skipNull", function () {
