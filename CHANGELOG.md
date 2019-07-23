@@ -1,3 +1,7 @@
+# Version 1.10.1
+
+- fix missing export
+
 # Version 1.10.0
 
 - add AsyncPrioritizedQueue

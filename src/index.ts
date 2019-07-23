@@ -21,3 +21,4 @@ export * from "./subjects/transforming-subject";
 
 export * from "./utils/functions";
 export * from "./utils/types";
+export * from "./utils/async-prioritized-queue";
