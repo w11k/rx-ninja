@@ -1,3 +1,7 @@
+# Version 1.10.0
+
+- add AsyncPrioritizedQueue
+
 # Version 1.9.2
 
 - restore tslint rules
