@@ -1,3 +1,8 @@
+
+# Version 1.10.2
+
+- provides ESM5 and ESM2015 bundle
+
 # Version 1.10.1
 
 - fix missing export
