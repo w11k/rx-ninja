@@ -40,8 +40,6 @@
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
 							<input type="checkbox" id="tsd-filter-externals" checked />
 							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -67,24 +65,31 @@
 				<p><a href="https://travis-ci.org/w11k/rx-ninja"><img src="https://travis-ci.org/w11k/rx-ninja.svg?branch=master" alt="Build Status"></a>
 				<a href="https://badge.fury.io/js/%40w11k%2Frx-ninja"><img src="https://badge.fury.io/js/%40w11k%2Frx-ninja.svg" alt="npm version"></a></p>
 				<h1 id="rx-ninja">rx-ninja</h1>
-				<p>Utilities for RxJS</p>
-				<p><strong>Patrons</strong></p>
-				<p>❤️ <a href="https://www.w11k.de/">W11K - The Web Engineers</a></p>
-				<p>❤️ <a href="https://www.thecodecampus.de/">theCodeCampus - Trainings for Angular and TypeScript</a></p>
+				<p>Utilities for RxJS. Provides additional operators as well as tslint rules to avoid common mistakes.</p>
 				<h2 id="api-documentation">API Documentation</h2>
-				<p>🗄 <a href="https://w11k.github.io/rx-ninja/modules/_index_.html">TypeDoc online API documentation</a></p>
-				<table>
-					<thead>
-						<tr>
-							<th>Operator</th>
-							<th>Description</th>
-						</tr>
-					</thead>
-					<tbody><tr>
-							<td>debounceIf</td>
-							<td>Debounce values on the stream if the predicate returns true</td>
-						</tr>
-				</tbody></table>
+				<p>Please see <a href="https://w11k.github.io/rx-ninja/index.html">API documentation</a></p>
+				<h2 id="operators">Operators</h2>
+				<ul>
+					<li><a href="https://w11k.github.io/rx-ninja/modules/_operators_combine_latest_to_map_.html">combineLatestToMap</a></li>
+					<li><a href="https://w11k.github.io/rx-ninja/modules/_operators_debounce_if_.html">debounceIf</a></li>
+					<li><a href="https://w11k.github.io/rx-ninja/modules/_operators_execute_latest_on_idle_.html">executeLatestOnIdle</a></li>
+					<li><a href="https://w11k.github.io/rx-ninja/modules/_operators_just_instance_of_.html">justInstanceOf</a></li>
+					<li><a href="https://w11k.github.io/rx-ninja/modules/_operators_map_to_value_and_changed_properties_.html">mapToValueAndChangedProperties</a></li>
+					<li><a href="https://w11k.github.io/rx-ninja/modules/_operators_on_completion_continue_with_.html">onCompletionContinueWith</a></li>
+					<li><a href="https://w11k.github.io/rx-ninja/modules/_operators_replay_on_.html">replayOn</a></li>
+					<li><a href="https://w11k.github.io/rx-ninja/modules/_operators_skip_nil_.html">skipNil</a></li>
+					<li><a href="https://w11k.github.io/rx-ninja/modules/_operators_skip_null_.html">skipNull</a></li>
+					<li><a href="https://w11k.github.io/rx-ninja/modules/_operators_skip_property_nil_.html">skipPropertyNil</a></li>
+					<li><a href="https://w11k.github.io/rx-ninja/modules/_operators_skip_property_null_.html">skipPropertyNull</a></li>
+					<li><a href="https://w11k.github.io/rx-ninja/modules/_operators_skip_property_undefined_.html">skipPropertyUndefined</a></li>
+					<li><a href="https://w11k.github.io/rx-ninja/modules/_operators_skip_some_property_nil_.html">skipSomePropertyNil</a></li>
+					<li><a href="https://w11k.github.io/rx-ninja/modules/_operators_skip_some_property_null_.html">skipSomePropertyNull</a></li>
+					<li><a href="https://w11k.github.io/rx-ninja/modules/_operators_skip_some_property_undefined_.html">skipSomePropertyUndefined</a></li>
+					<li><a href="https://w11k.github.io/rx-ninja/modules/_operators_skip_undefined_.html">skipUndefined</a></li>
+					<li><a href="https://w11k.github.io/rx-ninja/modules/_operators_skip_until_completion_and_continue_with_.html">skipUntilCompletionAndContinueWith</a></li>
+				</ul>
+				<p>Please use the API documentation for an always up-to-date list of all included operators.
+				The API documentation also contains detailed descriptions, examples and marble diagrams. </p>
 				<h2 id="tslint-rules">TSLint rules</h2>
 				<h3 id="installation">Installation</h3>
 				<p><strong>Adjust your tslint.json</strong></p>
@@ -112,6 +117,9 @@
 of(<span class="hljs-number">1</span>).subscribe(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
     of(<span class="hljs-number">2</span>).subscribe(); <span class="hljs-comment">// &lt;-- error</span>
 });</code></pre>
+				<p><strong>Patrons</strong></p>
+				<p>❤️ <a href="https://www.w11k.de/">W11K - The Web Engineers</a></p>
+				<p>❤️ <a href="https://www.thecodecampus.de/">theCodeCampus - Trainings for Angular and TypeScript</a></p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -121,37 +129,70 @@ of(<span class="hljs-number">1</span>).subscribe(<span class="hljs-function"><sp
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_callablesubject_.html">"<wbr>Callable<wbr>Subject"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_callablesubject_test_.html">"<wbr>Callable<wbr>Subject.test"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_transformingsubject_.html">"<wbr>Transforming<wbr>Subject"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_transformingsubject_test_.html">"<wbr>Transforming<wbr>Subject.test"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_functions_.html">"functions"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_functions_test_.html">"functions.test"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
 						<a href="modules/_index_.html">"index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_maptovalueandchangedproperties_.html">"map<wbr>ToValue<wbr>And<wbr>Changed<wbr>Properties"</a>
+						<a href="modules/_operators_combine_latest_to_map_.html">"operators/combine-<wbr>latest-<wbr>to-<wbr>map"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_maptovalueandchangedproperties_test_.html">"map<wbr>ToValue<wbr>And<wbr>Changed<wbr>Properties.test"</a>
+						<a href="modules/_operators_debounce_if_.html">"operators/debounce-<wbr>if"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_tslint_rules_rxninjasubscribeinsubscriberule_.html">"tslint_<wbr>rules/rx<wbr>Ninja<wbr>Subscribe<wbr>InSubscribe<wbr>Rule"</a>
+						<a href="modules/_operators_execute_latest_on_idle_.html">"operators/execute-<wbr>latest-<wbr>on-<wbr>idle"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_tslint_rules_rxninjasubscribetakeuntilrule_.html">"tslint_<wbr>rules/rx<wbr>Ninja<wbr>Subscribe<wbr>Takeuntil<wbr>Rule"</a>
+						<a href="modules/_operators_just_instance_of_.html">"operators/just-<wbr>instance-<wbr>of"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operators_map_to_value_and_changed_properties_.html">"operators/map-<wbr>to-<wbr>value-<wbr>and-<wbr>changed-<wbr>properties"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operators_on_completion_continue_with_.html">"operators/on-<wbr>completion-<wbr>continue-<wbr>with"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operators_replay_on_.html">"operators/replay-<wbr>on"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operators_skip_nil_.html">"operators/skip-<wbr>nil"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operators_skip_null_.html">"operators/skip-<wbr>null"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operators_skip_property_nil_.html">"operators/skip-<wbr>property-<wbr>nil"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operators_skip_property_null_.html">"operators/skip-<wbr>property-<wbr>null"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operators_skip_property_undefined_.html">"operators/skip-<wbr>property-<wbr>undefined"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operators_skip_some_property_nil_.html">"operators/skip-<wbr>some-<wbr>property-<wbr>nil"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operators_skip_some_property_null_.html">"operators/skip-<wbr>some-<wbr>property-<wbr>null"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operators_skip_some_property_undefined_.html">"operators/skip-<wbr>some-<wbr>property-<wbr>undefined"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operators_skip_undefined_.html">"operators/skip-<wbr>undefined"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_operators_skip_until_completion_and_continue_with_.html">"operators/skip-<wbr>until-<wbr>completion-<wbr>and-<wbr>continue-<wbr>with"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_subjects_callable_subject_.html">"subjects/callable-<wbr>subject"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_subjects_transforming_subject_.html">"subjects/transforming-<wbr>subject"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_tslint_rules_rx_ninja_subscribe_in_subscribe_rule_.html">"tslint_<wbr>rules/rx-<wbr>ninja-<wbr>subscribe-<wbr>in-<wbr>subscribe-<wbr>rule"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_tslint_rules_rx_ninja_subscribe_takeuntil_rule_.html">"tslint_<wbr>rules/rx-<wbr>ninja-<wbr>subscribe-<wbr>takeuntil-<wbr>rule"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_tslint_rules_subscribe_in_subscribe_badcode_.html">"tslint_<wbr>rules/subscribe-<wbr>in-<wbr>subscribe/bad<wbr>Code"</a>
@@ -164,6 +205,12 @@ of(<span class="hljs-number">1</span>).subscribe(<span class="hljs-function"><sp
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_tslint_rules_util_.html">"tslint_<wbr>rules/util"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_utils_functions_.html">"utils/functions"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_utils_types_.html">"utils/types"</a>
 					</li>
 				</ul>
 			</nav>
@@ -186,6 +233,7 @@ of(<span class="hljs-number">1</span>).subscribe(<span class="hljs-function"><sp
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
@@ -234,7 +282,7 @@ of(<span class="hljs-number">1</span>).subscribe(<span class="hljs-function"><sp
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>

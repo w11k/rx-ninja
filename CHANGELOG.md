@@ -1,3 +1,26 @@
+# Version 1.10.1
+
+- fix missing export
+
+# Version 1.10.0
+
+- add AsyncPrioritizedQueue
+
+# Version 1.9.2
+
+- restore tslint rules
+
+# Version 1.9.1
+
+- fixed documentation bugs
+- restore isNil
+
+# Version 1.9.0
+
+- improved documentation
+- improved tests
+- new operator executeLatestOnIdle
+- new operator justInstanceOf
 
 # Version 1.8.2
 

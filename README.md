@@ -4,23 +4,34 @@
 
 # rx-ninja
 
-Utilities for RxJS
-
-**Patrons**
-
-❤️ [W11K - The Web Engineers](https://www.w11k.de/)
-
-❤️ [theCodeCampus - Trainings for Angular and TypeScript](https://www.thecodecampus.de/)
-
+Utilities for RxJS. Provides additional operators as well as tslint rules to avoid common mistakes.
 
 ## API Documentation
 
-🗄 [TypeDoc online API documentation](https://w11k.github.io/rx-ninja/modules/_index_.html)
+Please see [API documentation](https://w11k.github.io/rx-ninja/index.html)
 
-Operator|Description
---|--
-debounceIf|Debounce values on the stream if the predicate returns true
+## Operators
 
+* [combineLatestToMap](https://w11k.github.io/rx-ninja/modules/_operators_combine_latest_to_map_.html)
+* [debounceIf](https://w11k.github.io/rx-ninja/modules/_operators_debounce_if_.html)
+* [executeLatestOnIdle](https://w11k.github.io/rx-ninja/modules/_operators_execute_latest_on_idle_.html)
+* [justInstanceOf](https://w11k.github.io/rx-ninja/modules/_operators_just_instance_of_.html)
+* [mapToValueAndChangedProperties](https://w11k.github.io/rx-ninja/modules/_operators_map_to_value_and_changed_properties_.html)
+* [onCompletionContinueWith](https://w11k.github.io/rx-ninja/modules/_operators_on_completion_continue_with_.html)
+* [replayOn](https://w11k.github.io/rx-ninja/modules/_operators_replay_on_.html)
+* [skipNil](https://w11k.github.io/rx-ninja/modules/_operators_skip_nil_.html)
+* [skipNull](https://w11k.github.io/rx-ninja/modules/_operators_skip_null_.html)
+* [skipPropertyNil](https://w11k.github.io/rx-ninja/modules/_operators_skip_property_nil_.html)
+* [skipPropertyNull](https://w11k.github.io/rx-ninja/modules/_operators_skip_property_null_.html)
+* [skipPropertyUndefined](https://w11k.github.io/rx-ninja/modules/_operators_skip_property_undefined_.html)
+* [skipSomePropertyNil](https://w11k.github.io/rx-ninja/modules/_operators_skip_some_property_nil_.html)
+* [skipSomePropertyNull](https://w11k.github.io/rx-ninja/modules/_operators_skip_some_property_null_.html)
+* [skipSomePropertyUndefined](https://w11k.github.io/rx-ninja/modules/_operators_skip_some_property_undefined_.html)
+* [skipUndefined](https://w11k.github.io/rx-ninja/modules/_operators_skip_undefined_.html)
+* [skipUntilCompletionAndContinueWith](https://w11k.github.io/rx-ninja/modules/_operators_skip_until_completion_and_continue_with_.html)
+
+Please use the API documentation for an always up-to-date list of all included operators.
+The API documentation also contains detailed descriptions, examples and marble diagrams. 
 
 ## TSLint rules
 
@@ -73,3 +84,9 @@ of(1).subscribe(() => {
     of(2).subscribe(); // <-- error
 });
 ```
+
+**Patrons**
+
+❤️ [W11K - The Web Engineers](https://www.w11k.de/)
+
+❤️ [theCodeCampus - Trainings for Angular and TypeScript](https://www.thecodecampus.de/)

@@ -3,6 +3,8 @@
   "compilerOptions": {
     "allowJs": false,
     "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
     "emitDecoratorMetadata": false,
     "experimentalDecorators": false,
     "module": "commonjs",
@@ -22,5 +24,8 @@
     "typeRoots": [
       "node_modules/@types"
     ]
-  }
+  },
+  "exclude": [
+    "**/*.test.ts"
+  ]
 }
