@@ -1,12 +1,14 @@
 {
   "name": "@w11k/rx-ninja",
-  "version": "1.10.1",
+  "version": "1.10.2",
   "license": "Apache-2.0",
   "author": "W11K",
   "homepage": "https://github.com/w11k/rx-ninja",
-  "main": "./dist/index.js",
   "typings": "dist/index.d.ts",
-  "module": "./dist/es2015/index.js",
+  "main": "./dist/bundle/index.js",
+  "module": "./dist/esm5/index.js",
+  "esm5": "./dist/esm5/index.js",
+  "esm2015": "./dist/esm2015/index.js",
   "repository": "https://github.com/w11k/rx-ninja",
   "files": [
     "dist",
@@ -36,7 +38,7 @@
   },
   "scripts": {
     "clean": "del-cli dist",
-    "build": "npm run clean ; tsc -p tsconfig.json && tsc -p tsconfig.dist.es2015.json",
+    "build": "npm run clean ; tsc -p tsconfig.json && tsc -p tsconfig.dist.esm5.json && tsc -p tsconfig.dist.esm2015.json",
     "prepublishOnly": "npm test && npm run build && npm run doc",
     "postpublish": "npm run doc:deploy && git push",
     "test": "mocha --opts spec/mocha.opts src/**/*test.ts",

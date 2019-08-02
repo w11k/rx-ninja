@@ -7,7 +7,7 @@
     "sourceMap": true,
     "emitDecoratorMetadata": false,
     "experimentalDecorators": false,
-    "module": "commonjs",
+    "module": "umd",
     "moduleResolution": "node",
     "noEmitOnError": false,
     "noImplicitAny": true,
@@ -20,7 +20,7 @@
     "lib": [
       "es2015"
     ],
-    "outDir": "dist",
+    "outDir": "dist/bundle",
     "typeRoots": [
       "node_modules/@types"
     ]
