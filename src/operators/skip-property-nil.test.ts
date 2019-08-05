@@ -1,8 +1,21 @@
 import { assert } from "chai";
 import { of } from "rxjs";
 import { first, tap } from "rxjs/operators";
-import { skipPropertyNil } from "./skip-property-nil";
+import { isPropertyNotNil, skipPropertyNil } from "./skip-property-nil";
 
+
+describe("isPropertyNotNil", function () {
+  it("can be used with Array#filter", () => {
+    const values = [{
+      a: 1 as number | null | undefined
+    }];
+
+    values
+        .filter(isPropertyNotNil("a"))
+        .forEach(val => val.a.toExponential());
+
+  });
+});
 
 describe("skipPropertyNil", function () {
 

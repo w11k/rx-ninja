@@ -11,7 +11,7 @@ describe("skipNull", function () {
 
     const completion = testValue$
         .pipe(
-            skipNull,
+            skipNull(),
             tap(x => x.charAt(0)) // compiler check
         )
         .forEach(x => {
@@ -27,7 +27,7 @@ describe("skipNull", function () {
 
     const completion = testValue$
         .pipe(
-            skipNull,
+            skipNull(),
         )
         .forEach(x => {
           throw new Error(`shouldn't run here, x is '${x}'`);

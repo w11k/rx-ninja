@@ -7,9 +7,15 @@ import { filter } from "rxjs/operators";
  *
  * @param x value to check
  */
-export function notUndefined<T>(x: T | undefined): x is T {
+export function isNotUndefined<T>(x: T | undefined): x is T {
   return x !== undefined;
 }
+
+/**
+ * @see isNotUndefined
+ * @deprecated
+ */
+export const notUndefined = isNotUndefined;
 
 /**
  * Filters undefined values.
@@ -18,5 +24,5 @@ export function notUndefined<T>(x: T | undefined): x is T {
  * @param source observable to operate on
  */
 export const skipUndefined = <T>(source: Observable<T | undefined>) => {
-  return source.pipe(filter(notUndefined));
+  return source.pipe(filter(isNotUndefined));
 };

@@ -7,7 +7,7 @@ import { Newable } from "../utils/types";
  *
  * @param clazz the class to check
  */
-export function instanceOf<A>(clazz: Newable<A>) {
+export function isInstanceOf<A>(clazz: Newable<A>) {
   return function<B>(x: A | B): x is A {
     return x instanceof clazz;
   };
@@ -18,8 +18,14 @@ export function instanceOf<A>(clazz: Newable<A>) {
  *
  * @param clazz which instances are passed through
  */
-export function justInstanceOf<A>(clazz: Newable<A>) {
+export function onlyInstancesOf<A>(clazz: Newable<A>) {
   return function operateFunction<B>(source: Observable<A | B>) {
-    return source.pipe(filter(instanceOf(clazz)));
+    return source.pipe(filter(isInstanceOf(clazz)));
   };
 }
+
+/**
+ * @see onlyInstancesOf
+ * @deprecated
+ */
+export const justInstanceOf = onlyInstancesOf;

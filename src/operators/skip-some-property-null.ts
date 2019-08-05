@@ -15,12 +15,18 @@ import { entries } from "../utils/functions";
  *
  * @param obj object to check
  */
-export function propertiesNotNull<T>(obj: T): obj is { [P in keyof T]: NonNull<T[P]> } {
+export function hasNoNullProperties<T>(obj: T): obj is { [P in keyof T]: NonNull<T[P]> } {
   const hasNull = entries(obj)
       .some(x => x[1] === null);
 
   return !hasNull;
 }
+
+/**
+ * @see hasNoNullProperties
+ * @deprecated
+ */
+export const propertiesNotNull = hasNoNullProperties;
 
 /**
  * Skips / filters values which contains null for any property.
@@ -42,6 +48,9 @@ export function propertiesNotNull<T>(obj: T): obj is { [P in keyof T]: NonNull<T
  *
  * value { a: null, b: 'foo' } will be skipped
  */
-export function skipSomePropertyNull<T>(source: Observable<T>) {
-  return source.pipe(filter(propertiesNotNull));
+export function skipSomePropertyNull<T>() {
+  return (source: Observable<T>) => {
+    return source.pipe(filter(hasNoNullProperties));
+  };
 }
+

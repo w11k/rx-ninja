@@ -5,7 +5,7 @@ import { entries } from "../utils/functions";
 
 /**
  * Type guard function, checking if any property of the given object is neither undefined nor null.
- * Narrows the type of all properties within the object type from T | null | undefined to just T.
+ * Narrows the type of all properties within the object type from T | null | undefined to T.
  *
  * Example:
  * incoming type is { a: number | null, b: string | undefined }
@@ -14,12 +14,18 @@ import { entries } from "../utils/functions";
  *
  * @param obj object to check
  */
-export function propertiesNotNil<T>(obj: T): obj is { [P in keyof T]: NonNil<T[P]> } {
+export function hasNoNilProperties<T>(obj: T): obj is { [P in keyof T]: NonNil<T[P]> } {
   const hasNil = entries(obj)
       .some(x => x[1] === null || x[1] === undefined);
 
   return !hasNil;
 }
+
+/**
+ * @see hasNoNilProperties
+ * @deprecated
+ */
+export const propertiesNotNil = hasNoNilProperties;
 
 /**
  * Skips / filters values which contains null or undefined for any property.
@@ -41,6 +47,8 @@ export function propertiesNotNil<T>(obj: T): obj is { [P in keyof T]: NonNil<T[P
  *
  * value { a: null, b: 'foo' } will be skipped
  */
-export function skipSomePropertyNil<T>(source: Observable<T>) {
-  return source.pipe(filter(propertiesNotNil));
+export function skipSomePropertyNil<T>() {
+  return (source: Observable<T>) => {
+    return source.pipe(filter(hasNoNilProperties));
+  };
 }
