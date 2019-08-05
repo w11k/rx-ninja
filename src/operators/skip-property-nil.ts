@@ -14,7 +14,7 @@ import { filter } from "rxjs/operators";
  *
  * @param property name of the property to check
  */
-export function propertyNotNil<T, P extends keyof T>(property: P) {
+export function isPropertyNotNil<T, P extends keyof T>(property: P) {
   return (obj: T): obj is { [X in keyof T]: X extends P ? NonNil<T[X]> : T[X] } => {
     const value = obj[property];
 
@@ -23,8 +23,14 @@ export function propertyNotNil<T, P extends keyof T>(property: P) {
 }
 
 /**
- * Skips / filters values which contains null or undefined for the given property.
- * Narrows the type of the given property within the object type from T | null | undefined to just T.
+ * @see isPropertyNotNil
+ * @deprecated
+ */
+const propertyNotNil = isPropertyNotNil;
+
+/**
+ * Skips values which contains null or undefined for the given property.
+ * Narrows the type of the given property within the object type from T | null | undefined to T.
  *
  * Example:
  *
@@ -46,6 +52,6 @@ export function propertyNotNil<T, P extends keyof T>(property: P) {
  */
 export function skipPropertyNil<T, P extends keyof T>(prop: P) {
   return function operateFunction(source: Observable<T>) {
-    return source.pipe(filter(propertyNotNil(prop)));
+    return source.pipe(filter(isPropertyNotNil(prop)));
   };
 }

@@ -14,13 +14,19 @@ import { filter } from "rxjs/operators";
  *
  * @param property name of the property to check
  */
-export function propertyNotNull<T, P extends keyof T>(property: P) {
+export function isPropertyNotNull<T, P extends keyof T>(property: P) {
   return (obj: T): obj is { [X in keyof T]: X extends P ? NonNull<T[X]> : T[X] } => {
     const value = obj[property];
 
     return value !== null;
   };
 }
+
+/**
+ * @see isPropertyNotNull
+ * @deprecated
+ */
+export const propertyNotNull = isPropertyNotNull;
 
 /**
  * Skips / filters values which contains null for the given property.
@@ -44,6 +50,6 @@ export function propertyNotNull<T, P extends keyof T>(property: P) {
  */
 export function skipPropertyNull<T, P extends keyof T>(prop: P) {
   return function operateFunction(source: Observable<T>) {
-    return source.pipe(filter(propertyNotNull(prop)));
+    return source.pipe(filter(isPropertyNotNull(prop)));
   };
 }

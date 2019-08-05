@@ -7,9 +7,15 @@ import { filter } from "rxjs/operators";
  *
  * @param x value to check
  */
-export function notNil<T>(x: T | null | undefined): x is T {
+export function isNotNil<T>(x: T | null | undefined): x is T {
   return x !== null && x !== undefined;
 }
+
+/**
+ * @see isNotNil
+ * @deprecated
+ */
+export const notNil = isNotNil;
 
 /**
  * Type guard checking a value is null or undefined.
@@ -24,9 +30,9 @@ export function isNil<T>(x: T | null | undefined): x is null | undefined {
 /**
  * Filters null and undefined values.
  * Narrows the type from Observable<T | null | undefined> to just Observable<T>.
- *
- * @param source observable to operate on
  */
-export function skipNil<T>(source: Observable<T | null | undefined>) {
-  return source.pipe(filter(notNil));
+export function skipNil() {
+  return function <T>(source: Observable<T | null | undefined>) {
+    return source.pipe(filter(isNotNil));
+  };
 }

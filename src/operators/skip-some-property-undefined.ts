@@ -15,12 +15,18 @@ import { entries } from "../utils/functions";
  *
  * @param obj object to check
  */
-export function propertiesNotUndefined<T>(obj: T): obj is { [P in keyof T]: NonUndefined<T[P]> } {
+export function hasNoUndefinedProperties<T>(obj: T): obj is { [P in keyof T]: NonUndefined<T[P]> } {
   const hasUndefined = entries(obj)
       .some(x => x[1] === undefined);
 
   return !hasUndefined;
 }
+
+/**
+ * @see hasNoUndefinedProperties
+ * @deprecated
+ */
+export const propertiesNotUndefined = hasNoUndefinedProperties;
 
 /**
  * Skips / filters values which contains undefined for any property.
@@ -42,6 +48,9 @@ export function propertiesNotUndefined<T>(obj: T): obj is { [P in keyof T]: NonU
  *
  * value { a: undefined, b: 'foo' } will be skipped
  */
-export function skipSomePropertyUndefined<T>(source: Observable<T>) {
-  return source.pipe(filter(propertiesNotUndefined));
+export function skipSomePropertyUndefined<T>() {
+  return (source: Observable<T>) => {
+    return source.pipe(filter(hasNoUndefinedProperties));
+  };
 }
+
