@@ -42,7 +42,7 @@ The API documentation also contains detailed descriptions, examples and marble d
 ```
 {
   "rulesDirectory": [
-    "node_modules/@w11k/rx-ninja/dist/tslint_rules"
+    "node_modules/@w11k/rx-ninja/dist/bundle/tslint_rules"
   ],
   "rules": {
     "rx-ninja-subscribe-takeuntil": true,
