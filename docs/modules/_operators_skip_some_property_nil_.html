@@ -69,9 +69,15 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_operators_skip_some_property_nil_.html#propertiesnotnil" class="tsd-kind-icon">properties<wbr>Not<wbr>Nil</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_operators_skip_some_property_nil_.html#propertiesnotnil" class="tsd-kind-icon">properties<wbr>Not<wbr>Nil</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_operators_skip_some_property_nil_.html#hasnonilproperties" class="tsd-kind-icon">has<wbr>NoNil<wbr>Properties</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_operators_skip_some_property_nil_.html#skipsomepropertynil" class="tsd-kind-icon">skip<wbr>Some<wbr>Property<wbr>Nil</a></li>
 							</ul>
 						</section>
@@ -79,24 +85,46 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
+					<a name="propertiesnotnil" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> properties<wbr>Not<wbr>Nil</h3>
+					<div class="tsd-signature tsd-kind-icon">properties<wbr>Not<wbr>Nil<span class="tsd-signature-symbol">:</span> <a href="_operators_skip_some_property_nil_.html#hasnonilproperties" class="tsd-signature-type">hasNoNilProperties</a><span class="tsd-signature-symbol"> =&nbsp;hasNoNilProperties</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/b0fdc95/src/operators/skip-some-property-nil.ts#L28">operators/skip-some-property-nil.ts:28</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>see</dt>
+							<dd><p>hasNoNilProperties</p>
+							</dd>
+							<dt>deprecated</dt>
+							<dd></dd>
+						</dl>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-					<a name="propertiesnotnil" class="tsd-anchor"></a>
-					<h3>properties<wbr>Not<wbr>Nil</h3>
+					<a name="hasnonilproperties" class="tsd-anchor"></a>
+					<h3>has<wbr>NoNil<wbr>Properties</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">properties<wbr>Not<wbr>Nil&lt;T&gt;<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">has<wbr>NoNil<wbr>Properties&lt;T&gt;<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/c7ae983/src/operators/skip-some-property-nil.ts#L17">operators/skip-some-property-nil.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/b0fdc95/src/operators/skip-some-property-nil.ts#L17">operators/skip-some-property-nil.ts:17</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Type guard function, checking if any property of the given object is neither undefined nor null.
-									Narrows the type of all properties within the object type from T | null | undefined to just T.</p>
+									Narrows the type of all properties within the object type from T | null | undefined to T.</p>
 								</div>
 								<p>Example:
 								incoming type is { a: number | null, b: string | undefined }</p>
@@ -125,13 +153,13 @@
 					<a name="skipsomepropertynil" class="tsd-anchor"></a>
 					<h3>skip<wbr>Some<wbr>Property<wbr>Nil</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">skip<wbr>Some<wbr>Property<wbr>Nil&lt;T&gt;<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">skip<wbr>Some<wbr>Property<wbr>Nil&lt;T&gt;<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">(Anonymous function)</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/c7ae983/src/operators/skip-some-property-nil.ts#L44">operators/skip-some-property-nil.ts:44</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/b0fdc95/src/operators/skip-some-property-nil.ts#L50">operators/skip-some-property-nil.ts:50</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -155,13 +183,7 @@
 									<h4>T</h4>
 								</li>
 							</ul>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>source: <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">(Anonymous function)</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -180,8 +202,11 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
 						<a href="_operators_skip_some_property_nil_.html#propertiesnotnil" class="tsd-kind-icon">properties<wbr>Not<wbr>Nil</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="_operators_skip_some_property_nil_.html#hasnonilproperties" class="tsd-kind-icon">has<wbr>NoNil<wbr>Properties</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
 						<a href="_operators_skip_some_property_nil_.html#skipsomepropertynil" class="tsd-kind-icon">skip<wbr>Some<wbr>Property<wbr>Nil</a>
