@@ -1,4 +1,9 @@
 
+# Version 2.0.0
+
+- several operator and predicate function names were changed
+- old names are still available but deprecated
+
 # Version 1.10.2
 
 - provides ESM5 and ESM2015 bundle
