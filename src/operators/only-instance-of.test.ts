@@ -1,10 +1,15 @@
 import { assert } from "chai";
-import { from, of } from "rxjs";
-import { first, tap } from "rxjs/operators";
-import { isInstanceOf, onlyInstancesOf } from "./only-instances-of";
+import { from } from "rxjs";
+import { first } from "rxjs/operators";
+import { isInstanceOf, onlyInstanceOf } from "./only-instance-of";
 
-class Class1 { a: boolean | undefined; }
-class Class2 { b: number | undefined; }
+class Class1 {
+  a: boolean | undefined;
+}
+
+class Class2 {
+  b: number | undefined;
+}
 
 describe("isInstanceOf", function () {
 
@@ -32,7 +37,7 @@ describe("onlyInstancesOf", function () {
 
     const firstValue = await aOrB$
         .pipe(
-            onlyInstancesOf(Class1),
+            onlyInstanceOf(Class1),
             first(), // let rxjs throw an error if no event passed
         )
         .toPromise();

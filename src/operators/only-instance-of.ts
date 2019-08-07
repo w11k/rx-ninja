@@ -18,14 +18,14 @@ export function isInstanceOf<A>(clazz: Newable<A>) {
  *
  * @param clazz which instances are passed through
  */
-export function onlyInstancesOf<A>(clazz: Newable<A>) {
+export function onlyInstanceOf<A>(clazz: Newable<A>) {
   return function operateFunction<B>(source: Observable<A | B>) {
     return source.pipe(filter(isInstanceOf(clazz)));
   };
 }
 
 /**
- * @see onlyInstancesOf
+ * @see onlyInstanceOf
  * @deprecated
  */
-export const justInstanceOf = onlyInstancesOf;
+export const justInstanceOf = onlyInstanceOf;
