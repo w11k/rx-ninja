@@ -5,7 +5,7 @@ import { hasNoNilProperties, skipSomePropertyNil } from "./skip-some-property-ni
 
 describe("hasNoNilProperties", function () {
 
-  it("works", async function () {
+  it("returns true, if all properties are neither null nor undefined", async function () {
     const obj = {
       a: 1 as number | null,
       b: 2 as number | undefined,
@@ -24,7 +24,7 @@ describe("hasNoNilProperties", function () {
 
 describe("skipSomePropertyNil", async function () {
 
-  it("works", async function () {
+  it("skips values in the stream, if they contain properties that are either null or undefined", async function () {
     const obj = {
       a: 1 as number | null,
       b: 2 as number | undefined,
