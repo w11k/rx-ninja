@@ -104,13 +104,26 @@
 }</code></pre><p><strong>Run tslint with type info</strong></p>
 				<pre><code>tslint -<span class="hljs-selector-tag">p</span> tsconfig<span class="hljs-selector-class">.json</span> -t verbose</code></pre><h3 id="rule-descriptions">Rule descriptions</h3>
 				<p><strong>rx-ninja-subscribe-takeuntil</strong></p>
-				<p>This rule triggers if <code>Observable#subscribe()</code> is called and then enforces that </p>
+				<p>This rule triggers when <code>Observable#subscribe()</code> is called and then enforces that </p>
 				<ul>
 					<li><code>.pipe()</code> is called directly before <code>.subscribe()</code></li>
-					<li>and that either <code>takeUntil()</code> or one of a specified terminator operator is called as the last pipe operator</li>
+					<li>and that either <code>takeUntil()</code> or one of a specified finalizer operators is called as the last pipe operator</li>
 				</ul>
+				<p>The rule can be limited to files with the specified suffix (<code>fileSuffix</code>). Angular users might set this to <code>.component.ts</code>.</p>
 				<p><em>Configuration:</em></p>
-				<pre><code><span class="hljs-string">"rx-ninja-subscribe-takeuntil"</span>: [<span class="hljs-literal">true</span>, <span class="hljs-string">"takeUntil"</span>, <span class="hljs-string">"customOperator"</span>, <span class="hljs-string">"anotherOperator"</span>]</code></pre><p><strong>rx-ninja-subscribe-in-subscribe</strong></p>
+				<pre><code><span class="hljs-string">"rx-ninja-subscribe-takeuntil"</span>: [
+    true,
+    {
+        <span class="hljs-string">"finalizer"</span>: [
+            <span class="hljs-string">"takeUntil"</span>,
+            <span class="hljs-string">"customOperator"</span>,
+            <span class="hljs-string">"anotherOperator"</span>
+        ],
+        <span class="hljs-string">"fileSuffix"</span>: [
+            <span class="hljs-string">"-relevant.ts"</span>
+        ]
+    }
+]</code></pre><p><strong>rx-ninja-subscribe-in-subscribe</strong></p>
 				<p>This rule triggers if <code>Observable#subscribe()</code> is called inside of another <code>Observable#subscribe()</code> call, e.g.</p>
 				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> {of} <span class="hljs-keyword">from</span> <span class="hljs-string">"rxjs"</span>;
 
