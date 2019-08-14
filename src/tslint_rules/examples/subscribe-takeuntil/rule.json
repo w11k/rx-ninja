@@ -1,0 +1,8 @@
+{
+  "rulesDirectory": [
+    "../../../../dist/bundle/tslint_rules"
+  ],
+  "rules": {
+    "rx-ninja-subscribe-takeuntil": true
+  }
+}

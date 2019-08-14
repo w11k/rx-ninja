@@ -1,11 +1,18 @@
 {
   "rulesDirectory": [
-    "../../../dist/tslint_rules"
+    "../../../../dist/bundle/tslint_rules"
   ],
   "rules": {
-    "w11k-rxjs-subscribe-takeuntil": [
+    "rx-ninja-subscribe-takeuntil": [
       true,
-      "customTerminator"
+      {
+        "finalizer": [
+          "customTerminator"
+        ],
+        "fileSuffix": [
+          "-relevant.ts"
+        ]
+      }
     ]
   }
 }

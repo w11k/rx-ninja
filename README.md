@@ -61,15 +61,29 @@ tslint -p tsconfig.json -t verbose
 
 **rx-ninja-subscribe-takeuntil**
 
-This rule triggers if `Observable#subscribe()` is called and then enforces that 
+This rule triggers when `Observable#subscribe()` is called and then enforces that 
 
 - `.pipe()` is called directly before `.subscribe()`
-- and that either `takeUntil()` or one of a specified terminator operator is called as the last pipe operator
+- and that either `takeUntil()` or one of a specified finalizer operators is called as the last pipe operator
+
+The rule can be limited to files with the specified suffix (`fileSuffix`). Angular users might set this to `.component.ts`.
 
 *Configuration:*
 
 ```
-"rx-ninja-subscribe-takeuntil": [true, "takeUntil", "customOperator", "anotherOperator"]
+"rx-ninja-subscribe-takeuntil": [
+    true,
+    {
+        "finalizer": [
+            "takeUntil",
+            "customOperator",
+            "anotherOperator"
+        ],
+        "fileSuffix": [
+            "-relevant.ts"
+        ]
+    }
+]
 ```
 
 

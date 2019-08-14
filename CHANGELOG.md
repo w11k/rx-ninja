@@ -1,4 +1,22 @@
 
+# Version 2.0.1
+
+- The configuration for TSLint rule "rx-ninja-subscribe-takeuntil" changed. It is now possible to specify the relevant file name suffixes. This is useful for Angular applications:
+
+"rx-ninja-subscribe-takeuntil": [
+    true,
+    {
+        "finalizer": [
+            "takeUntil",
+            "customOperator",
+            "anotherOperator"
+        ],
+        "fileSuffix": [
+            "-relevant.ts"
+        ]
+    }
+]
+
 # Version 2.0.0
 
 - several operator and predicate function names were changed
