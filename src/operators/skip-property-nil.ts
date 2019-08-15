@@ -26,7 +26,7 @@ export function isPropertyNotNil<T, P extends keyof T>(property: P) {
  * @see isPropertyNotNil
  * @deprecated
  */
-const propertyNotNil = isPropertyNotNil;
+export const propertyNotNil = isPropertyNotNil;
 
 /**
  * Skips values which contains null or undefined for the given property.
