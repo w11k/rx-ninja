@@ -1,10 +1,5 @@
 
-# Version 2.0.2
-
-- added alias propertyNotNil for isPropertyNotNil
-
-
-# Version 2.0.1
+# Version 3
 
 - The configuration for TSLint rule "rx-ninja-subscribe-takeuntil" changed. It is now possible to specify the relevant file name suffixes. This is useful for Angular applications:
 
@@ -21,6 +16,9 @@
         ]
     }
 ]
+
+- added deprecated alias propertyNotNil for isPropertyNotNil
+
 
 # Version 2.0.0
 
