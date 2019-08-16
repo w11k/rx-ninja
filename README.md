@@ -4,8 +4,6 @@
 
 # rx-ninja
 
-**Breaking change in 2.0.2 for the _configuration_ of the TSLint rule rx-ninja-subscribe-takeuntil** 
-
 Utilities for RxJS. Provides additional operators as well as tslint rules to avoid common mistakes.
 
 ## API Documentation
