@@ -2,9 +2,42 @@ import { NonNil } from "../utils/types";
 import { Observable } from "rxjs";
 import { filter } from "rxjs/operators";
 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Internal helper types
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+type PropertyNotNil<O extends object, P extends keyof O> = {
+  [X in keyof O]: X extends P ? NonNil<O[X]> : O[X]
+};
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Plain function overloads
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
 /**
- * Returns a type guard function, which receives an object and checks if the given property is neither null nor
- * undefined. Narrows the type of the given property within the object type from T | null | undefined to just T.
+ * A predicate / type guard function, which receives an object and a property.
+ * It checks if the given property is neither null nor undefined.
+ * Narrows the type of the given property within the object type from T | null | undefined to just T.
+ *
+ * Example:
+ *
+ * incoming type is { a: number, b: string | null | undefined }
+ *
+ * outgoing type is { a: number, b: string }
+ *
+ * @param obj the object to check
+ * @param property name of the property to check
+ */
+export function isPropertyNotNil<O extends object, P extends keyof O>(obj: O, property?: P): obj is PropertyNotNil<O, P>;
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Array operators overloads
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/**
+ * Returns a predicate / type guard function, which receives an object and checks
+ * if the given property is neither null nor undefined.
+ * Narrows the type of the given property within the object type from T | null | undefined to just T.
  *
  * Example:
  *
@@ -14,12 +47,33 @@ import { filter } from "rxjs/operators";
  *
  * @param property name of the property to check
  */
-export function isPropertyNotNil<T, P extends keyof T>(property: P) {
-  return (obj: T): obj is { [X in keyof T]: X extends P ? NonNil<T[X]> : T[X] } => {
-    const value = obj[property];
+export function isPropertyNotNil<O extends object, P extends keyof O>(prop: P): (obj: O) => obj is PropertyNotNil<O, P>;
 
-    return value !== null && value !== undefined;
-  };
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Plain and array implementation
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+export function isPropertyNotNil<O extends object, P extends keyof O>(objOrProp: O | P, prop?: P) {
+  if (typeof objOrProp === "object" && prop !== undefined) {
+    return check(objOrProp, prop);
+  }
+  else if (typeof objOrProp === "string") {
+    return (obj: O) => {
+      check(obj, objOrProp);
+    };
+  }
+
+  throw new Error("bug in implementation of overloaded function");
+}
+
+function check<T extends object, P extends keyof T>(obj: T, property: P): obj is PropertyNotNil<T, P> {
+  if (obj === null || obj === undefined) {
+    return false;
+  }
+
+  const value = obj[property];
+
+  return value !== null && value !== undefined;
 }
 
 /**
@@ -27,6 +81,10 @@ export function isPropertyNotNil<T, P extends keyof T>(property: P) {
  * @deprecated
  */
 export const propertyNotNil = isPropertyNotNil;
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Observable operator overloads
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 /**
  * Skips values which contains null or undefined for the given property.
@@ -50,7 +108,7 @@ export const propertyNotNil = isPropertyNotNil;
  *
  * @param prop name of the property to check
  */
-export function skipPropertyNil<T, P extends keyof T>(prop: P) {
+export function skipPropertyNil<T extends object, P extends keyof T>(prop: P) {
   return function operateFunction(source: Observable<T>) {
     return source.pipe(filter(isPropertyNotNil(prop)));
   };
