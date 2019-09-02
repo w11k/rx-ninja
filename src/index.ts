@@ -8,6 +8,7 @@ export * from "./operators/replay-on";
 export * from "./operators/skip-nil";
 export * from "./operators/skip-null";
 export * from "./operators/skip-undefined";
+export * from "./operators/skip-path-nil";
 export * from "./operators/skip-property-nil";
 export * from "./operators/skip-property-null";
 export * from "./operators/skip-property-undefined";
