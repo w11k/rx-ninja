@@ -60,9 +60,7 @@ export function isPropertyNotNil<O extends object, P extends keyof O>(objOrProp:
     return check(objOrProp, prop);
   }
   else if (typeof objOrProp === "string") {
-    return (obj: O) => {
-      check(obj, objOrProp);
-    };
+    return (obj: O) => check(obj, objOrProp);
   }
 
   throw new Error("bug in implementation of overloaded function");
