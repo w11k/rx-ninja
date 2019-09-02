@@ -41,52 +41,6 @@ type PathNotNil_5<O,
   [V1 in P1]-?: PathNotNil_4<NonNil<O[P1]>, P2, P3, P4, P5>
 };
 
-type PathNotNil_6<O,
-    P1 extends keyof O,
-    P2 extends keyof NonNil<O[P1]>,
-    P3 extends keyof NonNil<NonNil<O[P1]>[P2]>,
-    P4 extends keyof NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>,
-    P5 extends keyof NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>,
-    P6 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>> = {
-  [V1 in P1]-?: PathNotNil_5<NonNil<O[P1]>, P2, P3, P4, P5, P6>
-};
-
-type PathNotNil_7<O,
-    P1 extends keyof O,
-    P2 extends keyof NonNil<O[P1]>,
-    P3 extends keyof NonNil<NonNil<O[P1]>[P2]>,
-    P4 extends keyof NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>,
-    P5 extends keyof NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>,
-    P6 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>,
-    P7 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>> = {
-  [V1 in P1]-?: PathNotNil_6<NonNil<O[P1]>, P2, P3, P4, P5, P6, P7>
-};
-
-type PathNotNil_8<O,
-    P1 extends keyof O,
-    P2 extends keyof NonNil<O[P1]>,
-    P3 extends keyof NonNil<NonNil<O[P1]>[P2]>,
-    P4 extends keyof NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>,
-    P5 extends keyof NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>,
-    P6 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>,
-    P7 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>,
-    P8 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>[P7]>> = {
-  [V1 in P1]-?: PathNotNil_7<NonNil<O[P1]>, P2, P3, P4, P5, P6, P7, P8>
-};
-
-type PathNotNil_9<O,
-    P1 extends keyof O,
-    P2 extends keyof NonNil<O[P1]>,
-    P3 extends keyof NonNil<NonNil<O[P1]>[P2]>,
-    P4 extends keyof NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>,
-    P5 extends keyof NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>,
-    P6 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>,
-    P7 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>,
-    P8 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>[P7]>,
-    P9 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>[P7]>[P8]>> = {
-  [V1 in P1]-?: PathNotNil_8<NonNil<O[P1]>, P2, P3, P4, P5, P6, P7, P8, P9>
-};
-
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Plain function overloads
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -103,7 +57,7 @@ type PathNotNil_9<O,
  * The second variant is a factory-function which only gets the property path.
  * It returns a pre-configured predicate function for usage with functional calls like Array#filter.
  *
- * Both variants have overloads with up to 9 properties to check.
+ * Both variants have overloads with up to 5 properties to check.
  *
  * Example:
  *
@@ -160,52 +114,6 @@ export function isPathNotNil<O extends object,
     obj: O, p1: P1, p2: P2, p3: P3, p4: P4, p5: P5
 ): obj is PathNotNil_5<O, P1, P2, P3, P4, P5> & O;
 
-export function isPathNotNil<O extends object,
-    P1 extends keyof O,
-    P2 extends keyof NonNil<O[P1]>,
-    P3 extends keyof NonNil<NonNil<O[P1]>[P2]>,
-    P4 extends keyof NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>,
-    P5 extends keyof NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>,
-    P6 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>>(
-    obj: O, p1: P1, p2: P2, p3: P3, p4: P4, p5: P5, p6: P6
-): obj is PathNotNil_6<O, P1, P2, P3, P4, P5, P6> & O;
-
-export function isPathNotNil<O extends object,
-    P1 extends keyof O,
-    P2 extends keyof NonNil<O[P1]>,
-    P3 extends keyof NonNil<NonNil<O[P1]>[P2]>,
-    P4 extends keyof NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>,
-    P5 extends keyof NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>,
-    P6 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>,
-    P7 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>>(
-    obj: O, p1: P1, p2: P2, p3: P3, p4: P4, p5: P5, p6: P6, p7: P7
-): obj is PathNotNil_7<O, P1, P2, P3, P4, P5, P6, P7> & O;
-
-export function isPathNotNil<O extends object,
-    P1 extends keyof O,
-    P2 extends keyof NonNil<O[P1]>,
-    P3 extends keyof NonNil<NonNil<O[P1]>[P2]>,
-    P4 extends keyof NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>,
-    P5 extends keyof NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>,
-    P6 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>,
-    P7 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>,
-    P8 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>[P7]>>(
-    obj: O, p1: P1, p2: P2, p3: P3, p4: P4, p5: P5, p6: P6, p7: P7, p8: P8
-): obj is PathNotNil_8<O, P1, P2, P3, P4, P5, P6, P7, P8> & O;
-
-export function isPathNotNil<O extends object,
-    P1 extends keyof O,
-    P2 extends keyof NonNil<O[P1]>,
-    P3 extends keyof NonNil<NonNil<O[P1]>[P2]>,
-    P4 extends keyof NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>,
-    P5 extends keyof NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>,
-    P6 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>,
-    P7 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>,
-    P8 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>[P7]>,
-    P9 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>[P7]>[P8]>>(
-    obj: O, p1: P1, p2: P2, p3: P3, p4: P4, p5: P5, p6: P6, p7: P7, p8: P8, p9: P9
-): obj is PathNotNil_9<O, P1, P2, P3, P4, P5, P6, P7, P8, P9> & O;
-
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Array operators overloads
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -244,52 +152,6 @@ export function isPathNotNil<O extends object,
     P5 extends keyof NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>>(
     p1: P1, p2: P2, p3: P3, p4: P4, p5: P5
 ): (obj: O) => obj is PathNotNil_5<O, P1, P2, P3, P4, P5> & O;
-
-export function isPathNotNil<O extends object,
-    P1 extends keyof O,
-    P2 extends keyof NonNil<O[P1]>,
-    P3 extends keyof NonNil<NonNil<O[P1]>[P2]>,
-    P4 extends keyof NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>,
-    P5 extends keyof NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>,
-    P6 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>>(
-    p1: P1, p2: P2, p3: P3, p4: P4, p5: P5, p6: P6
-): (obj: O) => obj is PathNotNil_6<O, P1, P2, P3, P4, P5, P6> & O;
-
-export function isPathNotNil<O extends object,
-    P1 extends keyof O,
-    P2 extends keyof NonNil<O[P1]>,
-    P3 extends keyof NonNil<NonNil<O[P1]>[P2]>,
-    P4 extends keyof NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>,
-    P5 extends keyof NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>,
-    P6 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>,
-    P7 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>>(
-    p1: P1, p2: P2, p3: P3, p4: P4, p5: P5, p6: P6, p7: P7
-): (obj: O) => obj is PathNotNil_7<O, P1, P2, P3, P4, P5, P6, P7> & O;
-
-export function isPathNotNil<O extends object,
-    P1 extends keyof O,
-    P2 extends keyof NonNil<O[P1]>,
-    P3 extends keyof NonNil<NonNil<O[P1]>[P2]>,
-    P4 extends keyof NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>,
-    P5 extends keyof NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>,
-    P6 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>,
-    P7 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>,
-    P8 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>[P7]>>(
-    p1: P1, p2: P2, p3: P3, p4: P4, p5: P5, p6: P6, p7: P7, p8: P8
-): (obj: O) => obj is PathNotNil_8<O, P1, P2, P3, P4, P5, P6, P7, P8> & O;
-
-export function isPathNotNil<O extends object,
-    P1 extends keyof O,
-    P2 extends keyof NonNil<O[P1]>,
-    P3 extends keyof NonNil<NonNil<O[P1]>[P2]>,
-    P4 extends keyof NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>,
-    P5 extends keyof NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>,
-    P6 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>,
-    P7 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>,
-    P8 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>[P7]>,
-    P9 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>[P7]>[P8]>>(
-    p1: P1, p2: P2, p3: P3, p4: P4, p5: P5, p6: P6, p7: P7, p8: P8, p9: P9
-): (obj: O) => obj is PathNotNil_9<O, P1, P2, P3, P4, P5, P6, P7, P8, P9> & O;
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Plain and array implementation
@@ -346,7 +208,7 @@ function checkPath<O>(obj: O, path: string[]) {
  *
  * With a path of just one property it does the same as skipPropertyNil.
  *
- * Overloaded with up to 9 properties building the path to check.
+ * Overloaded with up to 5 properties building the path to check.
  */
 export function skipPathNil<O extends object,
     P1 extends keyof O>(
@@ -383,52 +245,6 @@ export function skipPathNil<O extends object,
     p1: P1, p2: P2, p3: P3, p4: P4, p5: P5
 ): (x: Observable<O>) => Observable<PathNotNil_5<O, P1, P2, P3, P4, P5>>;
 
-export function skipPathNil<O extends object,
-    P1 extends keyof O,
-    P2 extends keyof NonNil<O[P1]>,
-    P3 extends keyof NonNil<NonNil<O[P1]>[P2]>,
-    P4 extends keyof NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>,
-    P5 extends keyof NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>,
-    P6 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>>(
-    p1: P1, p2: P2, p3: P3, p4: P4, p5: P5, p6: P6
-): (x: Observable<O>) => Observable<PathNotNil_6<O, P1, P2, P3, P4, P5, P6>>;
-
-export function skipPathNil<O extends object,
-    P1 extends keyof O,
-    P2 extends keyof NonNil<O[P1]>,
-    P3 extends keyof NonNil<NonNil<O[P1]>[P2]>,
-    P4 extends keyof NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>,
-    P5 extends keyof NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>,
-    P6 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>,
-    P7 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>>(
-    p1: P1, p2: P2, p3: P3, p4: P4, p5: P5, p6: P6, p7: P7
-): (x: Observable<O>) => Observable<PathNotNil_7<O, P1, P2, P3, P4, P5, P6, P7>>;
-
-export function skipPathNil<O extends object,
-    P1 extends keyof O,
-    P2 extends keyof NonNil<O[P1]>,
-    P3 extends keyof NonNil<NonNil<O[P1]>[P2]>,
-    P4 extends keyof NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>,
-    P5 extends keyof NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>,
-    P6 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>,
-    P7 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>,
-    P8 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>[P7]>>(
-    p1: P1, p2: P2, p3: P3, p4: P4, p5: P5, p6: P6, p7: P7, p8: P8
-): (x: Observable<O>) => Observable<PathNotNil_8<O, P1, P2, P3, P4, P5, P6, P7, P8>>;
-
-export function skipPathNil<O extends object,
-    P1 extends keyof O,
-    P2 extends keyof NonNil<O[P1]>,
-    P3 extends keyof NonNil<NonNil<O[P1]>[P2]>,
-    P4 extends keyof NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>,
-    P5 extends keyof NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>,
-    P6 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>,
-    P7 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>,
-    P8 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>[P7]>,
-    P9 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>[P7]>[P8]>>(
-    p1: P1, p2: P2, p3: P3, p4: P4, p5: P5, p6: P6, p7: P7, p8: P8, p9: P9
-): (x: Observable<O>) => Observable<PathNotNil_9<O, P1, P2, P3, P4, P5, P6, P7, P8, P9>>;
-
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Observable operator implementation
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -438,12 +254,8 @@ export function skipPathNil<O extends object,
     P2 extends keyof NonNil<O[P1]>,
     P3 extends keyof NonNil<NonNil<O[P1]>[P2]>,
     P4 extends keyof NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>,
-    P5 extends keyof NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>,
-    P6 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>,
-    P7 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>,
-    P8 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>[P7]>,
-    P9 extends keyof NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>[P5]>[P6]>[P7]>[P8]>>(
-    p1: P1, p2?: P2, p3?: P3, p4?: P4, p5?: P5, p6?: P6, p7?: P7, p8?: P8, p9?: P9
+    P5 extends keyof NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>>(
+    p1: P1, p2?: P2, p3?: P3, p4?: P4, p5?: P5,
 ) {
   return function operateFunction(source: Observable<O>) {
     if (p2 === undefined) {
@@ -458,20 +270,8 @@ export function skipPathNil<O extends object,
     else if (p5 === undefined) {
       return source.pipe(filter(isPathNotNil(p1, p2, p3, p4)));
     }
-    else if (p6 === undefined) {
-      return source.pipe(filter(isPathNotNil(p1, p2, p3, p4, p5)));
-    }
-    else if (p7 === undefined) {
-      return source.pipe(filter(isPathNotNil(p1, p2, p3, p4, p5, p6)));
-    }
-    else if (p8 === undefined) {
-      return source.pipe(filter(isPathNotNil(p1, p2, p3, p4, p5, p6, p7)));
-    }
-    else if (p9 === undefined) {
-      return source.pipe(filter(isPathNotNil(p1, p2, p3, p4, p5, p6, p7, p8)));
-    }
     else {
-      return source.pipe(filter(isPathNotNil(p1, p2, p3, p4, p5, p6, p7, p8, p9)));
+      return source.pipe(filter(isPathNotNil(p1, p2, p3, p4, p5)));
     }
   };
 }

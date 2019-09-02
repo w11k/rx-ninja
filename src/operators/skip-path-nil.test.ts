@@ -3,32 +3,32 @@ import { of } from "rxjs";
 import { filter, first, tap } from "rxjs/operators";
 import { isPathNotNil, skipPathNil } from "./skip-path-nil";
 
-const obj_9: { a?: { b?: { c?: { d?: { e?: { f?: { g?: { h: { i?: string | null } | null } | null } | null } | null } | null } | null } | null } | null } = {
-  a: { b: { c: { d: { e: { f: { g: { h: { i: "i" } } } } } } } }
+const obj_9: { a?: { b?: { c?: { d?: { e?: string | null } | null } | null } | null } | null } = {
+  a: { b: { c: { d: { e: "e" } } } }
 };
 
 describe("isPathNotNil", function () {
   it("should compile and pass array of object with just values", function () {
     [obj_9]
-        .filter(isPathNotNil("a", "b", "c", "d", "e", "f", "g", "h"))
+        .filter(isPathNotNil("a", "b", "c", "d", "e"))
         .forEach(x => {
-          assert.equal(x.a.b.c.d.e.f.g.h.i, "i");
+          assert.equal(x.a.b.c.d.e, "e");
         });
 
-    let a: object | undefined;
-    if (isPathNotNil(obj_9, "a")) {
-      a = obj_9.a;
+    let b: object | undefined;
+    if (isPathNotNil(obj_9, "a", "b")) {
+      b = obj_9.a.b;
     }
-    assert.equal(typeof a, "object");
+    assert.equal(typeof b, "object");
   });
 
   it("should compile and pass direct call with object with just values", function () {
-    let i: string | undefined;
-    if (isPathNotNil(obj_9, "a", "b", "c", "d", "e", "f", "g", "h", "i")) {
-      i = obj_9.a.b.c.d.e.f.g.h.i;
+    let e: string | undefined;
+    if (isPathNotNil(obj_9, "a", "b", "c", "d", "e")) {
+      e = obj_9.a.b.c.d.e;
     }
 
-    assert.equal(i, "i");
+    assert.equal(e, "e");
   });
 
   it("should filter object with null", function () {
@@ -64,12 +64,12 @@ describe("skipPathNil", function () {
     const completion = testObj$
     // functional test
         .pipe(
-            skipPathNil("a", "b", "c", "d", "e", "f", "g", "h", "i"),
+            skipPathNil("a", "b", "c", "d", "e"),
             first(), // let rxjs throw error on completion without previous value
         )
         // just for compiler check
         .pipe(
-            tap(x => x.a.b.c.d.e.f.g.h.i.charAt(0)),
+            tap(x => x.a.b.c.d.e.charAt(0)),
         )
         .forEach(x => {
           assert.equal(x, obj_9);
