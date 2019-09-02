@@ -100,7 +100,12 @@ of(1).subscribe(() => {
 });
 ```
 
-**Patrons**
+## Utilities
+
+* [AsyncPrioritizedQueue](https://w11k.github.io/rx-ninja/modules/_utils_async_prioritized_queue_.html)
+* [entries](https://w11k.github.io/rx-ninja/modules/_utils_functions_.html#entries)
+
+## Patrons
 
 ❤️ [W11K - The Web Engineers](https://www.w11k.de/)
 
