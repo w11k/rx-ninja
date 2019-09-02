@@ -15,9 +15,11 @@ describe("isPathNotNil", function () {
           assert.equal(x.a.b.c.d.e.f.g.h.i, "i");
         });
 
-    if (isPathNotNil(obj_9,"a")) {
-      obj_9.a
+    let a: object | undefined;
+    if (isPathNotNil(obj_9, "a")) {
+      a = obj_9.a;
     }
+    assert.equal(typeof a, "object");
   });
 
   it("should compile and pass direct call with object with just values", function () {
