@@ -15,18 +15,33 @@ type PropertyNotNil<O extends object, P extends keyof O> = {
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 /**
- * A predicate / type guard function, which receives an object and a property.
- * It checks if the given property is neither null nor undefined.
- * Narrows the type of the given property within the object type from T | null | undefined to just T.
+ * Predicate / type guard function, checks if the given property is neither null nor undefined.
+ * Narrows the type of the given property within the object type from ```T | null | undefined``` to just ```T```.
+ *
+ * Two variants:
+ *
+ * A simple function for direct calls (e.g. in if-statement-conditions).
+ * It asks for the object to check as well as the property.
+ *
+ * The second variant is a factory-function which only gets the property.
+ * It returns a pre-configured predicate function for usage with functional calls like Array#filter.
  *
  * Example:
+ * ```ts
+ * const x: { a: number, b: string | undefined } = { a: 1, b: 'example' };
  *
- * incoming type is { a: number, b: string | null | undefined }
+ * // simple usage: pass object and property path
+ * if (isPropertyNotNil(x, 'b')) {
+ *   // type of x is now { a: number, b: string }
+ *   x.b.charAt(3); // safe to access b
+ * }
  *
- * outgoing type is { a: number, b: string }
- *
- * @param obj the object to check
- * @param property name of the property to check
+ * // array usage: just pass the property to check
+ * [x]
+ *   .filter(isPropertyNotNil('b'))
+ *   // type is now [{ a: number, b: string }]
+ *   .map(x => x.b.charAt(3)) // safe to access b
+ * ```
  */
 export function isPropertyNotNil<O extends object, P extends keyof O>(obj: O, property?: P): obj is PropertyNotNil<O, P>;
 
@@ -34,19 +49,6 @@ export function isPropertyNotNil<O extends object, P extends keyof O>(obj: O, pr
  * Array operators overloads
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-/**
- * Returns a predicate / type guard function, which receives an object and checks
- * if the given property is neither null nor undefined.
- * Narrows the type of the given property within the object type from T | null | undefined to just T.
- *
- * Example:
- *
- * incoming type is { a: number, b: string | null | undefined }
- *
- * outgoing type of returned type guard from propertyNotNil('b') is { a: number, b: string }
- *
- * @param property name of the property to check
- */
 export function isPropertyNotNil<O extends object, P extends keyof O>(prop: P): (obj: O) => obj is PropertyNotNil<O, P>;
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

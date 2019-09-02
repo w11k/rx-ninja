@@ -92,7 +92,7 @@
 					<div class="tsd-signature tsd-kind-icon">property<wbr>Not<wbr>Nil<span class="tsd-signature-symbol">:</span> <a href="_operators_skip_property_nil_.html#ispropertynotnil" class="tsd-signature-type">isPropertyNotNil</a><span class="tsd-signature-symbol"> =&nbsp;isPropertyNotNil</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/78a4aa6/src/operators/skip-property-nil.ts#L83">operators/skip-property-nil.ts:83</a></li>
+							<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/d7df753/src/operators/skip-property-nil.ts#L85">operators/skip-property-nil.ts:85</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -119,18 +119,33 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/78a4aa6/src/operators/skip-property-nil.ts#L31">operators/skip-property-nil.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/d7df753/src/operators/skip-property-nil.ts#L46">operators/skip-property-nil.ts:46</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>A predicate / type guard function, which receives an object and a property.
-										It checks if the given property is neither null nor undefined.
-									Narrows the type of the given property within the object type from T | null | undefined to just T.</p>
+									<p>Predicate / type guard function, checks if the given property is neither null nor undefined.
+									Narrows the type of the given property within the object type from <code>T | null | undefined</code> to just <code>T</code>.</p>
 								</div>
+								<p>Two variants:</p>
+								<p>A simple function for direct calls (e.g. in if-statement-conditions).
+								It asks for the object to check as well as the property.</p>
+								<p>The second variant is a factory-function which only gets the property.
+								It returns a pre-configured predicate function for usage with functional calls like Array#filter.</p>
 								<p>Example:</p>
-								<p>incoming type is { a: number, b: string | null | undefined }</p>
-								<p>outgoing type is { a: number, b: string }</p>
+								<pre><code class="language-ts"><span class="hljs-keyword">const</span> x: { a: <span class="hljs-built_in">number</span>, b: <span class="hljs-built_in">string</span> | <span class="hljs-literal">undefined</span> } = { a: <span class="hljs-number">1</span>, b: <span class="hljs-string">'example'</span> };
+
+<span class="hljs-comment">// simple usage: pass object and property path</span>
+<span class="hljs-keyword">if</span> (isPropertyNotNil(x, <span class="hljs-string">'b'</span>)) {
+  <span class="hljs-comment">// type of x is now { a: number, b: string }</span>
+  x.b.charAt(<span class="hljs-number">3</span>); <span class="hljs-comment">// safe to access b</span>
+}
+
+<span class="hljs-comment">// array usage: just pass the property to check</span>
+[x]
+  .filter(isPropertyNotNil(<span class="hljs-string">'b'</span>))
+  <span class="hljs-comment">// type is now [{ a: number, b: string }]</span>
+  .map(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x.b.charAt(<span class="hljs-number">3</span>)) <span class="hljs-comment">// safe to access b</span></code></pre>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -145,15 +160,9 @@
 							<ul class="tsd-parameters">
 								<li>
 									<h5>obj: <span class="tsd-signature-type">O</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the object to check</p>
-									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> property: <a href="" class="tsd-signature-type">P</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>name of the property to check</p>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -161,19 +170,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/78a4aa6/src/operators/skip-property-nil.ts#L50">operators/skip-property-nil.ts:50</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/d7df753/src/operators/skip-property-nil.ts#L52">operators/skip-property-nil.ts:52</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Returns a predicate / type guard function, which receives an object and checks
-										if the given property is neither null nor undefined.
-									Narrows the type of the given property within the object type from T | null | undefined to just T.</p>
-								</div>
-								<p>Example:</p>
-								<p>incoming type is { a: number, b: string | null | undefined }</p>
-								<p>outgoing type of returned type guard from propertyNotNil(&#39;b&#39;) is { a: number, b: string }</p>
-							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
@@ -221,7 +220,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/78a4aa6/src/operators/skip-property-nil.ts#L111">operators/skip-property-nil.ts:111</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/d7df753/src/operators/skip-property-nil.ts#L113">operators/skip-property-nil.ts:113</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
