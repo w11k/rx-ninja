@@ -1,9 +1,14 @@
+# Version 3.1
+
+* added isPathNotNil function and skipPathNil operator
+* added overloaded isPropertyNil with object as first parameter, for usage in if statements 
 
 # Version 3
 
 - The configuration for TSLint rule "rx-ninja-subscribe-takeuntil" changed. It is now possible to specify the relevant file name suffixes. This is useful for Angular applications:
 
-"rx-ninja-subscribe-takeuntil": [
+  ```json
+  "rx-ninja-subscribe-takeuntil": [
     true,
     {
         "finalizer": [
@@ -15,7 +20,8 @@
             "-relevant.ts"
         ]
     }
-]
+  ]
+  ```
 
 - added deprecated alias propertyNotNil for isPropertyNotNil
 
