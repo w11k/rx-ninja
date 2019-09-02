@@ -92,7 +92,7 @@
 					<div class="tsd-signature tsd-kind-icon">property<wbr>Not<wbr>Nil<span class="tsd-signature-symbol">:</span> <a href="_operators_skip_property_nil_.html#ispropertynotnil" class="tsd-signature-type">isPropertyNotNil</a><span class="tsd-signature-symbol"> =&nbsp;isPropertyNotNil</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/a08be84/src/operators/skip-property-nil.ts#L29">operators/skip-property-nil.ts:29</a></li>
+							<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/78a4aa6/src/operators/skip-property-nil.ts#L83">operators/skip-property-nil.ts:83</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -112,19 +112,63 @@
 					<a name="ispropertynotnil" class="tsd-anchor"></a>
 					<h3>is<wbr>Property<wbr>Not<wbr>Nil</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Property<wbr>Not<wbr>Nil&lt;T, P&gt;<span class="tsd-signature-symbol">(</span>property<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">(Anonymous function)</span></li>
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Property<wbr>Not<wbr>Nil&lt;O, P&gt;<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">O</span>, property<span class="tsd-signature-symbol">?: </span><a href="" class="tsd-signature-type">P</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Property<wbr>Not<wbr>Nil&lt;O, P&gt;<span class="tsd-signature-symbol">(</span>prop<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/a08be84/src/operators/skip-property-nil.ts#L17">operators/skip-property-nil.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/78a4aa6/src/operators/skip-property-nil.ts#L31">operators/skip-property-nil.ts:31</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Returns a type guard function, which receives an object and checks if the given property is neither null nor
-									undefined. Narrows the type of the given property within the object type from T | null | undefined to just T.</p>
+									<p>A predicate / type guard function, which receives an object and a property.
+										It checks if the given property is neither null nor undefined.
+									Narrows the type of the given property within the object type from T | null | undefined to just T.</p>
+								</div>
+								<p>Example:</p>
+								<p>incoming type is { a: number, b: string | null | undefined }</p>
+								<p>outgoing type is { a: number, b: string }</p>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>O<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h4>
+								</li>
+								<li>
+									<h4>P<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">keyof O</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>obj: <span class="tsd-signature-type">O</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the object to check</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> property: <a href="" class="tsd-signature-type">P</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>name of the property to check</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/78a4aa6/src/operators/skip-property-nil.ts#L50">operators/skip-property-nil.ts:50</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a predicate / type guard function, which receives an object and checks
+										if the given property is neither null nor undefined.
+									Narrows the type of the given property within the object type from T | null | undefined to just T.</p>
 								</div>
 								<p>Example:</p>
 								<p>incoming type is { a: number, b: string | null | undefined }</p>
@@ -133,22 +177,37 @@
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
-									<h4>T</h4>
+									<h4>O<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h4>
 								</li>
 								<li>
-									<h4>P<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">keyof T</span></h4>
+									<h4>P<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">keyof O</span></h4>
 								</li>
 							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>property: <span class="tsd-signature-type">P</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>name of the property to check</p>
-									</div>
+									<h5>prop: <span class="tsd-signature-type">P</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">(Anonymous function)</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter-siganture">
+									<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">O</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>obj: <span class="tsd-signature-type">O</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</section>
@@ -162,7 +221,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/a08be84/src/operators/skip-property-nil.ts#L53">operators/skip-property-nil.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/78a4aa6/src/operators/skip-property-nil.ts#L111">operators/skip-property-nil.ts:111</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -183,7 +242,7 @@
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
-									<h4>T</h4>
+									<h4>T<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h4>
 								</li>
 								<li>
 									<h4>P<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">keyof T</span></h4>
