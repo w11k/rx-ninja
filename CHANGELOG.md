@@ -1,4 +1,4 @@
-# Version 4.0.0 and 4.0.1
+# Version 4.0.0 to 4.0.2
 
 * Breaking Change: changed signature of skipUndefined
 
