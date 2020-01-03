@@ -49,7 +49,7 @@ export const propertiesNotUndefined = hasNoUndefinedProperties;
  * value { a: undefined, b: 'foo' } will be skipped
  */
 export function skipSomePropertyUndefined<T>() {
-  return (source: Observable<T>) => {
+  return function operatorFunction(source: Observable<T>) {
     return source.pipe(filter(hasNoUndefinedProperties));
   };
 }

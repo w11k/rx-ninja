@@ -49,7 +49,7 @@ export const propertiesNotNull = hasNoNullProperties;
  * value { a: null, b: 'foo' } will be skipped
  */
 export function skipSomePropertyNull<T>() {
-  return (source: Observable<T>) => {
+  return function operatorFunction(source: Observable<T>) {
     return source.pipe(filter(hasNoNullProperties));
   };
 }

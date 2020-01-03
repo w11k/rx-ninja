@@ -32,7 +32,7 @@ export function isNil<T>(x: T | null | undefined): x is null | undefined {
  * Narrows the type from Observable<T | null | undefined> to just Observable<T>.
  */
 export function skipNil() {
-  return function <T>(source: Observable<T | null | undefined>) {
+  return function operatorFunction<T>(source: Observable<T | null | undefined>) {
     return source.pipe(filter(isNotNil));
   };
 }
