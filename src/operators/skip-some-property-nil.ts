@@ -22,12 +22,6 @@ export function hasNoNilProperties<T>(obj: T): obj is { [P in keyof T]: NonNil<T
 }
 
 /**
- * @see hasNoNilProperties
- * @deprecated
- */
-export const propertiesNotNil = hasNoNilProperties;
-
-/**
  * Skips / filters values which contains null or undefined for any property.
  * Narrows the type of all properties within the object type from T | null | undefined to just T.
  *

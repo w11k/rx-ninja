@@ -12,12 +12,6 @@ export function isNotUndefined<T>(x: T | undefined): x is T {
 }
 
 /**
- * @see isNotUndefined
- * @deprecated
- */
-export const notUndefined = isNotUndefined;
-
-/**
  * Filters undefined values.
  * Narrows the type from Observable<T | undefined> to just Observable<T>.
  */

@@ -23,12 +23,6 @@ export function isPropertyNotUndefined<T, P extends keyof T>(property: P) {
 }
 
 /**
- * @see isPropertyNotUndefined
- * @deprecated
- */
-export const propertyNotUndefined = isPropertyNotUndefined;
-
-/**
  * Skips / filters values which contains undefined for the given property.
  * Narrows the type of the given property within the object type from T | undefined to just T.
  *

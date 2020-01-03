@@ -12,12 +12,6 @@ export function isNotNull<T>(x: T | null): x is T {
 }
 
 /**
- * @see isNotNull
- * @deprecated
- */
-export const notNull = isNotNull;
-
-/**
  * Skips / filters null values.
  * Narrows the type from Observable<T | null> to just Observable<T>.
  *

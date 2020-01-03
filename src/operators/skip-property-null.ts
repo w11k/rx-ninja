@@ -23,12 +23,6 @@ export function isPropertyNotNull<T, P extends keyof T>(property: P) {
 }
 
 /**
- * @see isPropertyNotNull
- * @deprecated
- */
-export const propertyNotNull = isPropertyNotNull;
-
-/**
  * Skips / filters values which contains null for the given property.
  * Narrows the type of the given property within the object type from T | null to just T.
  *

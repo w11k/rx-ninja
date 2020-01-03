@@ -12,12 +12,6 @@ export function isNotNil<T>(x: T | null | undefined): x is T {
 }
 
 /**
- * @see isNotNil
- * @deprecated
- */
-export const notNil = isNotNil;
-
-/**
  * Type guard checking a value is null or undefined.
  * Narrows the type from T | null | undefined to null | undefined.
  *

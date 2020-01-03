@@ -23,9 +23,3 @@ export function onlyInstanceOf<A>(clazz: Newable<A>) {
     return source.pipe(filter(isInstanceOf(clazz)));
   };
 }
-
-/**
- * @see onlyInstanceOf
- * @deprecated
- */
-export const justInstanceOf = onlyInstanceOf;

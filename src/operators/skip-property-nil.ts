@@ -76,12 +76,6 @@ function check<T extends object, P extends keyof T>(obj: T, property: P): obj is
   return value !== null && value !== undefined;
 }
 
-/**
- * @see isPropertyNotNil
- * @deprecated
- */
-export const propertyNotNil = isPropertyNotNil;
-
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Observable operator overloads
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */

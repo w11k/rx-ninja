@@ -23,12 +23,6 @@ export function hasNoNullProperties<T>(obj: T): obj is { [P in keyof T]: NonNull
 }
 
 /**
- * @see hasNoNullProperties
- * @deprecated
- */
-export const propertiesNotNull = hasNoNullProperties;
-
-/**
  * Skips / filters values which contains null for any property.
  * Narrows the type of all properties within the object type from T | null to just T.
  *
