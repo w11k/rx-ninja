@@ -36,7 +36,8 @@
     "ts-node": "^8.5.4",
     "tslint": "^5.20.1",
     "typedoc": "^0.15.6",
-    "typescript": "^3.7.4"
+    "typescript": "^3.7.4",
+    "version-bump-prompt": "^5.0.7"
   },
   "peerDependencies": {
     "rxjs": ">=6.0.0"
@@ -56,6 +57,7 @@
     "test_tslint": "npm run test_tslint_prepare && npm run test_tslint_subscribe_takeuntil ;npm run test_tslint_subscribe_takeuntil_config ; npm run test_tslint_subscribe_in_subscribe",
     "doc": "npm run doc:generate && echo \"\" > doc/.nojekyll && git add doc/** && git commit -m 'generated documentation'",
     "doc:generate": "typedoc --options ./typedoc.js src",
-    "doc:deploy": "gh-pages -t --dotfiles -d doc"
+    "doc:deploy": "gh-pages -t --dotfiles -d doc",
+    "bump": "bump --commit \"bump version to v\" --no-verify package.json package-lock.json"
   }
 }
