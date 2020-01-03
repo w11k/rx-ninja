@@ -30,6 +30,7 @@ Please see [API documentation](https://w11k.github.io/rx-ninja/index.html)
 * [skipSomePropertyUndefined](https://w11k.github.io/rx-ninja/modules/_operators_skip_some_property_undefined_.html)
 * [skipUndefined](https://w11k.github.io/rx-ninja/modules/_operators_skip_undefined_.html)
 * [skipUntilCompletionAndContinueWith](https://w11k.github.io/rx-ninja/modules/_operators_skip_until_completion_and_continue_with_.html)
+* [takeUntilCompletion](https://w11k.github.io/rx-ninja/modules/_operators_take_until_completion_.html)
 
 Please use the API documentation for an always up-to-date list of all included operators.
 The API documentation also contains detailed descriptions, examples and marble diagrams. 
