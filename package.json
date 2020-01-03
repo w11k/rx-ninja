@@ -2,7 +2,12 @@
   "name": "@w11k/rx-ninja",
   "version": "3.1.1",
   "license": "Apache-2.0",
-  "author": "W11K",
+  "author": "W11K GmbH",
+  "contributors": [
+    {
+      "name": "Philipp Burgmer"
+    }
+  ],
   "homepage": "https://github.com/w11k/rx-ninja",
   "typings": "dist/bundle/index.d.ts",
   "main": "./dist/bundle/index.js",
