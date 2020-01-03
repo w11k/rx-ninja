@@ -21,22 +21,22 @@
     "README.md"
   ],
   "dependencies": {
-    "@phenomnomnominal/tsquery": "^3.0.0"
+    "@phenomnomnominal/tsquery": "^4.0.0"
   },
   "devDependencies": {
-    "@types/chai": "^4.1.7",
+    "@types/chai": "^4.2.7",
     "@types/mocha": "^5.2.7",
-    "@types/sinon": "^7.0.13",
+    "@types/sinon": "^7.5.1",
     "chai": "^4.2.0",
-    "del-cli": "^2.0.0",
-    "gh-pages": "^2.0.1",
-    "mocha": "^6.2.0",
-    "rxjs": "^6.5.2",
-    "sinon": "^7.4.2",
-    "ts-node": "^8.3.0",
-    "tslint": "^5.18.0",
-    "typedoc": "~0.15.0",
-    "typescript": "3.5.3"
+    "del-cli": "^3.0.0",
+    "gh-pages": "^2.1.1",
+    "mocha": "^6.2.2",
+    "rxjs": "^6.5.4",
+    "sinon": "^8.0.2",
+    "ts-node": "^8.5.4",
+    "tslint": "^5.20.1",
+    "typedoc": "^0.15.6",
+    "typescript": "^3.7.4"
   },
   "peerDependencies": {
     "rxjs": ">=6.0.0"
