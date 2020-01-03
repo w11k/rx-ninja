@@ -1,9 +1,30 @@
-# Version 3.1
+# Version 4.0.0 and 4.0.1
+
+* Breaking Change: changed signature of skipUndefined
+
+  before: ```skipUndefined```
+  after: ```skipUndefined()```
+  
+* removed deprecated aliases
+  * ```justInstanceOf```, use ```onlyInstanceOf``` instead
+  * ```notNil```, use ```isNotNil``` instead
+  * ```notNull```, use ```isNotNull``` instead
+  * ```notUndefined```, use ```isNotUndefined``` instead
+  * ```propertyNotNil```, use ```isPropertyNotNil``` instead
+  * ```propertyNotNull```, use ```isPropertyNotNull``` instead
+  * ```propertyNotUndefined```, use ```isPropertyNotUndefined``` instead
+  * ```propertiesNotNil```, use ```hasNoNilProperties``` instead
+  * ```propertiesNotNull```, use ```hasNoNullProperties``` instead
+  * ```propertiesNotUndefined```, use ```hasNoUndefinedProperties``` instead
+  
+* added operator ```takeUntilCompletion```
+
+# Version 3.1.0
 
 * added isPathNotNil function and skipPathNil operator
 * added overloaded isPropertyNil with object as first parameter, for usage in if statements 
 
-# Version 3
+# Version 3.0.0
 
 - The configuration for TSLint rule "rx-ninja-subscribe-takeuntil" changed. It is now possible to specify the relevant file name suffixes. This is useful for Angular applications:
 
