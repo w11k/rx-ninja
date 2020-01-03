@@ -20,9 +20,9 @@ export const notUndefined = isNotUndefined;
 /**
  * Filters undefined values.
  * Narrows the type from Observable<T | undefined> to just Observable<T>.
- *
- * @param source observable to operate on
  */
-export const skipUndefined = <T>(source: Observable<T | undefined>) => {
-  return source.pipe(filter(isNotUndefined));
-};
+export function skipUndefined<T>() {
+  return function operatorFunction(source: Observable<T | undefined>) {
+    return source.pipe(filter(isNotUndefined));
+  };
+}

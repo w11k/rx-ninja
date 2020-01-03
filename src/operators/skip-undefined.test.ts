@@ -11,7 +11,7 @@ describe("skipUndefined", function () {
 
     const completion = testValue$
         .pipe(
-            skipUndefined,
+            skipUndefined(),
             tap(x => x.charAt(0)) // compiler check
         )
         .forEach(x => {
@@ -27,7 +27,7 @@ describe("skipUndefined", function () {
 
     const completion = testValue$
         .pipe(
-            skipUndefined,
+            skipUndefined(),
         )
         .forEach(x => {
           throw new Error(`shouldn't run here, x is '${x}'`);
