@@ -12,29 +12,27 @@ import { map } from "rxjs/operators";
  * challenge to not mix up the order. A map with key instead of index based access helps to avoid this mix up.
  *
  * Example:
- * source: { a: Observable<string>, b: Observable<string> }
+ * source: { A: Observable<string>, B: Observable<string> }
  *
- * result: Observable<{ a: string, b: string}>
+ * result: Observable<{ A: string, B: string}>
  *
  * ```
  * sourceA: -a---b---c--|
- * sourceB: ---x---y---z---|
- * result:  -1-2-3-4-5-6---|
+ * sourceB: ---d---e---f---|
+ * result:  ---g-h-i-j-k---|
  * ```
  *
  * with
  *
- * 1 = { a: 'a', b: undefined }
+ * g = { A: 'a', B: 'x' }
  *
- * 2 = { a: 'a', b: 'x' }
+ * h = { A: 'b', B: 'x' }
  *
- * 3 = { a: 'b', b: 'x' }
+ * i = { A: 'b', B: 'y' }
  *
- * 4 = { a: 'b', b: 'y' }
+ * j = { A: 'c', B: 'y' }
  *
- * 5 = { a: 'c', b: 'y' }
- *
- * 6 = { a: 'c', b: 'z' }
+ * k = { A: 'c', B: 'z' }
  *
  * @param obsMap source observables
  */
