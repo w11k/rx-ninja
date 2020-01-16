@@ -24,15 +24,15 @@ import { map } from "rxjs/operators";
  *
  * with
  *
- * g = { A: 'a', B: 'x' }
+ * g = { A: 'a', B: 'd' }
  *
- * h = { A: 'b', B: 'x' }
+ * h = { A: 'b', B: 'd' }
  *
- * i = { A: 'b', B: 'y' }
+ * i = { A: 'b', B: 'e' }
  *
- * j = { A: 'c', B: 'y' }
+ * j = { A: 'c', B: 'e' }
  *
- * k = { A: 'c', B: 'z' }
+ * k = { A: 'c', B: 'f' }
  *
  * @param obsMap source observables
  */
