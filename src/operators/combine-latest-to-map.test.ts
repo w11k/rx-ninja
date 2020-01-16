@@ -60,22 +60,14 @@ describe("combineLatestToMap", function () {
         const marbleB = "---d---e---f---|";
         const marbleR = "---g-h-i-j-k---|";
 
-        const a = "a";
-        const b = "b";
-        const c = "c";
-        const d = "d";
-        const e = "e";
-        const f = "f";
+        const g = { A: "a", B: "d" };
+        const h = { A: "b", B: "d" };
+        const i = { A: "b", B: "e" };
+        const j = { A: "c", B: "e" };
+        const k = { A: "c", B: "f" };
 
-        const g = { A: a, B: d };
-        const h = { A: b, B: d };
-        const i = { A: b, B: e };
-        const j = { A: c, B: e };
-        const k = { A: c, B: f };
-
-
-        const sourceA = m.cold<string>(marbleA, { a, b, c });
-        const sourceB = m.cold<string>(marbleB, { d, e, f });
+        const sourceA = m.cold<string>(marbleA);
+        const sourceB = m.cold<string>(marbleB);
 
         const expected = m.cold<{ A: string, B: string }>(marbleR, { g, h, i, j, k });
 
