@@ -1,3 +1,7 @@
+# Version 4.0.3
+
+* The documentation of the ```combineLatestToMap``` operator was corrected
+
 # Version 4.0.0 to 4.0.2
 
 * Breaking Change: changed signature of skipUndefined
