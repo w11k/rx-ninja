@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;operators/replay-on&quot; | @w11k/rx-ninja - v4.0.2</title>
+	<title>&quot;operators/take-until-completion&quot; | @w11k/rx-ninja - v4.0.2</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_operators_replay_on_.html">&quot;operators/replay-on&quot;</a>
+					<a href="_operators_take_until_completion_.html">&quot;operators/take-until-completion&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;operators/replay-on&quot;</h1>
+			<h1>External module &quot;operators/take-until-completion&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -71,7 +71,7 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_operators_replay_on_.html#replayon" class="tsd-kind-icon">replay<wbr>On</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_operators_take_until_completion_.html#takeuntilcompletion" class="tsd-kind-icon">take<wbr>Until<wbr>Completion</a></li>
 							</ul>
 						</section>
 					</div>
@@ -80,25 +80,22 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-					<a name="replayon" class="tsd-anchor"></a>
-					<h3>replay<wbr>On</h3>
+					<a name="takeuntilcompletion" class="tsd-anchor"></a>
+					<h3>take<wbr>Until<wbr>Completion</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">replay<wbr>On&lt;T&gt;<span class="tsd-signature-symbol">(</span>signal<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">operateFunction</span></li>
+						<li class="tsd-signature tsd-kind-icon">take<wbr>Until<wbr>Completion&lt;T&gt;<span class="tsd-signature-symbol">(</span>notifier<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">operatorFunction</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/6e87879/src/operators/replay-on.ts#L15">src/operators/replay-on.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/6e87879/src/operators/take-until-completion.ts#L9">src/operators/take-until-completion.ts:9</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Replays the last value of &#39;source&#39; whenever &#39;signal&#39; emits a value.</p>
+									<p>Behaves like rxjs&#39;s takeUntil operator but listens for completion of the notifier instead of next.</p>
 								</div>
-								<pre><code><span class="hljs-comment">source:</span> <span class="hljs-literal">-</span><span class="hljs-comment">a</span>--<span class="hljs-literal">-</span><span class="hljs-comment">b</span>--<span class="hljs-literal">-</span><span class="hljs-comment">c</span>--<span class="hljs-literal">-</span><span class="hljs-comment">|</span>
-<span class="hljs-comment">signal:</span> --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">1</span>--<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">2</span><span class="hljs-literal">-</span><span class="hljs-comment">|</span>
-<span class="hljs-comment">result:</span> <span class="hljs-literal">-</span><span class="hljs-comment">a</span>--<span class="hljs-literal">-</span><span class="hljs-comment">bb</span>--<span class="hljs-comment">c</span><span class="hljs-literal">-</span><span class="hljs-comment">c</span><span class="hljs-literal">-</span><span class="hljs-comment">|</span></code></pre>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -109,13 +106,12 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>signal: <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>notifier: <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>trigger observable to replay value of source</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">operateFunction</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">operatorFunction</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -128,14 +124,14 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_operators_replay_on_.html">&quot;operators/replay-<wbr>on&quot;</a>
+						<a href="_operators_take_until_completion_.html">&quot;operators/take-<wbr>until-<wbr>completion&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="_operators_replay_on_.html#replayon" class="tsd-kind-icon">replay<wbr>On</a>
+						<a href="_operators_take_until_completion_.html#takeuntilcompletion" class="tsd-kind-icon">take<wbr>Until<wbr>Completion</a>
 					</li>
 				</ul>
 			</nav>
