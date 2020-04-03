@@ -1,5 +1,9 @@
 # rx-ninja Changelog
 
+## 4.1.0
+
+* ```onUnsubscribe``` operator added
+
 ## Version 4.0.3
 
 * The documentation of the ```combineLatestToMap``` operator was corrected
