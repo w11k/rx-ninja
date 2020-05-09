@@ -4,7 +4,9 @@ import { mapTo, pairwise, startWith, switchMap, take } from "rxjs/operators";
 /**
  * Debounce values on the stream if the predicate returns true.
  *
- * TODO: add marble diagram
+ * @param debounceTimeInMs time to debounce in milliseconds
+ * @param predicate called with previous and last value, when evaluates to true debounce
+ * @param scheduler the scheduler
  */
 export function debounceIf<T>(debounceTimeInMs: number,
                               predicate: (previous: T | undefined, last: T) => boolean,

@@ -1,53 +1,33 @@
-import { of } from "rxjs";
-import { assert } from "chai";
 import { debounceIf } from "./debounce-if";
+import { marbles } from "rxjs-marbles";
 
-// TODO: improve async tests, use promises or switch to TestScheduler
+describe("debounceIf", () => {
 
-describe("debounceIf", function () {
+  it("should not debounce and emit values, when predicate evaluates to false", marbles(m => {
+    const source =         m.cold("-1--2--3|");
+    const expectedOutput = m.cold("-1--2--3|");
 
-  it("should emit values immediately if the predicate returns false", async function () {
-    const source = of(1, 2);
+    const destination = source.pipe(debounceIf(m.time("--|"), () => false, m.scheduler));
+    m.expect(destination).toBeObservable(expectedOutput);
+  }));
 
-    const values: any[] = [];
-    const completion = source
-        .pipe(
-            debounceIf(1000, () => false)
-        )
-        .forEach(value => {
-          values.push(value);
-        });
+  it("should debounce every value by one frame, when predicate evaluates to true", marbles(m => {
+    const source =         m.cold("1-2-(3|)");
+    const expectedOutput = m.cold("-1-2-(3|)");
 
-    await completion;
+    const destination = source.pipe(debounceIf(m.time("-|"), () => true, m.scheduler));
+    m.expect(destination).toBeObservable(expectedOutput);
+  }));
 
-    assert.deepEqual(values, [1, 2]);
-  });
+  it("should debounce only even values", marbles(m => {
+    const source =         m.cold("1-2-(3|)");
+    const expectedOutput = m.cold("1--2(3|)");
 
-  it("should debounce if the predicate returns true", function (done) {
-    const source = of(1, 2);
-
-    let async = false;
-    let called = 0;
-    source.pipe(
-        debounceIf(0, (prev, cur) => {
-          if (called === 0) {
-            assert.isUndefined(prev);
-            assert.equal(cur, 1);
-          } else if (called === 1) {
-            assert.equal(prev, 1);
-            assert.equal(cur, 2);
-          }
-
-          called++;
-          return true;
-        })
-    ).subscribe(value => {
-      assert.isTrue(async);
-      assert.equal(called, 2);
-      assert.equal(value, 2);
-      done();
-    });
-    async = true;
-  });
-
+    const destination = source.pipe(debounceIf(m.time("-|"), isEven, m.scheduler));
+    m.expect(destination).toBeObservable(expectedOutput);
+  }));
 });
+
+function isEven(prev: string | undefined, s: string): boolean {
+  return (+s) % 2 === 0;
+}
