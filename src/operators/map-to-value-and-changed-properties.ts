@@ -2,7 +2,24 @@ import {Observable} from "rxjs";
 import {map, pairwise, startWith} from "rxjs/operators";
 
 /**
- * TODO: add documentation with marble diagram or textual example
+ * Maps source to source and a partial source with changed properties.
+ *
+ * Example:
+ *
+ * ```
+ * source: a-b-c|
+ * output: d-e-f|
+ * ```
+ *
+ * with
+ *
+ * a = { a: 1 }
+ * b = { a: 2, b: 3 }
+ * c = { a: 2, b: 4 }
+ * d = [{ a: 1 }, { a: 1 }]
+ * e = [{ a: 2, b: 3 }, { a: 2, b: 3 }]
+ * f = [{ a: 2, b: 4 }, { b: 4 }]
+ *
  */
 export function mapToValueAndChangedProperties<T>(): (source: Observable<T>) => Observable<[T, Partial<T>]> {
   return function operateFunction(source) {
