@@ -1,15 +1,12 @@
 --require ts-node/register
 --require tsconfig-paths/register
---require source-map-support/register
---require spec/setup.js
 --require spec/helpers/polyfills.ts
+--require source-map-support/register
+--require spec/helpers/tests2png/diagram-test-runner.ts
 --require spec/helpers/testScheduler-ui.ts
 --ui spec/helpers/testScheduler-ui.ts
 
---ui bdd
---reporter spec
-
---check-leaks
+--reporter dot
 
 --recursive
---timeout 1000
+--timeout 5000
