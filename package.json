@@ -1,6 +1,6 @@
 {
   "name": "@w11k/rx-ninja",
-  "version": "4.0.2",
+  "version": "4.1.0",
   "license": "Apache-2.0",
   "author": "W11K GmbH",
   "contributors": [
@@ -56,7 +56,7 @@
     "test_tslint_subscribe_takeuntil_config": "tslint -p tsconfig.json -t verbose -c src/tslint_rules/examples/subscribe-takeuntil-config/rule.json src/tslint_rules/examples/subscribe-takeuntil-config/*.ts",
     "test_tslint_subscribe_in_subscribe": "tslint -p tsconfig.json -t verbose -c src/tslint_rules/examples/subscribe-in-subscribe/rule.json src/tslint_rules/examples/subscribe-in-subscribe/*.ts",
     "test_tslint": "npm run test_tslint_prepare && npm run test_tslint_subscribe_takeuntil ;npm run test_tslint_subscribe_takeuntil_config ; npm run test_tslint_subscribe_in_subscribe",
-    "doc": "npm run doc:generate && echo \"\" > doc/.nojekyll && git add doc/** && git commit -m 'generated documentation'",
+    "doc": "npm run doc:generate && touch doc/.nojekyll && git add doc/** && git commit -m 'generated documentation'",
     "doc:generate": "typedoc --options ./typedoc.js src",
     "doc:deploy": "gh-pages -t --dotfiles -d doc",
     "bump": "bump --commit \"bump version to v\" --no-verify package.json package-lock.json"

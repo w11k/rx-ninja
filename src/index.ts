@@ -4,6 +4,7 @@ export * from "./operators/execute-latest-on-idle";
 export * from "./operators/only-instance-of";
 export * from "./operators/map-to-value-and-changed-properties";
 export * from "./operators/on-completion-continue-with";
+export * from "./operators/on-unsubscribe";
 export * from "./operators/replay-on";
 export * from "./operators/skip-nil";
 export * from "./operators/skip-null";
