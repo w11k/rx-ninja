@@ -4,6 +4,8 @@ import { filter, materialize, takeUntil } from "rxjs/operators";
 /**
  * Behaves like rxjs's takeUntil operator but listens for completion of the notifier instead of next.
  *
+ * <img src="media://takeUntilCompletion.png" alt="marble">
+ *
  * @param notifier
  */
 export function takeUntilCompletion<T>(notifier: Observable<any>) {

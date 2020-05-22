@@ -14,6 +14,8 @@ export function isNotUndefined<T>(x: T | undefined): x is T {
 /**
  * Filters undefined values.
  * Narrows the type from Observable<T | undefined> to just Observable<T>.
+ *
+ * <img src="media://skipUndefined.png" alt="marble">
  */
 export function skipUndefined<T>() {
   return function operatorFunction(source: Observable<T | undefined>) {

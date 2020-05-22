@@ -11,6 +11,8 @@ import { map } from "rxjs/operators";
  * But imagine an array of two string-observable. Typescript just can tell you that both are strings. It is your
  * challenge to not mix up the order. A map with key instead of index based access helps to avoid this mix up.
  *
+ * <img src="media://combineLatestToMap.png" alt="marble">
+ *
  * Example:
  * source: { A: Observable<string>, B: Observable<string> }
  *
