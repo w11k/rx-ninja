@@ -26,6 +26,8 @@ export function hasNoUndefinedProperties<T>(obj: T): obj is { [P in keyof T]: No
  * Skips / filters values which contains undefined for any property.
  * Narrows the type of all properties within the object type from T | undefined to just T.
  *
+ * <img src="media://skipSomePropertyUndefined.png" alt="marble">
+ *
  * Example:
  *
  * ```ts
