@@ -4,6 +4,8 @@ import { mapTo, startWith, switchMap } from "rxjs/operators";
 /**
  * Replays the last value of 'source' whenever 'signal' emits a value.
  *
+ * <img src="media://replayOn.png" alt="marble">
+ *
  * ```
  * source: -a---b---c---|
  * signal: ------1----2-|
@@ -21,5 +23,5 @@ export function replayOn<T>(signal: Observable<any>) {
                   startWith(value)
               ))
       );
-  }
+  };
 }
