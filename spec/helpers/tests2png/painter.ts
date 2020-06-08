@@ -180,7 +180,7 @@ function stringifyContent(content: MarbleContent): string {
     } else if (typeof content === "boolean") {
         return content ? "true" : "false";
     } else if (typeof content === "object") {
-        string = JSON.stringify(content).replace(/"/g, "");
+        string = JSON.stringify(content, (_, value) => value === undefined ? "undefined" : value).replace(/"/g, "");
     }
     return String("\"" + string + "\"");
 }
