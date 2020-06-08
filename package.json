@@ -6,6 +6,10 @@
   "contributors": [
     {
       "name": "Philipp Burgmer"
+    },
+    {
+      "name": "Sascha Engmann",
+      "email": "engmann@w11k.de"
     }
   ],
   "homepage": "https://github.com/w11k/rx-ninja",
@@ -57,7 +61,7 @@
     "postpublish-git-tag": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags",
     "postpublish-doc": "npm run doc:deploy && git push",
     "postpublish": "npm run postpublish-git-tag ; npm run postpublish-doc",
-    "test": "mocha --opts spec/mocha.opts src/**/*test.ts",
+    "test": "TS_NODE_CACHE=false && mocha --opts spec/mocha.opts src/**/*test.ts",
     "test_tslint_prepare": "npm run clean && tsc",
     "test_tslint_subscribe_takeuntil": "tslint -p tsconfig.json -t verbose -c src/tslint_rules/examples/subscribe-takeuntil/rule.json src/tslint_rules/examples/subscribe-takeuntil/*.ts",
     "test_tslint_subscribe_takeuntil_config": "tslint -p tsconfig.json -t verbose -c src/tslint_rules/examples/subscribe-takeuntil-config/rule.json src/tslint_rules/examples/subscribe-takeuntil-config/*.ts",
@@ -66,7 +70,7 @@
     "doc": "npm run doc:generate && touch doc/.nojekyll && git add doc/** && git commit -m 'generated documentation'",
     "doc:generate": "npm run tests2png && typedoc --options ./typedoc.js src",
     "doc:deploy": "gh-pages -t --dotfiles -d doc",
-    "tests2png": "mkdirp tmp/diagrams && mocha --opts spec/tests2png.opts \"src/**/*test.diagram.ts\"",
+    "tests2png": "TS_NODE_CACHE=false && mkdirp tmp/diagrams && mocha --opts spec/tests2png.opts \"src/**/*test.ts\"",
     "bump": "bump --commit \"bump version to v\" --no-verify package.json package-lock.json"
   }
 }

@@ -3,6 +3,20 @@ import { of } from "rxjs";
 import { marbles } from "rxjs-marbles/mocha";
 import { tap } from "rxjs/operators";
 import { skipNull } from "./skip-null";
+import { expectObservable, hot } from "../../spec/helpers/marble-testing";
+
+declare function asDiagram(arg: string): Function;
+
+describe("diagram skipNull", () => {
+    asDiagram("skipNull()")("should skip all null values", () => {
+        // @formatter:off
+        const e1 =   hot("-a-n-b|", {a: "a", n: null, b: "b"});
+        const expected = "-a---b|";
+        // @formatter:on
+
+        expectObservable(e1.pipe(skipNull())).toBe(expected);
+    });
+});
 
 describe("skipNull", function () {
 

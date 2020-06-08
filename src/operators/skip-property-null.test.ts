@@ -2,7 +2,22 @@ import { assert } from "chai";
 import { of } from "rxjs";
 import { first, tap } from "rxjs/operators";
 import { skipPropertyNull } from "./skip-property-null";
+import { expectObservable, hot } from "../../spec/helpers/marble-testing";
 
+declare function asDiagram(arg: string): Function;
+
+describe("diagram skipPropertyNull", () => {
+    asDiagram(`skipPropertyNull(b)`)("should skip values when property b is null", () => {
+        const a = { a: 1, b: 2 };
+        const b = { a: 1, b: null };
+        // @formatter:off
+        const e1 =   hot("a-b-a|", {a, b});
+        const expected = "a---a|";
+        // @formatter:on
+
+        expectObservable(e1.pipe(skipPropertyNull("b"))).toBe(expected, { a });
+    });
+});
 
 describe("skipPropertyNull", function () {
 

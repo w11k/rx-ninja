@@ -2,7 +2,23 @@ import { assert } from "chai";
 import { of } from "rxjs";
 import { first, tap } from "rxjs/operators";
 import { isPropertyNotNil, skipPropertyNil } from "./skip-property-nil";
+import { expectObservable, hot } from "../../spec/helpers/marble-testing";
 
+declare function asDiagram(arg: string): Function;
+
+describe("diagram skipPropertyNil", () => {
+    asDiagram(`skipPropertyNil(b)`)("should skip values when property b null or undefined", () => {
+        const a = { a: 1, b: 2 };
+        const b = { a: 1, b: null };
+        const c = { a: 1, b: undefined };
+        // @formatter:off
+        const e1 =   hot("a-b-c-a|", {a, b, c});
+        const expected = "a-----a|";
+        // @formatter:on
+
+        expectObservable(e1.pipe(skipPropertyNil("b"))).toBe(expected, { a });
+    });
+});
 
 describe("isPropertyNotNil", function () {
   it("can be used with Array#filter", () => {

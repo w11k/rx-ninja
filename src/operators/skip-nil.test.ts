@@ -2,6 +2,20 @@ import { assert } from "chai";
 import { of } from "rxjs";
 import { tap } from "rxjs/operators";
 import { skipNil } from "./skip-nil";
+import { expectObservable, hot } from "../../spec/helpers/marble-testing";
+
+declare function asDiagram(arg: string): Function;
+
+describe("diagram skipNil", () => {
+    asDiagram("skipNil()")("should skip all nil values", () => {
+        // @formatter:off
+        const e1 =   hot("-a-n-u-b|", {a: "a", n: null, u: undefined, b: "b"});
+        const expected = "-a-----b|";
+        // @formatter:on
+
+        expectObservable(e1.pipe(skipNil())).toBe(expected);
+    });
+});
 
 describe("skipNull", function () {
 

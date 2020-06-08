@@ -6,7 +6,6 @@
 --require spec/helpers/testScheduler-ui.ts
 --ui spec/helpers/testScheduler-ui.ts
 
---ui bdd
 --reporter spec
 
 --check-leaks

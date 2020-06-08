@@ -2,6 +2,21 @@ import { assert } from "chai";
 import { Subject } from "rxjs";
 import { tap } from "rxjs/operators";
 import { takeUntilCompletion } from "./take-until-completion";
+import { expectObservable, hot } from "../../spec/helpers/marble-testing";
+
+declare function asDiagram(arg: string): Function;
+
+describe("diagram takeUntilCompletion", () => {
+  asDiagram("takeUntilCompletion(other)")("should skip all undefined values", () => {
+    // @formatter:off
+    const e1 =   hot("-a--b|");
+    const e2 =   hot("---|");
+    const expected = "-a-|";
+    // @formatter:on
+
+    expectObservable(e1.pipe(takeUntilCompletion(e2))).toBe(expected);
+  });
+});
 
 describe("takeUntilCompletion", function () {
 
