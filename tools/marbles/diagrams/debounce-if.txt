@@ -1,0 +1,8 @@
+[styles]
+frame_width = 35
+
+-1--2---3--|
+
+> debounceIf(20, n => n % 2 === 0)
+
+-1----2-3--|

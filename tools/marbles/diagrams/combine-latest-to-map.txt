@@ -1,0 +1,16 @@
+[styles]
+event_radius = 70
+frame_width = 140
+
+-a---b---c--|
+
+---d---e---f---|
+
+> combineLatestToMap({A: x, B: y})
+
+---g-h-i-j-k---|
+g := { A: "a", B: "d" }
+h := { A: "b", B: "d" }
+i := { A: "b", B: "e" }
+j := { A: "c", B: "e" }
+k := { A: "c", B: "f" }
