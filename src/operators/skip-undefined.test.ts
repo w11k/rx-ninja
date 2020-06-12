@@ -2,20 +2,6 @@ import { assert } from "chai";
 import { of } from "rxjs";
 import { tap } from "rxjs/operators";
 import { skipUndefined } from "./skip-undefined";
-import { expectObservable, hot } from "../../spec/helpers/marble-testing";
-
-declare function asDiagram(arg: string): Function;
-
-describe("diagram skipUndefined", () => {
-    asDiagram("skipUndefined()")("should skip all undefined values", () => {
-        // @formatter:off
-        const e1 =   hot("-a-u-b|", {a: "a", u: undefined, b: "b"});
-        const expected = "-a---b|";
-        // @formatter:on
-
-        expectObservable(e1.pipe(skipUndefined())).toBe(expected);
-    });
-});
 
 describe("skipUndefined", function () {
 

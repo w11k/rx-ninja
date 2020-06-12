@@ -1,23 +1,5 @@
 import { debounceIf } from "./debounce-if";
 import { marbles } from "rxjs-marbles";
-import { TestScheduler } from "rxjs/testing";
-import { expectObservable, hot } from "../../spec/helpers/marble-testing";
-
-declare function asDiagram(arg: string): Function;
-
-declare const rxTestScheduler: TestScheduler;
-
-describe("diagram debounceIf", () => {
-  asDiagram("debounceIf(20, n => n % 2 === 0)")("should debounce only even values", () => {
-    // @formatter:off
-    const e1 =   hot("-1--2---3--|");
-    const expected = "-1----2-3--|";
-    // @formatter:on
-
-    expectObservable(e1.pipe(debounceIf(20, isEven, rxTestScheduler))).toBe(expected);
-  });
-});
-
 
 describe("debounceIf", () => {
 

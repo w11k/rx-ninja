@@ -1,20 +1,5 @@
 import { replayOn } from "./replay-on";
 import { marbles } from "rxjs-marbles";
-import { expectObservable, hot } from "../../spec/helpers/marble-testing";
-
-declare function asDiagram(arg: string): Function;
-
-describe("diagram replayOn", () => {
-  asDiagram("replayOn(signal)")("should replay last value when signal emits", () => {
-    // @formatter:off
-    const e1 =      hot("a-b-c|");
-    const trigger = hot("---1-|");
-    const expected =    "a-bbc|";
-    // @formatter:on
-
-    expectObservable(e1.pipe(replayOn(trigger))).toBe(expected);
-  });
-});
 
 describe("replayOn", () => {
   it("should pass values", marbles(m => {

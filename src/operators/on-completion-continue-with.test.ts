@@ -2,21 +2,6 @@ import { NEVER, of } from "rxjs";
 import { assert } from "chai";
 import { take } from "rxjs/operators";
 import { onCompletionContinueWith } from "./on-completion-continue-with";
-import { cold, expectObservable, hot } from "../../spec/helpers/marble-testing";
-
-declare function asDiagram(arg: string): Function;
-
-describe("diagram onCompletionContinueWith", () => {
-    asDiagram("onCompletionContinueWith(otherGenerator)")("should debounce only even values", () => {
-        // @formatter:off
-        const e1 =       hot("-a-b-c-|");
-        const e2 =      cold("-d-e-f-|");
-        const expected = "-a-b-c--d-e-f-|";
-        // @formatter:on
-
-        expectObservable(e1.pipe(onCompletionContinueWith(() => e2))).toBe(expected);
-    });
-});
 
 describe("onCompletionContinueWith", function () {
 
