@@ -1,7 +1,10 @@
+[styles]
+frame_width = 45
+
 a-b-c-|
 
       d-e-f-|
 
-> onCompletionContinueWith()
+> onCompletionContinueWith(last => newObservable)
 
 a-b-c-d-e-f-|

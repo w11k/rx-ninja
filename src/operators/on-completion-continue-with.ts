@@ -6,6 +6,8 @@ import { flatMap, materialize } from "rxjs/operators";
  * On completion of source the given continueWith function will be called and returns another observable.
  * Resulting observable continues with emitted values of this observable provided by the continueWith function.
  *
+ * <img src="media://on-completion-continue-with.svg" alt="marble">
+ *
  * source:                 -a-b-c-|
  *
  * return of continueWith:        --d-e-f-|

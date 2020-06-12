@@ -26,7 +26,7 @@ export function isPropertyNotUndefined<T, P extends keyof T>(property: P) {
  * Skips / filters values which contains undefined for the given property.
  * Narrows the type of the given property within the object type from T | undefined to just T.
  *
- * <img src="media://skipPropertyUndefined.png" alt="marble">
+ * <img src="media://skip-property-undefined.svg" alt="marble">
  *
  * Example:
  *

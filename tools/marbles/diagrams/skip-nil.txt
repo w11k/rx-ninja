@@ -1,0 +1,11 @@
+[styles]
+event_radius = 45
+frame_width = 55
+
+a-n-u-b|
+n:=null
+u:=undefined
+
+> skipNil()
+
+a-----b|

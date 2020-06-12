@@ -28,7 +28,7 @@ export function isPropertyNotNull<T, P extends keyof T>(property: P) {
  *
  * Example:
  *
- * <img src="media://skipPropertyNull.png" alt="marble">
+ * <img src="media://skip-property-null.svg" alt="marble">
  *
  * ```ts
  * const x: Observable<{ a: number, b: string | null }>;

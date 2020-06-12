@@ -4,7 +4,7 @@ import { filter, materialize, takeUntil } from "rxjs/operators";
 /**
  * Behaves like rxjs's takeUntil operator but listens for completion of the notifier instead of next.
  *
- * <img src="media://takeUntilCompletion.png" alt="marble">
+ * <img src="media://take-until-completion.svg" alt="marble">
  *
  * @param notifier
  */

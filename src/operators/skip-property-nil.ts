@@ -84,7 +84,7 @@ function check<T extends object, P extends keyof T>(obj: T, property: P): obj is
  * Skips values which contains null or undefined for the given property.
  * Narrows the type of the given property within the object type from T | null | undefined to T.
  *
- * <img src="media://skipPropertyNil.png" alt="marble">
+ * <img src="media://skip-property-nil.svg" alt="marble">
  *
  * Example:
  *

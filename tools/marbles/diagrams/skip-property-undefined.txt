@@ -1,0 +1,12 @@
+[styles]
+event_radius = 85
+frame_width = 95
+
+a-b-a|
+a := { a: 1, b: 2 }
+b := { a: 1, b: undefined }
+
+> skipPropertyUndefined("b")
+
+a---a|
+a := { a: 1, b: 2 }

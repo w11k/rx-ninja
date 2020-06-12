@@ -15,7 +15,7 @@ export function isNotNull<T>(x: T | null): x is T {
  * Skips / filters null values.
  * Narrows the type from Observable<T | null> to just Observable<T>.
  *
- * <img src="media://skipNull.png" alt="marble">
+ * <img src="media://skip-null.svg" alt="marble">
  *
  * @param source observable to operate on
  */

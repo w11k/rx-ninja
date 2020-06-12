@@ -1,0 +1,13 @@
+[styles]
+event_radius = 65
+frame_width = 75
+
+a-b-c-a|
+a := { a: 1, b: 2 }
+b := { a: 1, b: null }
+c := { a: null, b: 1 }
+
+> skipSomePropertyNull()
+
+a-----a|
+a := { a: 1, b: 2 }

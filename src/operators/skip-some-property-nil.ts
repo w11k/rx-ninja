@@ -25,7 +25,7 @@ export function hasNoNilProperties<T>(obj: T): obj is { [P in keyof T]: NonNil<T
  * Skips / filters values which contains null or undefined for any property.
  * Narrows the type of all properties within the object type from T | null | undefined to just T.
  *
- * <img src="media://skipSomePropertyNil.png" alt="marble">
+ * <img src="media://skip-some-property-nil.svg" alt="marble">
  *
  * Example:
  *

@@ -26,7 +26,7 @@ export function hasNoNullProperties<T>(obj: T): obj is { [P in keyof T]: NonNull
  * Skips / filters values which contains null for any property.
  * Narrows the type of all properties within the object type from T | null to just T.
  *
- * <img src="media://skipSomePropertyNull.png" alt="marble">
+ * <img src="media://skip-some-property-null.svg" alt="marble">
  *
  * Example:
  *

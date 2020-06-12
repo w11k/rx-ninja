@@ -1,0 +1,8 @@
+[styles]
+
+a-n-n-b|
+n:=null
+
+> skipNull()
+
+a-----b|

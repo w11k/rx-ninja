@@ -4,7 +4,7 @@ import { mapTo, startWith, switchMap } from "rxjs/operators";
 /**
  * Replays the last value of 'source' whenever 'signal' emits a value.
  *
- * <img src="media://replayOn.png" alt="marble">
+ * <img src="media://replay-on.svg" alt="marble">
  *
  * ```
  * source: -a---b---c---|

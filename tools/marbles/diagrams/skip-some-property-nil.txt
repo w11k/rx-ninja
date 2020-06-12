@@ -1,0 +1,15 @@
+[styles]
+event_radius = 85
+frame_width = 95
+
+a-b-c--d-e-a|
+a := { a: 1, b: 2 }
+b := { a: 1, b: null }
+c := { a: null, b: 1 }
+d := { a: undefined, b: 1 }
+e := { a: 1, b: undefined }
+
+> skipSomePropertyNil()
+
+a----------a|
+a := { a: 1, b: 2 }
