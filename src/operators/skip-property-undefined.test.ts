@@ -3,8 +3,7 @@ import { of } from "rxjs";
 import { first, tap } from "rxjs/operators";
 import { skipPropertyUndefined } from "./skip-property-undefined";
 
-
-describe("skipPropertyNull", function () {
+describe("skipPropertyUndefined", function () {
 
   it("should should pass object with just values", async function () {
     const testObj = {

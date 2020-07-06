@@ -4,6 +4,8 @@ import {map, pairwise, startWith} from "rxjs/operators";
 /**
  * Maps source to source and a partial source with changed properties.
  *
+ * <img src="media://map-to-value-and-changed-properties.svg" alt="marble">
+ *
  * Example:
  *
  * ```

@@ -1,0 +1,9 @@
+[styles]
+
+-a---b---c---|
+
+------1----2-|
+
+> replayOn(signal)
+
+-a---bb--c-c-|

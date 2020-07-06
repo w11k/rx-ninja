@@ -52,6 +52,6 @@ describe("skipNull", function () {
         const testee = source.pipe(skipNull());
 
         m.expect(testee).toBeObservable(output);
-    }))
+    }));
 
 });

@@ -24,6 +24,8 @@ export function isNil<T>(x: T | null | undefined): x is null | undefined {
 /**
  * Filters null and undefined values.
  * Narrows the type from Observable<T | null | undefined> to just Observable<T>.
+ *
+ * <img src="media://skip-nil.svg" alt="marble">
  */
 export function skipNil() {
   return function operatorFunction<T>(source: Observable<T | null | undefined>) {

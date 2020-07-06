@@ -112,3 +112,6 @@ of(1).subscribe(() => {
 ❤️ [W11K - The Web Engineers](https://www.w11k.de/)
 
 ❤️ [theCodeCampus - Trainings for Angular and TypeScript](https://www.thecodecampus.de/)
+
+## Thanks
+* Diagram generation from [RxJS](https://rxjs-dev.firebaseapp.com/)

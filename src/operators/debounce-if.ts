@@ -4,6 +4,8 @@ import { mapTo, pairwise, startWith, switchMap, take } from "rxjs/operators";
 /**
  * Debounce values on the stream if the predicate returns true.
  *
+ * <img src="media://debounce-if.svg" alt="marble">
+ *
  * Examples:
  *
  * Example 1

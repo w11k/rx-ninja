@@ -3,7 +3,6 @@ import { of } from "rxjs";
 import { first, tap } from "rxjs/operators";
 import { isPropertyNotNil, skipPropertyNil } from "./skip-property-nil";
 
-
 describe("isPropertyNotNil", function () {
   it("can be used with Array#filter", () => {
     const values = [{

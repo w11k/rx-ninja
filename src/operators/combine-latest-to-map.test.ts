@@ -1,4 +1,3 @@
-// TODO: implement tests
 import { marbles } from "rxjs-marbles/mocha";
 import { combineLatestToMap } from "./combine-latest-to-map";
 

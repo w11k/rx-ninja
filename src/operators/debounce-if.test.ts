@@ -31,6 +31,6 @@ describe("debounceIf", () => {
   }));
 });
 
-function isEven(prev: string | undefined, s: string): boolean {
+export function isEven(prev: string | undefined, s: string): boolean {
   return (+s) % 2 === 0;
 }

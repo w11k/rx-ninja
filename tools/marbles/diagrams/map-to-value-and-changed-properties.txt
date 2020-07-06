@@ -1,0 +1,15 @@
+[styles]
+event_radius = 110
+frame_width = 130
+
+-a-b-c|
+a := { a: 1 }
+b := { a: 2, b: 3 }
+c := { a: 2, b: 4 }
+
+> mapToValueAndChangedProperties()
+
+-d-e-f|
+d := [{ a: 1 }, { a: 1 }]
+e := [{ a: 2, b: 3 }, { a: 2, b: 3 }]
+f := [{ a: 2, b: 4 }, { b: 4 }]

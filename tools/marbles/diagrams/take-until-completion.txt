@@ -1,0 +1,10 @@
+[styles]
+frame_width = 60
+
+-a--b|
+
+1--|
+
+> takeUntilCompletion(signal)
+
+-a-|

@@ -3,7 +3,6 @@ import { of } from "rxjs";
 import { first, tap } from "rxjs/operators";
 import { skipPropertyNull } from "./skip-property-null";
 
-
 describe("skipPropertyNull", function () {
 
   it("should should pass object with just values", async function () {
