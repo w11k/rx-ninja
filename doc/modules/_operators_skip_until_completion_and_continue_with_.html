@@ -89,7 +89,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/503d794/src/operators/skip-until-completion-and-continue-with.ts#L18">src/operators/skip-until-completion-and-continue-with.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/skip-until-completion-and-continue-with.ts#L18">src/operators/skip-until-completion-and-continue-with.ts:18</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -97,9 +97,10 @@
 									<p>On completion of source observable the given continueWith function will be called and
 									the resulting observable will emit its values. Does not emit values of the source.</p>
 								</div>
-								<pre><code><span class="hljs-built_in">source</span>:                 -a-b-c-|
-<span class="hljs-built_in">return</span> of continueWith:        --d<span class="hljs-_">-e</span><span class="hljs-_">-f</span>-|
-result:                 ---------d<span class="hljs-_">-e</span><span class="hljs-_">-f</span>-|</code></pre><p>If you also need the values from source, use onCompletionContinueWith.</p>
+								<pre><code>source:                 -<span class="hljs-keyword">a</span>-b-c-|
+<span class="hljs-literal">return</span> <span class="hljs-keyword">of</span> continueWith:        <span class="hljs-comment">--d-e-f-|</span>
+<span class="hljs-built_in">result</span>:                 <span class="hljs-comment">---------d-e-f-|</span></code></pre>
+								<p>If you also need the values from source, use onCompletionContinueWith.</p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -197,6 +198,5 @@ result:                 ---------d<span class="hljs-_">-e</span><span class="hlj
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

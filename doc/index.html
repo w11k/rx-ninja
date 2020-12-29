@@ -107,14 +107,15 @@
 				</a>
 				<p><strong>Adjust your tslint.json</strong></p>
 				<pre><code>{
-  <span class="hljs-attr">"rulesDirectory"</span>: [
-    <span class="hljs-string">"node_modules/@w11k/rx-ninja/dist/bundle/tslint_rules"</span>
+  <span class="hljs-attr">&quot;rulesDirectory&quot;</span>: [
+    <span class="hljs-string">&quot;node_modules/@w11k/rx-ninja/dist/bundle/tslint_rules&quot;</span>
   ],
-  <span class="hljs-attr">"rules"</span>: {
-    <span class="hljs-attr">"rx-ninja-subscribe-takeuntil"</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">"rx-ninja-subscribe-in-subscribe"</span>: <span class="hljs-literal">true</span>
+  <span class="hljs-attr">&quot;rules&quot;</span>: {
+    <span class="hljs-attr">&quot;rx-ninja-subscribe-takeuntil&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">&quot;rx-ninja-subscribe-in-subscribe&quot;</span>: <span class="hljs-literal">true</span>
   }
-}</code></pre><p><strong>Run tslint with type info</strong></p>
+}</code></pre>
+				<p><strong>Run tslint with type info</strong></p>
 				<pre><code>tslint -p tsconfig.json -t <span class="hljs-keyword">verbose</span></code></pre>
 				<a href="#rule-descriptions" id="rule-descriptions" style="color: inherit; text-decoration: none;">
 					<h3>Rule descriptions</h3>
@@ -127,24 +128,25 @@
 				</ul>
 				<p>The rule can be limited to files with the specified suffix (<code>fileSuffix</code>). Angular users might set this to <code>.component.ts</code>.</p>
 				<p><em>Configuration:</em></p>
-				<pre><code><span class="hljs-string">"rx-ninja-subscribe-takeuntil"</span>: [
+				<pre><code><span class="hljs-string">&quot;rx-ninja-subscribe-takeuntil&quot;</span>: [
     true,
     {
-        <span class="hljs-string">"finalizer"</span>: [
-            <span class="hljs-string">"takeUntil"</span>,
-            <span class="hljs-string">"customOperator"</span>,
-            <span class="hljs-string">"anotherOperator"</span>
+        <span class="hljs-string">&quot;finalizer&quot;</span>: [
+            <span class="hljs-string">&quot;takeUntil&quot;</span>,
+            <span class="hljs-string">&quot;customOperator&quot;</span>,
+            <span class="hljs-string">&quot;anotherOperator&quot;</span>
         ],
-        <span class="hljs-string">"fileSuffix"</span>: [
-            <span class="hljs-string">"-relevant.ts"</span>
+        <span class="hljs-string">&quot;fileSuffix&quot;</span>: [
+            <span class="hljs-string">&quot;-relevant.ts&quot;</span>
         ]
     }
-]</code></pre><p><strong>rx-ninja-subscribe-in-subscribe</strong></p>
+]</code></pre>
+				<p><strong>rx-ninja-subscribe-in-subscribe</strong></p>
 				<p>This rule triggers if <code>Observable#subscribe()</code> is called inside of another <code>Observable#subscribe()</code> call, e.g.</p>
-				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> {of} <span class="hljs-keyword">from</span> <span class="hljs-string">"rxjs"</span>;
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> {<span class="hljs-keyword">of</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;rxjs&quot;</span>;
 
-of(<span class="hljs-number">1</span>).subscribe(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-    of(<span class="hljs-number">2</span>).subscribe(); <span class="hljs-comment">// &lt;-- error</span>
+<span class="hljs-keyword">of</span>(<span class="hljs-number">1</span>).subscribe(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-keyword">of</span>(<span class="hljs-number">2</span>).subscribe(); <span class="hljs-comment">// &lt;-- error</span>
 });</code></pre>
 				<a href="#utilities" id="utilities" style="color: inherit; text-decoration: none;">
 					<h2>Utilities</h2>
@@ -292,6 +294,5 @@ of(<span class="hljs-number">1</span>).subscribe(<span class="hljs-function"><sp
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

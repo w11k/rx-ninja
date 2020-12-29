@@ -71,6 +71,7 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_operators_distinct_until_changed_deep_.html#deepequal" class="tsd-kind-icon">deep<wbr>Equal</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_operators_distinct_until_changed_deep_.html#distinctuntilchangeddeep" class="tsd-kind-icon">distinct<wbr>Until<wbr>Changed<wbr>Deep</a></li>
 							</ul>
 						</section>
@@ -80,24 +81,71 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="distinctuntilchangeddeep" class="tsd-anchor"></a>
-					<h3>distinct<wbr>Until<wbr>Changed<wbr>Deep</h3>
+					<a name="deepequal" class="tsd-anchor"></a>
+					<h3>deep<wbr>Equal</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">distinct<wbr>Until<wbr>Changed<wbr>Deep<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">operatorFunction</span></li>
+						<li class="tsd-signature tsd-kind-icon">deep<wbr>Equal<span class="tsd-signature-symbol">(</span>obj1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, obj2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, maxDepth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, actualDepth<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/503d794/src/operators/distinct-until-changed-deep.ts#L9">src/operators/distinct-until-changed-deep.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/distinct-until-changed-deep.ts#L24">src/operators/distinct-until-changed-deep.ts:24</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>thanks to Daniil Andreyevich Baunov <a href="https://stackoverflow.com/a/45683145/6081477">https://stackoverflow.com/a/45683145/6081477</a></p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>obj1: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>obj2: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>maxDepth: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> actualDepth: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="distinctuntilchangeddeep" class="tsd-anchor"></a>
+					<h3>distinct<wbr>Until<wbr>Changed<wbr>Deep</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">distinct<wbr>Until<wbr>Changed<wbr>Deep<span class="tsd-signature-symbol">(</span>maxDepth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">operatorFunction</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/distinct-until-changed-deep.ts#L12">src/operators/distinct-until-changed-deep.ts:12</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Emit only new values if the value changes in a deep equal comparison.</p>
 								</div>
-								<img src="../media/distinct-until-changed-deep.svg" alt="marble">
 							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>maxDepth: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>of iteration to determine if datastructures are equal. When you intend to iterate over all
+										properties regardless of depth use INFINITY. A depth of 0 uses the same comparison as distinctUntilChanged.</p>
+										<img src="../media/distinct-until-changed-deep.svg" alt="marble">
+									</div>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">operatorFunction</span></h4>
 						</li>
 					</ul>
@@ -117,6 +165,9 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_operators_distinct_until_changed_deep_.html#deepequal" class="tsd-kind-icon">deep<wbr>Equal</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_operators_distinct_until_changed_deep_.html#distinctuntilchangeddeep" class="tsd-kind-icon">distinct<wbr>Until<wbr>Changed<wbr>Deep</a>
 					</li>
@@ -146,6 +197,5 @@
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

@@ -90,7 +90,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/503d794/src/operators/skip-property-undefined.ts#L17">src/operators/skip-property-undefined.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/skip-property-undefined.ts#L17">src/operators/skip-property-undefined.ts:17</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -134,7 +134,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/503d794/src/operators/skip-property-undefined.ts#L47">src/operators/skip-property-undefined.ts:47</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/skip-property-undefined.ts#L47">src/operators/skip-property-undefined.ts:47</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -144,10 +144,10 @@
 								</div>
 								<img src="../media/skip-property-undefined.svg" alt="marble">
 								<p>Example:</p>
-								<pre><code class="language-ts"><span class="hljs-keyword">const</span> x: Observable&lt;{ a: <span class="hljs-built_in">number</span>, b: <span class="hljs-built_in">string</span> | <span class="hljs-literal">undefined</span> }&gt;;
+								<pre><code class="language-ts"><span class="hljs-keyword">const</span> x: Observable&lt;{ <span class="hljs-attr">a</span>: <span class="hljs-built_in">number</span>, <span class="hljs-attr">b</span>: <span class="hljs-built_in">string</span> | <span class="hljs-literal">undefined</span> }&gt;;
 
-<span class="hljs-keyword">const</span> z: Observable&lt;{ a: <span class="hljs-built_in">number</span>, b: <span class="hljs-built_in">string</span> }&gt; = x.pipe(
-  skipPropertyUndefined(<span class="hljs-string">'b'</span>)
+<span class="hljs-keyword">const</span> z: Observable&lt;{ <span class="hljs-attr">a</span>: <span class="hljs-built_in">number</span>, <span class="hljs-attr">b</span>: <span class="hljs-built_in">string</span> }&gt; = x.pipe(
+  skipPropertyUndefined(<span class="hljs-string">&#x27;b&#x27;</span>)
 );</code></pre>
 								<p>value { a: 1, b: &#39;foo&#39; } will pass through</p>
 								<p>value { a: 1, b: undefined } will be skipped</p>
@@ -221,6 +221,5 @@
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>
