@@ -53,7 +53,7 @@
     "tsconfig-paths": "^3.9.0",
     "tslint": "^5.20.1",
     "typedoc": "^0.20.1",
-    "typescript": "^3.8.3",
+    "typescript": "^4.0.5",
     "version-bump-prompt": "^5.0.7"
   },
   "peerDependencies": {
@@ -73,7 +73,7 @@
     "test_tslint_subscribe_in_subscribe": "tslint -p tsconfig.json -t verbose -c src/tslint_rules/examples/subscribe-in-subscribe/rule.json src/tslint_rules/examples/subscribe-in-subscribe/*.ts",
     "test_tslint": "npm run test_tslint_prepare && npm run test_tslint_subscribe_takeuntil ;npm run test_tslint_subscribe_takeuntil_config ; npm run test_tslint_subscribe_in_subscribe",
     "doc": "npm run doc:generate && touch doc/.nojekyll && git add doc/** && git commit -m 'generated documentation'",
-    "doc:generate": "npm run build:marbles && typedoc --options ./typedoc.js src",
+    "doc:generate": "npm run build:marbles && typedoc --options ./typedoc.js",
     "doc:deploy": "gh-pages -t --dotfiles -d doc",
     "build:marbles": "mkdirp ./tmp/swirly/svgs && ts-node -P ./tools/marbles/tsconfig.marbles.json ./tools/marbles/scripts/index.ts",
     "bump": "bump --commit \"bump version to v\" --no-verify package.json package-lock.json"
