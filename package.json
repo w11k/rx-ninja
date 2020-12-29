@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@types/chai": "^4.2.7",
-    "@types/lodash": "^4.14.150",
+    "@types/lodash": "^4.14.166",
     "@types/mocha": "^5.2.7",
     "@types/sinon": "^7.5.1",
     "@types/sinon-chai": "^3.2.4",
@@ -39,7 +39,7 @@
     "del-cli": "^3.0.0",
     "gh-pages": "^2.1.1",
     "gm": "^1.23.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.20",
     "mocha": "^6.2.2",
     "rxjs": "^6.5.4",
     "rxjs-marbles": "^5.0.4",
@@ -52,7 +52,7 @@
     "ts-node": "^8.5.4",
     "tsconfig-paths": "^3.9.0",
     "tslint": "^5.20.1",
-    "typedoc": "^0.17.6",
+    "typedoc": "^0.20.1",
     "typescript": "^3.8.3",
     "version-bump-prompt": "^5.0.7"
   },
