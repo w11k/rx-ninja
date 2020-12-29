@@ -1,5 +1,4 @@
-import { Observable } from "rxjs";
-import { ReplaySubject } from "rxjs/internal/ReplaySubject";
+import { Observable, ReplaySubject } from "rxjs";
 
 export type Worker<T> = () => Promise<T>;
 

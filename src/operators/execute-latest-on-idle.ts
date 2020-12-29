@@ -1,6 +1,5 @@
-import { merge, Observable, Operator, Subject, Subscriber, TeardownLogic } from 'rxjs';
+import { merge, Observable, Operator, Subject, Subscriber, TeardownLogic, BehaviorSubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
 export type ExecuteLatestOnIdleEvent<T, R = void> = StartedEvent<T> | SkippedEvent<T> | FinishedEvent<T, R> | ErrorEvent<T>;
 
