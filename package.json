@@ -52,8 +52,8 @@
     "ts-node": "^8.5.4",
     "tsconfig-paths": "^3.9.0",
     "tslint": "^5.20.1",
-    "typedoc": "^0.17.8",
-    "typescript": "^3.8.3",
+    "typedoc": "^0.19.2",
+    "typescript": "^3.9.7",
     "version-bump-prompt": "^5.0.7"
   },
   "peerDependencies": {
