@@ -91,7 +91,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/f9b56cc/src/operators/skip-property-nil.ts#L46">src/operators/skip-property-nil.ts:46</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/skip-property-nil.ts#L46">src/operators/skip-property-nil.ts:46</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -105,17 +105,17 @@
 								<p>The second variant is a factory-function which only gets the property.
 								It returns a pre-configured predicate function for usage with functional calls like Array#filter.</p>
 								<p>Example:</p>
-								<pre><code class="language-ts"><span class="hljs-keyword">const</span> x: { a: <span class="hljs-built_in">number</span>, b: <span class="hljs-built_in">string</span> | <span class="hljs-literal">undefined</span> } = { a: <span class="hljs-number">1</span>, b: <span class="hljs-string">'example'</span> };
+								<pre><code class="language-ts"><span class="hljs-keyword">const</span> x: { <span class="hljs-attr">a</span>: <span class="hljs-built_in">number</span>, <span class="hljs-attr">b</span>: <span class="hljs-built_in">string</span> | <span class="hljs-literal">undefined</span> } = { <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: <span class="hljs-string">&#x27;example&#x27;</span> };
 
 <span class="hljs-comment">// simple usage: pass object and property path</span>
-<span class="hljs-keyword">if</span> (isPropertyNotNil(x, <span class="hljs-string">'b'</span>)) {
+<span class="hljs-keyword">if</span> (isPropertyNotNil(x, <span class="hljs-string">&#x27;b&#x27;</span>)) {
   <span class="hljs-comment">// type of x is now { a: number, b: string }</span>
   x.b.charAt(<span class="hljs-number">3</span>); <span class="hljs-comment">// safe to access b</span>
 }
 
 <span class="hljs-comment">// array usage: just pass the property to check</span>
 [x]
-  .filter(isPropertyNotNil(<span class="hljs-string">'b'</span>))
+  .filter(isPropertyNotNil(<span class="hljs-string">&#x27;b&#x27;</span>))
   <span class="hljs-comment">// type is now [{ a: number, b: string }]</span>
   .map(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x.b.charAt(<span class="hljs-number">3</span>)) <span class="hljs-comment">// safe to access b</span></code></pre>
 							</div>
@@ -142,7 +142,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/f9b56cc/src/operators/skip-property-nil.ts#L52">src/operators/skip-property-nil.ts:52</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/skip-property-nil.ts#L52">src/operators/skip-property-nil.ts:52</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -192,7 +192,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/f9b56cc/src/operators/skip-property-nil.ts#L107">src/operators/skip-property-nil.ts:107</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/skip-property-nil.ts#L107">src/operators/skip-property-nil.ts:107</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -202,10 +202,10 @@
 								</div>
 								<img src="../media/skip-property-nil.svg" alt="marble">
 								<p>Example:</p>
-								<pre><code class="language-ts"><span class="hljs-keyword">const</span> x: Observable&lt;{ a: <span class="hljs-built_in">number</span>, b: <span class="hljs-built_in">string</span> | <span class="hljs-literal">null</span> | <span class="hljs-literal">undefined</span> }&gt;;
+								<pre><code class="language-ts"><span class="hljs-keyword">const</span> x: Observable&lt;{ <span class="hljs-attr">a</span>: <span class="hljs-built_in">number</span>, <span class="hljs-attr">b</span>: <span class="hljs-built_in">string</span> | <span class="hljs-literal">null</span> | <span class="hljs-literal">undefined</span> }&gt;;
 
-<span class="hljs-keyword">const</span> z: Observable&lt;{ a: <span class="hljs-built_in">number</span>, b: <span class="hljs-built_in">string</span> }&gt; = x.pipe(
-  skipPropertyNil(<span class="hljs-string">'b'</span>)
+<span class="hljs-keyword">const</span> z: Observable&lt;{ <span class="hljs-attr">a</span>: <span class="hljs-built_in">number</span>, <span class="hljs-attr">b</span>: <span class="hljs-built_in">string</span> }&gt; = x.pipe(
+  skipPropertyNil(<span class="hljs-string">&#x27;b&#x27;</span>)
 );</code></pre>
 								<p>value { a: 1, b: &#39;foo&#39; } will pass through</p>
 								<p>value { a: 1, b: null } will be skipped</p>
@@ -280,6 +280,5 @@
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

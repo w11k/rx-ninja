@@ -90,7 +90,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/f9b56cc/src/operators/skip-some-property-nil.ts#L17">src/operators/skip-some-property-nil.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/skip-some-property-nil.ts#L17">src/operators/skip-some-property-nil.ts:17</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -131,7 +131,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/f9b56cc/src/operators/skip-some-property-nil.ts#L46">src/operators/skip-some-property-nil.ts:46</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/skip-some-property-nil.ts#L46">src/operators/skip-some-property-nil.ts:46</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -141,9 +141,9 @@
 								</div>
 								<img src="../media/skip-some-property-nil.svg" alt="marble">
 								<p>Example:</p>
-								<pre><code class="language-ts"><span class="hljs-keyword">const</span> x: Observable&lt;{ a: <span class="hljs-built_in">number</span> | <span class="hljs-literal">null</span>, b: <span class="hljs-built_in">string</span> | <span class="hljs-literal">undefined</span> }&gt;;
+								<pre><code class="language-ts"><span class="hljs-keyword">const</span> x: Observable&lt;{ <span class="hljs-attr">a</span>: <span class="hljs-built_in">number</span> | <span class="hljs-literal">null</span>, <span class="hljs-attr">b</span>: <span class="hljs-built_in">string</span> | <span class="hljs-literal">undefined</span> }&gt;;
 
-<span class="hljs-keyword">const</span> z: Observable&lt;{ a: <span class="hljs-built_in">number</span>, b: <span class="hljs-built_in">string</span> }&gt; = x.pipe(
+<span class="hljs-keyword">const</span> z: Observable&lt;{ <span class="hljs-attr">a</span>: <span class="hljs-built_in">number</span>, <span class="hljs-attr">b</span>: <span class="hljs-built_in">string</span> }&gt; = x.pipe(
   skipSomePropertyNil
 );</code></pre>
 								<p>value { a: 1, b: &#39;foo&#39; } will pass through</p>
@@ -207,6 +207,5 @@
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

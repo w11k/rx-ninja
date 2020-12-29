@@ -99,7 +99,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/f9b56cc/src/operators/skip-path-nil.ts#L82">src/operators/skip-path-nil.ts:82</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/skip-path-nil.ts#L82">src/operators/skip-path-nil.ts:82</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -114,17 +114,17 @@
 								It returns a pre-configured predicate function for usage with functional calls like Array#filter.</p>
 								<p>Both variants have overloads with up to 5 properties to check.</p>
 								<p>Example:</p>
-								<pre><code class="language-ts"><span class="hljs-keyword">const</span> x: { a: { b: <span class="hljs-built_in">number</span> | <span class="hljs-literal">undefined</span> } } = { a: { b: <span class="hljs-number">1</span> } };
+								<pre><code class="language-ts"><span class="hljs-keyword">const</span> x: { <span class="hljs-attr">a</span>: { <span class="hljs-attr">b</span>: <span class="hljs-built_in">number</span> | <span class="hljs-literal">undefined</span> } } = { <span class="hljs-attr">a</span>: { <span class="hljs-attr">b</span>: <span class="hljs-number">1</span> } };
 
 <span class="hljs-comment">// simple usage: pass object and property path</span>
-<span class="hljs-keyword">if</span> (isPathNotNil(x, <span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>)) {
+<span class="hljs-keyword">if</span> (isPathNotNil(x, <span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>)) {
   <span class="hljs-comment">// type of x is now { a: { b: number } }</span>
   x.a.b.toFixed(<span class="hljs-number">3</span>); <span class="hljs-comment">// safe to access a and b</span>
 }
 
 <span class="hljs-comment">// array usage: just pass the properties to check</span>
 [x]
-  .filter(isPathNotNil(<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>))
+  .filter(isPathNotNil(<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>))
   <span class="hljs-comment">// type is now [{ a: { b: number } }]</span>
   .map(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x.a.b.toFixed(<span class="hljs-number">3</span>)) <span class="hljs-comment">// safe to access a and b</span></code></pre>
 								<p>With a path of just one property it does the same as isPropertyNotNil.</p>
@@ -152,7 +152,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/f9b56cc/src/operators/skip-path-nil.ts#L87">src/operators/skip-path-nil.ts:87</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/skip-path-nil.ts#L87">src/operators/skip-path-nil.ts:87</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -184,7 +184,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/f9b56cc/src/operators/skip-path-nil.ts#L93">src/operators/skip-path-nil.ts:93</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/skip-path-nil.ts#L93">src/operators/skip-path-nil.ts:93</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -222,7 +222,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/f9b56cc/src/operators/skip-path-nil.ts#L100">src/operators/skip-path-nil.ts:100</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/skip-path-nil.ts#L100">src/operators/skip-path-nil.ts:100</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -266,7 +266,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/f9b56cc/src/operators/skip-path-nil.ts#L108">src/operators/skip-path-nil.ts:108</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/skip-path-nil.ts#L108">src/operators/skip-path-nil.ts:108</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -316,7 +316,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/f9b56cc/src/operators/skip-path-nil.ts#L121">src/operators/skip-path-nil.ts:121</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/skip-path-nil.ts#L121">src/operators/skip-path-nil.ts:121</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -357,7 +357,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/f9b56cc/src/operators/skip-path-nil.ts#L126">src/operators/skip-path-nil.ts:126</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/skip-path-nil.ts#L126">src/operators/skip-path-nil.ts:126</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -404,7 +404,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/f9b56cc/src/operators/skip-path-nil.ts#L132">src/operators/skip-path-nil.ts:132</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/skip-path-nil.ts#L132">src/operators/skip-path-nil.ts:132</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -457,7 +457,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/f9b56cc/src/operators/skip-path-nil.ts#L139">src/operators/skip-path-nil.ts:139</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/skip-path-nil.ts#L139">src/operators/skip-path-nil.ts:139</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -516,7 +516,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/f9b56cc/src/operators/skip-path-nil.ts#L147">src/operators/skip-path-nil.ts:147</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/skip-path-nil.ts#L147">src/operators/skip-path-nil.ts:147</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -594,7 +594,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/f9b56cc/src/operators/skip-path-nil.ts#L213">src/operators/skip-path-nil.ts:213</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/skip-path-nil.ts#L213">src/operators/skip-path-nil.ts:213</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -603,10 +603,10 @@
 									Narrows the type of each property in the path from <code>T | null | undefined</code> to <code>T</code>.</p>
 								</div>
 								<p>Example:</p>
-								<pre><code class="language-ts"><span class="hljs-keyword">const</span> x: Observable&lt;{ a: { b: <span class="hljs-built_in">number</span> | <span class="hljs-literal">null</span> | <span class="hljs-literal">undefined</span>} }&gt;;
+								<pre><code class="language-ts"><span class="hljs-keyword">const</span> x: Observable&lt;{ <span class="hljs-attr">a</span>: { <span class="hljs-attr">b</span>: <span class="hljs-built_in">number</span> | <span class="hljs-literal">null</span> | <span class="hljs-literal">undefined</span>} }&gt;;
 
-<span class="hljs-keyword">const</span> z: Observable&lt;{ a: { b: <span class="hljs-built_in">number</span> } }&gt; = x.pipe(
-  skipPathNil(<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>)
+<span class="hljs-keyword">const</span> z: Observable&lt;{ <span class="hljs-attr">a</span>: { <span class="hljs-attr">b</span>: <span class="hljs-built_in">number</span> } }&gt; = x.pipe(
+  skipPathNil(<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>)
 );</code></pre>
 								<p>value <code>{ a: { b: 1 } }</code> will pass through</p>
 								<p>value <code>{ a: null }</code> will be skipped</p>
@@ -652,7 +652,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/f9b56cc/src/operators/skip-path-nil.ts#L218">src/operators/skip-path-nil.ts:218</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/skip-path-nil.ts#L218">src/operators/skip-path-nil.ts:218</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -699,7 +699,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/f9b56cc/src/operators/skip-path-nil.ts#L224">src/operators/skip-path-nil.ts:224</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/skip-path-nil.ts#L224">src/operators/skip-path-nil.ts:224</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -752,7 +752,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/f9b56cc/src/operators/skip-path-nil.ts#L231">src/operators/skip-path-nil.ts:231</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/skip-path-nil.ts#L231">src/operators/skip-path-nil.ts:231</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -811,7 +811,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/f9b56cc/src/operators/skip-path-nil.ts#L239">src/operators/skip-path-nil.ts:239</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/skip-path-nil.ts#L239">src/operators/skip-path-nil.ts:239</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -922,6 +922,5 @@
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

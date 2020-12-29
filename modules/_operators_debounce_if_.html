@@ -89,7 +89,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/f9b56cc/src/operators/debounce-if.ts#L53">src/operators/debounce-if.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/debounce-if.ts#L53">src/operators/debounce-if.ts:53</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -101,21 +101,23 @@
 								<p>Example 1</p>
 								<p>debounceTimeInMs: don&#39;t matter in this example
 								predicate: <code>() =&gt; false</code></p>
-								<pre><code><span class="hljs-attr">source:</span> <span class="hljs-number">1</span><span class="hljs-number">-2</span><span class="hljs-number">-3</span><span class="hljs-string">|</span>
-<span class="hljs-attr">result:</span> <span class="hljs-number">1</span><span class="hljs-number">-2</span><span class="hljs-number">-3</span><span class="hljs-string">|</span></code></pre><hr>
+								<pre><code><span class="hljs-attribute">source</span>: <span class="hljs-number">1</span>-<span class="hljs-number">2</span>-<span class="hljs-number">3</span>|
+<span class="hljs-attribute">result</span>: <span class="hljs-number">1</span>-<span class="hljs-number">2</span>-<span class="hljs-number">3</span>|</code></pre>
+								<hr>
 								<p>Example 2</p>
 								<p>10ms equals 1 frame
 									debounceTimeInMs: <code>10</code>
 								predicate: <code>() =&gt; true</code></p>
-								<pre><code><span class="hljs-attr">source:</span> <span class="hljs-number">1</span><span class="hljs-number">-2</span><span class="hljs-number">-3</span><span class="hljs-string">|</span>
-<span class="hljs-attr">result:</span> <span class="hljs-number">-1</span><span class="hljs-number">-2</span><span class="hljs-number">-3</span><span class="hljs-string">|</span></code></pre><hr>
+								<pre><code><span class="hljs-attribute">source</span>: <span class="hljs-number">1</span>-<span class="hljs-number">2</span>-<span class="hljs-number">3</span>|
+<span class="hljs-attribute">result</span>: -<span class="hljs-number">1</span>-<span class="hljs-number">2</span>-<span class="hljs-number">3</span>|</code></pre>
+								<hr>
 								<p>Example 3
 								Debounce only on even values</p>
 								<p>10ms equals 1 frame
 									debounceTimeInMs: <code>10</code>
 								predicate: <code>(_, a) =&gt; a % 2 === 0</code></p>
-								<pre><code>source: <span class="hljs-number">1</span><span class="hljs-number">-2</span>-(<span class="hljs-number">3</span>|)
-result: <span class="hljs-number">1</span>-<span class="hljs-number">-2</span>(<span class="hljs-number">3</span>|)</code></pre>
+								<pre><code><span class="hljs-attribute">source</span>: <span class="hljs-number">1</span>-<span class="hljs-number">2</span>-(<span class="hljs-number">3</span>|)
+<span class="hljs-attribute">result</span>: <span class="hljs-number">1</span>--<span class="hljs-number">2</span>(<span class="hljs-number">3</span>|)</code></pre>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -213,6 +215,5 @@ result: <span class="hljs-number">1</span>-<span class="hljs-number">-2</span>(<
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

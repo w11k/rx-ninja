@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;operators/take-until-completion&quot; | @w11k/rx-ninja</title>
+	<title>&quot;operators/distinct-until-changed-deep&quot; | @w11k/rx-ninja</title>
 	<meta name="description" content="Documentation for @w11k/rx-ninja">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_operators_take_until_completion_.html">&quot;operators/take-until-completion&quot;</a>
+					<a href="_operators_distinct_until_changed_deep_.html">&quot;operators/distinct-until-changed-deep&quot;</a>
 				</li>
 			</ul>
-			<h1>Module &quot;operators/take-until-completion&quot;</h1>
+			<h1>Module &quot;operators/distinct-until-changed-deep&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -71,7 +71,8 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="_operators_take_until_completion_.html#takeuntilcompletion" class="tsd-kind-icon">take<wbr>Until<wbr>Completion</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_operators_distinct_until_changed_deep_.html#deepequal" class="tsd-kind-icon">deep<wbr>Equal</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_operators_distinct_until_changed_deep_.html#distinctuntilchangeddeep" class="tsd-kind-icon">distinct<wbr>Until<wbr>Changed<wbr>Deep</a></li>
 							</ul>
 						</section>
 					</div>
@@ -79,36 +80,69 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-					<a name="takeuntilcompletion" class="tsd-anchor"></a>
-					<h3>take<wbr>Until<wbr>Completion</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">take<wbr>Until<wbr>Completion&lt;T&gt;<span class="tsd-signature-symbol">(</span>notifier<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">operatorFunction</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="deepequal" class="tsd-anchor"></a>
+					<h3>deep<wbr>Equal</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">deep<wbr>Equal<span class="tsd-signature-symbol">(</span>obj1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, obj2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, maxDepth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, actualDepth<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/take-until-completion.ts#L11">src/operators/take-until-completion.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/distinct-until-changed-deep.ts#L24">src/operators/distinct-until-changed-deep.ts:24</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Behaves like rxjs&#39;s takeUntil operator but listens for completion of the notifier instead of next.</p>
+									<p>thanks to Daniil Andreyevich Baunov <a href="https://stackoverflow.com/a/45683145/6081477">https://stackoverflow.com/a/45683145/6081477</a></p>
 								</div>
-								<img src="../media/take-until-completion.svg" alt="marble">
 							</div>
-							<h4 class="tsd-type-parameters-title">Type parameters</h4>
-							<ul class="tsd-type-parameters">
-								<li>
-									<h4>T</h4>
-								</li>
-							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>notifier: <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>obj1: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>obj2: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>maxDepth: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> actualDepth: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="distinctuntilchangeddeep" class="tsd-anchor"></a>
+					<h3>distinct<wbr>Until<wbr>Changed<wbr>Deep</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">distinct<wbr>Until<wbr>Changed<wbr>Deep<span class="tsd-signature-symbol">(</span>maxDepth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">operatorFunction</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/e208cd8/src/operators/distinct-until-changed-deep.ts#L12">src/operators/distinct-until-changed-deep.ts:12</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Emit only new values if the value changes in a deep equal comparison.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>maxDepth: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
+										<p>of iteration to determine if datastructures are equal. When you intend to iterate over all
+										properties regardless of depth use INFINITY. A depth of 0 uses the same comparison as distinctUntilChanged.</p>
+										<img src="../media/distinct-until-changed-deep.svg" alt="marble">
 									</div>
 								</li>
 							</ul>
@@ -125,14 +159,17 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="_operators_take_until_completion_.html">&quot;operators/take-<wbr>until-<wbr>completion&quot;</a>
+						<a href="_operators_distinct_until_changed_deep_.html">&quot;operators/distinct-<wbr>until-<wbr>changed-<wbr>deep&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="_operators_take_until_completion_.html#takeuntilcompletion" class="tsd-kind-icon">take<wbr>Until<wbr>Completion</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_operators_distinct_until_changed_deep_.html#deepequal" class="tsd-kind-icon">deep<wbr>Equal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_operators_distinct_until_changed_deep_.html#distinctuntilchangeddeep" class="tsd-kind-icon">distinct<wbr>Until<wbr>Changed<wbr>Deep</a>
 					</li>
 				</ul>
 			</nav>
