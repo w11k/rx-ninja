@@ -14,6 +14,7 @@ Please see [API documentation](https://w11k.github.io/rx-ninja/index.html)
 
 * [combineLatestToMap](https://w11k.github.io/rx-ninja/modules/_operators_combine_latest_to_map_.html)
 * [debounceIf](https://w11k.github.io/rx-ninja/modules/_operators_debounce_if_.html)
+* [distinctUntilChangedDeep](https://w11k.github.io/rx-ninja/modules/_operators_distinct_until_changed_deep_.html)
 * [executeLatestOnIdle](https://w11k.github.io/rx-ninja/modules/_operators_execute_latest_on_idle_.html)
 * [mapToValueAndChangedProperties](https://w11k.github.io/rx-ninja/modules/_operators_map_to_value_and_changed_properties_.html)
 * [onCompletionContinueWith](https://w11k.github.io/rx-ninja/modules/_operators_on_completion_continue_with_.html)
