@@ -1,5 +1,12 @@
 # rx-ninja Changelog
 
+## 4.2.0
+
+* update to typescript 3.9
+* fix imports from rxjs/internal
+* add operator ```destinctUntilChangedDeep```
+* add marble diagrams to documentation
+
 ## 4.1.0
 
 * ```onUnsubscribe``` operator added
