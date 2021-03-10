@@ -1,6 +1,6 @@
-import { NonNil } from "../utils/types";
-import { Observable } from "rxjs";
-import { filter } from "rxjs/operators";
+import {Observable} from "rxjs";
+import {filter} from "rxjs/operators";
+import {NonUndefined} from "../utils/types";
 
 /**
  * Returns a type guard function, which receives an object and checks if the given property is not undefined.
@@ -15,7 +15,7 @@ import { filter } from "rxjs/operators";
  * @param property name of the property to check
  */
 export function isPropertyNotUndefined<T, P extends keyof T>(property: P) {
-  return (obj: T): obj is { [X in keyof T]: X extends P ? NonNil<T[X]> : T[X] } => {
+  return (obj: T): obj is { [X in keyof T]: X extends P ? NonUndefined<T[X]> : T[X] } => {
     const value = obj[property];
 
     return value !== undefined;
