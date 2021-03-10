@@ -71,7 +71,7 @@
     "prepublishOnly": "run-s test build doc",
     "postpublish-git-tag": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags",
     "postpublish-doc": "npm run doc:deploy && git push",
-    "postpublish": "run-s postpublish-git-tag postpublish-doc",
+    "postpublish": "run-s postpublish-doc",
     "test": "mocha --opts spec/mocha.opts src/**/*test.ts",
     "test_tslint_prepare": "run-s clean compile:base",
     "test_tslint_subscribe_takeuntil": "tslint -p tsconfig.json -t verbose -c src/tslint_rules/examples/subscribe-takeuntil/rule.json src/tslint_rules/examples/subscribe-takeuntil/*.ts",
