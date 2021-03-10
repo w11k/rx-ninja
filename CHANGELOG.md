@@ -1,5 +1,10 @@
 # rx-ninja Changelog
 
+## 4.2.2
+
+* support for TypeScript 4
+
+
 ## 4.2.1
 
 * fix publishing with broken folder structure
