@@ -78,10 +78,12 @@
     "test_tslint_subscribe_takeuntil_config": "tslint -p tsconfig.json -t verbose -c src/tslint_rules/examples/subscribe-takeuntil-config/rule.json src/tslint_rules/examples/subscribe-takeuntil-config/*.ts",
     "test_tslint_subscribe_in_subscribe": "tslint -p tsconfig.json -t verbose -c src/tslint_rules/examples/subscribe-in-subscribe/rule.json src/tslint_rules/examples/subscribe-in-subscribe/*.ts",
     "test_tslint": "run-s test_tslint_prepare test_tslint_subscribe_takeuntil  test_tslint_subscribe_takeuntil_config test_tslint_subscribe_in_subscribe",
-    "doc": "npm run doc:generate && touch doc/.nojekyll && git add doc/** && git commit -m 'generated documentation'",
-    "doc:generate": "run-s doc:marbles doc:typedoc",
-    "doc:typedoc": "typedoc --options ./typedoc.js src",
+    "doc": "run-s doc:marbles doc:typedoc doc:touchNoJekyll doc:git_add_doc doc:git_commit",
     "doc:marbles": "mkdirp ./tmp/swirly/svgs && ts-node -P ./tools/marbles/tsconfig.marbles.json ./tools/marbles/scripts/index.ts",
+    "doc:typedoc": "typedoc --options ./typedoc.js src",
+    "doc:touchNoJekyll": "touch doc/.nojekyll",
+    "doc:git_add_doc": "git add doc/**",
+    "doc:git_commit": "git commit -m \"generated documentation\"",
     "doc:deploy": "gh-pages -t --dotfiles -d doc",
     "bump": "bump --commit \"bump version to v\" --no-verify package.json package-lock.json"
   }
