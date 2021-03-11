@@ -1,4 +1,3 @@
-
 [![Build Status](https://travis-ci.org/w11k/rx-ninja.svg?branch=master)](https://travis-ci.org/w11k/rx-ninja)
 [![npm version](https://badge.fury.io/js/%40w11k%2Frx-ninja.svg)](https://badge.fury.io/js/%40w11k%2Frx-ninja)
 
@@ -34,12 +33,12 @@ Please see [API documentation](https://w11k.github.io/rx-ninja/index.html)
 * [skipUntilCompletionAndContinueWith](https://w11k.github.io/rx-ninja/modules/_operators_skip_until_completion_and_continue_with_.html)
 * [takeUntilCompletion](https://w11k.github.io/rx-ninja/modules/_operators_take_until_completion_.html)
 
-Please use the API documentation for an always up-to-date list of all included operators.
-The API documentation also contains detailed descriptions, examples and marble diagrams. 
+Please use the API documentation for an always up-to-date list of all included operators. The API documentation also contains detailed descriptions, examples
+and marble diagrams.
 
 ## TSLint rules
 
-### Installation 
+### Installation
 
 **Adjust your tslint.json**
 
@@ -65,12 +64,12 @@ tslint -p tsconfig.json -t verbose
 
 **rx-ninja-subscribe-takeuntil**
 
-This rule triggers when `Observable#subscribe()` is called and then enforces that 
+This rule triggers when `Observable#subscribe()` is called and then enforces that
 
 - `.pipe()` is called directly before `.subscribe()`
 - and that either `takeUntil()` or one of a specified finalizer operators is called as the last pipe operator
 
-The rule can be limited to files with the specified suffix (`fileSuffix`). Angular users might set this to `.component.ts`.
+You can filter the files where this rules applies with `fileSuffix` and `excludedFileSuffix`.
 
 *Configuration:*
 
@@ -84,16 +83,19 @@ The rule can be limited to files with the specified suffix (`fileSuffix`). Angul
             "anotherOperator"
         ],
         "fileSuffix": [
-            "-relevant.ts"
+            ".ts"
+        ],
+        "excludedFileSuffix": [
+          ".spec.ts",
+          ".test.ts"
         ]
     }
 ]
 ```
 
-
 **rx-ninja-subscribe-in-subscribe**
 
-This rule triggers if `Observable#subscribe()` is called inside of another `Observable#subscribe()` call, e.g.
+This rule triggers when `Observable#subscribe()` is called inside another `Observable#subscribe()` call, e.g.
 
 ```typescript
 import {of} from "rxjs";
@@ -115,4 +117,5 @@ of(1).subscribe(() => {
 ❤️ [theCodeCampus - Trainings for Angular and TypeScript](https://www.thecodecampus.de/)
 
 ## Thanks
+
 * Diagram generation from [RxJS](https://rxjs-dev.firebaseapp.com/)
