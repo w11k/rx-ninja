@@ -1,5 +1,10 @@
 # rx-ninja Changelog
 
+## 4.3.0
+
+- Allows to exclude file from lint rule rx-ninja-subscribe-takeuntil. Closes #8.
+
+
 ## 4.2.2
 
 * support for TypeScript 4

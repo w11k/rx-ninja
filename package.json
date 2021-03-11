@@ -63,6 +63,7 @@
     "typescript": "^3 || ^4"
   },
   "scripts": {
+    "np": "np",
     "clean": "del-cli dist",
     "compile": "run-p compile:*",
     "compile:base": "tsc -p tsconfig.json",
