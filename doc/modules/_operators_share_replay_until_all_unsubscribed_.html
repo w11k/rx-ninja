@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;operators/skip-undefined&quot; | @w11k/rx-ninja</title>
+	<title>&quot;operators/share-replay-until-all-unsubscribed&quot; | @w11k/rx-ninja</title>
 	<meta name="description" content="Documentation for @w11k/rx-ninja">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_operators_skip_undefined_.html">&quot;operators/skip-undefined&quot;</a>
+					<a href="_operators_share_replay_until_all_unsubscribed_.html">&quot;operators/share-replay-until-all-unsubscribed&quot;</a>
 				</li>
 			</ul>
-			<h1>Module &quot;operators/skip-undefined&quot;</h1>
+			<h1>Module &quot;operators/share-replay-until-all-unsubscribed&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -71,8 +71,7 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="_operators_skip_undefined_.html#isnotundefined" class="tsd-kind-icon">is<wbr>Not<wbr>Undefined</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="_operators_skip_undefined_.html#skipundefined" class="tsd-kind-icon">skip<wbr>Undefined</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="_operators_share_replay_until_all_unsubscribed_.html#sharereplayuntilallunsubscribed" class="tsd-kind-icon">share<wbr>Replay<wbr>Until<wbr>All<wbr>Unsubscribed</a></li>
 							</ul>
 						</section>
 					</div>
@@ -81,23 +80,27 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-					<a name="isnotundefined" class="tsd-anchor"></a>
-					<h3>is<wbr>Not<wbr>Undefined</h3>
+					<a name="sharereplayuntilallunsubscribed" class="tsd-anchor"></a>
+					<h3>share<wbr>Replay<wbr>Until<wbr>All<wbr>Unsubscribed</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Not<wbr>Undefined&lt;T&gt;<span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">x</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">T</span></li>
+						<li class="tsd-signature tsd-kind-icon">share<wbr>Replay<wbr>Until<wbr>All<wbr>Unsubscribed&lt;T&gt;<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">OperatorFunction</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/0fcd4bf/src/operators/skip-undefined.ts#L10">src/operators/skip-undefined.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/0fcd4bf/src/operators/share-replay-until-all-unsubscribed.ts#L15">src/operators/share-replay-until-all-unsubscribed.ts:15</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Type guard checking a value is not undefined.
-									Narrows the type from T | undefined to just T.</p>
+									<p>Similar to shareReplay(1) but unsubscribes from the source observable as soon as there are no subscribers.</p>
 								</div>
+								<p>Will resubscribe to the source as soon as a new subscriber subscribes.</p>
+								<p>Replays values as long as there are other subscribers. But does not replay potentially outdated values
+								(subscriber count going from 0 to 1).</p>
+								<p>Always replays error and complete signals.</p>
+								<p>Use cases: building a time based cache that should be updated as long as there is somebody interested in updates.</p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -105,46 +108,7 @@
 									<h4>T</h4>
 								</li>
 							</ul>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>x: <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>value to check</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">x</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">T</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-					<a name="skipundefined" class="tsd-anchor"></a>
-					<h3>skip<wbr>Undefined</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">skip<wbr>Undefined&lt;T&gt;<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">operatorFunction</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/0fcd4bf/src/operators/skip-undefined.ts#L20">src/operators/skip-undefined.ts:20</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Filters undefined values.
-									Narrows the type from Observable&lt;T | undefined&gt; to just Observable<T>.</p>
-								</div>
-								<img src="../media/skip-undefined.svg" alt="marble">
-							</div>
-							<h4 class="tsd-type-parameters-title">Type parameters</h4>
-							<ul class="tsd-type-parameters">
-								<li>
-									<h4>T</h4>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">operatorFunction</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">OperatorFunction</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -157,17 +121,14 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="_operators_skip_undefined_.html">&quot;operators/skip-<wbr>undefined&quot;</a>
+						<a href="_operators_share_replay_until_all_unsubscribed_.html">&quot;operators/share-<wbr>replay-<wbr>until-<wbr>all-<wbr>unsubscribed&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="_operators_skip_undefined_.html#isnotundefined" class="tsd-kind-icon">is<wbr>Not<wbr>Undefined</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="_operators_skip_undefined_.html#skipundefined" class="tsd-kind-icon">skip<wbr>Undefined</a>
+						<a href="_operators_share_replay_until_all_unsubscribed_.html#sharereplayuntilallunsubscribed" class="tsd-kind-icon">share<wbr>Replay<wbr>Until<wbr>All<wbr>Unsubscribed</a>
 					</li>
 				</ul>
 			</nav>
