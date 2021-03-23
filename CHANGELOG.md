@@ -1,8 +1,16 @@
 # rx-ninja Changelog
 
+## 4.4.1
+
+* fix shareReplayUntilAllUnsubscribed not exposed in index.ts
+
+## 4.4.0
+
+* add shareReplayUntilAllUnsubscribed operator
+
 ## 4.3.0
 
-- Allows to exclude file from lint rule rx-ninja-subscribe-takeuntil. Closes #8.
+* Allows to exclude file from lint rule rx-ninja-subscribe-takeuntil. Closes #8.
 
 
 ## 4.2.2
