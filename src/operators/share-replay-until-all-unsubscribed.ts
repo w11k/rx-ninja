@@ -59,6 +59,7 @@ export function shareReplayUntilAllUnsubscribed<T>(): OperatorFunction<T, T> {
 
         if (refCount < 1) {
           pullSubscription?.unsubscribe();
+          pullSubscription = undefined;
           replayLatestValue = false;
           replayLatestError = false;
         }

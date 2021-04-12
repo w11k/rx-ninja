@@ -210,4 +210,24 @@ describe("shareReplayUntilAllUnsubscribed", () => {
 
     expect(noop2.callCount).eq(0);
   });
+
+  it("should resubscribe to source on first resubscribe", () => {
+    const onSubscriberMock = spy();
+
+    const source = new Observable<number>(onSubscriberMock);
+
+    const sourcePiped = source.pipe(
+        shareReplayUntilAllUnsubscribed()
+    );
+
+    // first subscriber
+    sourcePiped.subscribe(x => {}).unsubscribe();
+
+    // first resubscriber
+    sourcePiped.subscribe(x => {});
+    // second subscriber after resubscribe
+    sourcePiped.subscribe(x => {});
+
+    expect(onSubscriberMock.callCount).eq(2);
+  });
 });
