@@ -7,6 +7,7 @@
 	<meta name="description" content="Documentation for @w11k/rx-ninja">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -51,13 +52,10 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="../globals.html">Globals</a>
+					<a href="../modules.html">@w11k/rx-ninja</a>
 				</li>
 				<li>
-					<a href="../modules/_utils_async_prioritized_queue_.html">&quot;utils/async-prioritized-queue&quot;</a>
-				</li>
-				<li>
-					<a href="_utils_async_prioritized_queue_.asyncprioritizedqueue.html">AsyncPrioritizedQueue</a>
+					<a href="asyncprioritizedqueue.html">AsyncPrioritizedQueue</a>
 				</li>
 			</ul>
 			<h1>Class AsyncPrioritizedQueue</h1>
@@ -100,18 +98,41 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="asyncprioritizedqueue.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_utils_async_prioritized_queue_.asyncprioritizedqueue.html#unhandlederrors" class="tsd-kind-icon">unhandled<wbr>Errors</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="asyncprioritizedqueue.html#unhandlederrors" class="tsd-kind-icon">unhandled<wbr>Errors</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="_utils_async_prioritized_queue_.asyncprioritizedqueue.html#add" class="tsd-kind-icon">add</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="asyncprioritizedqueue.html#add" class="tsd-kind-icon">add</a></li>
 							</ul>
 						</section>
 					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Async<wbr>Prioritized<wbr>Queue<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="asyncprioritizedqueue.html" class="tsd-signature-type" data-tsd-kind="Class">AsyncPrioritizedQueue</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="asyncprioritizedqueue.html" class="tsd-signature-type" data-tsd-kind="Class">AsyncPrioritizedQueue</a></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -120,16 +141,16 @@
 					<a name="unhandlederrors" class="tsd-anchor"></a>
 					<h3>unhandled<wbr>Errors</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> unhandledErrors<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>worker<span class="tsd-signature-symbol">: </span><a href="../modules/_utils_async_prioritized_queue_.html#worker" class="tsd-signature-type">Worker</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> unhandledErrors<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>worker<span class="tsd-signature-symbol">: </span><a href="../modules.html#worker" class="tsd-signature-type" data-tsd-kind="Type alias">Worker</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/5c442f5/src/utils/async-prioritized-queue.ts#L34">src/utils/async-prioritized-queue.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/a84df1f/src/utils/async-prioritized-queue.ts#L34">utils/async-prioritized-queue.ts:34</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>worker<span class="tsd-signature-symbol">: </span><a href="../modules/_utils_async_prioritized_queue_.html#worker" class="tsd-signature-type">Worker</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>worker<span class="tsd-signature-symbol">: </span><a href="../modules.html#worker" class="tsd-signature-type" data-tsd-kind="Type alias">Worker</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -140,13 +161,13 @@
 					<a name="add" class="tsd-anchor"></a>
 					<h3>add</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">add&lt;T&gt;<span class="tsd-signature-symbol">(</span>worker<span class="tsd-signature-symbol">: </span><a href="../modules/_utils_async_prioritized_queue_.html#worker" class="tsd-signature-type">Worker</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, priority<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">add&lt;T&gt;<span class="tsd-signature-symbol">(</span>worker<span class="tsd-signature-symbol">: </span><a href="../modules.html#worker" class="tsd-signature-type" data-tsd-kind="Type alias">Worker</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, priority<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/5c442f5/src/utils/async-prioritized-queue.ts#L49">src/utils/async-prioritized-queue.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/w11k/rx-ninja/blob/a84df1f/src/utils/async-prioritized-queue.ts#L49">utils/async-prioritized-queue.ts:49</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -167,7 +188,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>worker: <a href="../modules/_utils_async_prioritized_queue_.html#worker" class="tsd-signature-type">Worker</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>worker: <a href="../modules.html#worker" class="tsd-signature-type" data-tsd-kind="Type alias">Worker</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
 									<h5>priority: <span class="tsd-signature-type">number</span></h5>
@@ -184,11 +205,8 @@
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
-						<a href="../globals.html"><em>Globals</em></a>
-					</li>
-					<li class="current tsd-kind-module">
-						<a href="../modules/_utils_async_prioritized_queue_.html">&quot;utils/async-<wbr>prioritized-<wbr>queue&quot;</a>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
 					</li>
 				</ul>
 			</nav>
@@ -196,22 +214,22 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class tsd-parent-kind-module">
-						<a href="_utils_async_prioritized_queue_.asyncprioritizedqueue.html" class="tsd-kind-icon">Async<wbr>Prioritized<wbr>Queue</a>
+					<li class="current tsd-kind-class">
+						<a href="asyncprioritizedqueue.html" class="tsd-kind-icon">Async<wbr>Prioritized<wbr>Queue</a>
 						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="asyncprioritizedqueue.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
-								<a href="_utils_async_prioritized_queue_.asyncprioritizedqueue.html#unhandlederrors" class="tsd-kind-icon">unhandled<wbr>Errors</a>
+								<a href="asyncprioritizedqueue.html#unhandlederrors" class="tsd-kind-icon">unhandled<wbr>Errors</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
-								<a href="_utils_async_prioritized_queue_.asyncprioritizedqueue.html#add" class="tsd-kind-icon">add</a>
+								<a href="asyncprioritizedqueue.html#add" class="tsd-kind-icon">add</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../modules/_utils_async_prioritized_queue_.html#worker" class="tsd-kind-icon">Worker</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
@@ -222,13 +240,8 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 		</div>
 	</div>

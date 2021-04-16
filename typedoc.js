@@ -1,5 +1,5 @@
 module.exports = {
-    excludeNotExported: true,
+    entryPoints: ['./src/index.ts'],
     excludePrivate: true,
     media: "./tmp/swirly/svgs",
     out: "doc",

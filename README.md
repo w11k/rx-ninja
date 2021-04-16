@@ -11,28 +11,29 @@ Please see [API documentation](https://w11k.github.io/rx-ninja/index.html)
 
 ## Operators
 
-* [combineLatestToMap](https://w11k.github.io/rx-ninja/modules/_operators_combine_latest_to_map_.html)
-* [debounceIf](https://w11k.github.io/rx-ninja/modules/_operators_debounce_if_.html)
-* [distinctUntilChangedDeep](https://w11k.github.io/rx-ninja/modules/_operators_distinct_until_changed_deep_.html)
-* [executeLatestOnIdle](https://w11k.github.io/rx-ninja/modules/_operators_execute_latest_on_idle_.html)
-* [mapToValueAndChangedProperties](https://w11k.github.io/rx-ninja/modules/_operators_map_to_value_and_changed_properties_.html)
-* [onCompletionContinueWith](https://w11k.github.io/rx-ninja/modules/_operators_on_completion_continue_with_.html)
-* [onlyInstanceOf](https://w11k.github.io/rx-ninja/modules/_operators_only_instance_of_.html)
-* [onUnsubscribe](https://w11k.github.io/rx-ninja/modules/_operators_on_unsubscribe_.html)
-* [replayOn](https://w11k.github.io/rx-ninja/modules/_operators_replay_on_.html)
-* [shareReplayUntilAllUnsubscribed](https://w11k.github.io/rx-ninja/modules/_operators_share_replay_until_all_unsubscribed_.html)
-* [skipNil](https://w11k.github.io/rx-ninja/modules/_operators_skip_nil_.html)
-* [skipNull](https://w11k.github.io/rx-ninja/modules/_operators_skip_null_.html)
-* [skipPathNil](https://w11k.github.io/rx-ninja/modules/_operators_skip_path_nil_.html)
-* [skipPropertyNil](https://w11k.github.io/rx-ninja/modules/_operators_skip_property_nil_.html)
-* [skipPropertyNull](https://w11k.github.io/rx-ninja/modules/_operators_skip_property_null_.html)
-* [skipPropertyUndefined](https://w11k.github.io/rx-ninja/modules/_operators_skip_property_undefined_.html)
-* [skipSomePropertyNil](https://w11k.github.io/rx-ninja/modules/_operators_skip_some_property_nil_.html)
-* [skipSomePropertyNull](https://w11k.github.io/rx-ninja/modules/_operators_skip_some_property_null_.html)
-* [skipSomePropertyUndefined](https://w11k.github.io/rx-ninja/modules/_operators_skip_some_property_undefined_.html)
-* [skipUndefined](https://w11k.github.io/rx-ninja/modules/_operators_skip_undefined_.html)
-* [skipUntilCompletionAndContinueWith](https://w11k.github.io/rx-ninja/modules/_operators_skip_until_completion_and_continue_with_.html)
-* [takeUntilCompletion](https://w11k.github.io/rx-ninja/modules/_operators_take_until_completion_.html)
+* [combineLatestToMap](https://w11k.github.io/rx-ninja/modules.html#combinelatesttomap)
+* [debounceIf](https://w11k.github.io/rx-ninja/modules.html#debounceif.html)
+* [distinctUntilChangedDeep](https://w11k.github.io/rx-ninja/modules.html#distinctuntilchangeddeep.html)
+* [executeLatestOnIdle](https://w11k.github.io/rx-ninja/modules.html#executelatestonidle.html)
+* [mapToValueAndChangedProperties](https://w11k.github.io/rx-ninja/modules.html#maptovalueandchangedproperties.html)
+* [onCompletionContinueWith](https://w11k.github.io/rx-ninja/modules.html#oncompletioncontinuewith.html)
+* [onlyInstanceOf](https://w11k.github.io/rx-ninja/modules.html#onlyinstanceof.html)
+* [onUnsubscribe](https://w11k.github.io/rx-ninja/modules.html#onunsubscribe.html)
+* [replayOn](https://w11k.github.io/rx-ninja/modules.html#replayon.html)
+* [rateLimitLossless + rateLimitLossy](https://w11k.github.io/rx-ninja/modules.html#ratelimit.html)
+* [shareReplayUntilAllUnsubscribed](https://w11k.github.io/rx-ninja/modules.html#sharereplayuntilallunsubscribed.html)
+* [skipNil](https://w11k.github.io/rx-ninja/modules.html#skipnil.html)
+* [skipNull](https://w11k.github.io/rx-ninja/modules.html#skipnull.html)
+* [skipPathNil](https://w11k.github.io/rx-ninja/modules.html#skippathnil.html)
+* [skipPropertyNil](https://w11k.github.io/rx-ninja/modules.html#skippropertynil.html)
+* [skipPropertyNull](https://w11k.github.io/rx-ninja/modules.html#skippropertynull.html)
+* [skipPropertyUndefined](https://w11k.github.io/rx-ninja/modules.html#skippropertyundefined.html)
+* [skipSomePropertyNil](https://w11k.github.io/rx-ninja/modules.html#skipsomepropertynil.html)
+* [skipSomePropertyNull](https://w11k.github.io/rx-ninja/modules.html#skipsomepropertynull.html)
+* [skipSomePropertyUndefined](https://w11k.github.io/rx-ninja/modules.html#skipsomepropertyundefined.html)
+* [skipUndefined](https://w11k.github.io/rx-ninja/modules.html#skipundefined.html)
+* [skipUntilCompletionAndContinueWith](https://w11k.github.io/rx-ninja/modules.html#skipuntilcompletionandcontinuewith.html)
+* [takeUntilCompletion](https://w11k.github.io/rx-ninja/modules.html#takeuntilcompletion.html)
 
 Please use the API documentation for an always up-to-date list of all included operators. The API documentation also contains detailed descriptions, examples
 and marble diagrams.
@@ -108,8 +109,8 @@ of(1).subscribe(() => {
 
 ## Utilities
 
-* [AsyncPrioritizedQueue](https://w11k.github.io/rx-ninja/modules/_utils_async_prioritized_queue_.html)
-* [entries](https://w11k.github.io/rx-ninja/modules/_utils_functions_.html#entries)
+* [AsyncPrioritizedQueue](https://w11k.github.io/rx-ninja/classes/asyncprioritizedqueue.html)
+* [entries](https://w11k.github.io/rx-ninja/modules.html#entries)
 
 ## Patrons
 

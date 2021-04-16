@@ -1,5 +1,5 @@
 import {marbles} from "rxjs-marbles/mocha";
-import {rateLimitLossless, rateLimitLossy} from "./rate-limit.operator";
+import {rateLimitLossless, rateLimitLossy} from "./rate-limit";
 
 describe("rate limit operator", () => {
   describe("rateLimitLossless", () => {
