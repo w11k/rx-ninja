@@ -31,7 +31,7 @@ export function deepEqual(a: any, b: any, maxDepth: number, actualDepth: number 
     }
 
     if (actualDepth === maxDepth) {
-        return true;
+        return false;
     }
 
     if (Object.keys(a).length !== Object.keys(b).length) {
