@@ -21,30 +21,28 @@ export function distinctUntilChangedDeep(maxDepth: number) {
 }
 
 /** thanks to Daniil Andreyevich Baunov https://stackoverflow.com/a/45683145/6081477 */
-export function deepEqual(obj1: any, obj2: any, maxDepth: number, actualDepth: number = 0) {
-
-    if (obj1 === obj2) {
+export function deepEqual(a: any, b: any, maxDepth: number, actualDepth: number = 0) {
+    if (a === b) {
         return true;
     }
 
-    if (isPrimitive(obj1) && isPrimitive(obj2)) {
-        return obj1 === obj2;
+    if (isPrimitive(a) && isPrimitive(b)) {
+        return a === b;
     }
 
-    // TODO bail here or check keys.length first?
     if (actualDepth === maxDepth) {
         return true;
     }
 
-    if (Object.keys(obj1).length !== Object.keys(obj2).length) {
+    if (Object.keys(a).length !== Object.keys(b).length) {
         return false;
     }
 
-    for (let key in obj1) {
-        if (!(key in obj2)) {
+    for (let key in a) {
+        if (!(key in b)) {
             return false;
         }
-        if (!deepEqual(obj1[key], obj2[key], maxDepth, actualDepth + 1)) {
+        if (!deepEqual(a[key], b[key], maxDepth, actualDepth + 1)) {
             return false;
         }
     }

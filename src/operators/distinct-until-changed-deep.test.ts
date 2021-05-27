@@ -19,8 +19,8 @@ describe("distinctUntilChangedDeep", () => {
 
         const b = { baz: {}, foo: "bar" };
         // @formatter:off
-        const source   = m.cold("a-b-a|", {a, b});
-        const expected = m.cold("a----|", {a});
+        const source   = m.cold("a-b|", {a, b});
+        const expected = m.cold("a--|", {a});
         // @formatter:on
 
         const destination = source.pipe(distinctUntilChangedDeep(1));
@@ -32,6 +32,7 @@ describe("distinctUntilChangedDeep", () => {
         const mustThrow = () => source.pipe(distinctUntilChangedDeep(-1));
         expect(mustThrow).to.throw();
     }));
+
     it("should return true for an array with objects and primitive leaves", () => {
         const a = [{ foo: "bar" }, { bar: 1 }, { baz: true }];
         const b = [{ foo: "bar" }, { bar: 1 }, { baz: true }];
