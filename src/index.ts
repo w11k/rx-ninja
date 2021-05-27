@@ -1,5 +1,6 @@
 export * from "./operators/combine-latest-to-map";
 export * from "./operators/debounce-if";
+export * from "./operators/distinct-until-changed-deep";
 export * from "./operators/execute-latest-on-idle";
 export * from "./operators/only-instance-of";
 export * from "./operators/map-to-value-and-changed-properties";
