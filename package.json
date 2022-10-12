@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@swirly/parser": "^0.15.2",
-    "@swirly/renderer-node": "^0.15.2",
+    "@swirly/renderer-node": "^0.21.0",
     "@swirly/types": "^0.15.2",
     "@types/chai": "^4.2.7",
     "@types/lodash": "^4.14.166",
