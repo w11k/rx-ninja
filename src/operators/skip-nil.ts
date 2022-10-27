@@ -5,20 +5,20 @@ import { filter } from "rxjs/operators";
  * Type guard checking a value is neither null nor undefined.
  * Narrows the type from T | null | undefined to just T.
  *
- * @param x value to check
+ * @param val value to check
  */
-export function isNotNil<T>(x: T | null | undefined): x is T {
-  return x !== null && x !== undefined;
+export function isNotNil<T>(val: T | null | undefined): val is T {
+  return val !== null && val !== undefined;
 }
 
 /**
  * Type guard checking a value is null or undefined.
  * Narrows the type from T | null | undefined to null | undefined.
  *
- * @param x value to check
+ * @param val value to check
  */
-export function isNil<T>(x: T | null | undefined): x is null | undefined {
-  return x === null || x === undefined;
+export function isNil<T>(val: T | null | undefined): val is null | undefined {
+  return val === null || val === undefined;
 }
 
 /**

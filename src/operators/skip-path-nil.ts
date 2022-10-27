@@ -213,20 +213,20 @@ function checkPath<O>(obj: O, path: string[]) {
 export function skipPathNil<O extends object,
     P1 extends keyof O>(
     p1: P1
-): (x: Observable<O>) => Observable<PathNotNil_1<O, P1>>;
+): (obs: Observable<O>) => Observable<PathNotNil_1<O, P1>>;
 
 export function skipPathNil<O extends object,
     P1 extends keyof O,
     P2 extends keyof NonNil<O[P1]>>(
     p1: P1, p2: P2
-): (x: Observable<O>) => Observable<PathNotNil_2<O, P1, P2>>;
+): (obs: Observable<O>) => Observable<PathNotNil_2<O, P1, P2>>;
 
 export function skipPathNil<O extends object,
     P1 extends keyof O,
     P2 extends keyof NonNil<O[P1]>,
     P3 extends keyof NonNil<NonNil<O[P1]>[P2]>>(
     p1: P1, p2: P2, p3: P3
-): (x: Observable<O>) => Observable<PathNotNil_3<O, P1, P2, P3>>;
+): (obs: Observable<O>) => Observable<PathNotNil_3<O, P1, P2, P3>>;
 
 export function skipPathNil<O extends object,
     P1 extends keyof O,
@@ -234,7 +234,7 @@ export function skipPathNil<O extends object,
     P3 extends keyof NonNil<NonNil<O[P1]>[P2]>,
     P4 extends keyof NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>>(
     p1: P1, p2: P2, p3: P3, p4: P4
-): (x: Observable<O>) => Observable<PathNotNil_4<O, P1, P2, P3, P4>>;
+): (obs: Observable<O>) => Observable<PathNotNil_4<O, P1, P2, P3, P4>>;
 
 export function skipPathNil<O extends object,
     P1 extends keyof O,
@@ -243,7 +243,7 @@ export function skipPathNil<O extends object,
     P4 extends keyof NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>,
     P5 extends keyof NonNil<NonNil<NonNil<NonNil<O[P1]>[P2]>[P3]>[P4]>>(
     p1: P1, p2: P2, p3: P3, p4: P4, p5: P5
-): (x: Observable<O>) => Observable<PathNotNil_5<O, P1, P2, P3, P4, P5>>;
+): (obs: Observable<O>) => Observable<PathNotNil_5<O, P1, P2, P3, P4, P5>>;
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Observable operator implementation

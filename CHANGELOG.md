@@ -1,5 +1,9 @@
 # rx-ninja Changelog
 
+## 4.5.3
+
+* renamed all function parameters with name 'x' to e.g. 'val' to avoid IntelliJ's smart error messages like "'height' should probably not be passed as parameter 'x'"
+
 ## 4.4.1
 
 * fix shareReplayUntilAllUnsubscribed not exposed in index.ts

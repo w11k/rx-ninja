@@ -5,10 +5,10 @@ import { filter } from "rxjs/operators";
  * Type guard checking a value is not undefined.
  * Narrows the type from T | undefined to just T.
  *
- * @param x value to check
+ * @param val value to check
  */
-export function isNotUndefined<T>(x: T | undefined): x is T {
-  return x !== undefined;
+export function isNotUndefined<T>(val: T | undefined): val is T {
+  return val !== undefined;
 }
 
 /**

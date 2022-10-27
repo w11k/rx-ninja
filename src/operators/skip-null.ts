@@ -5,10 +5,10 @@ import { filter } from "rxjs/operators";
  * Type guard checking a value is not null.
  * Narrows the type from T | null to just T.
  *
- * @param x value to check
+ * @param val value to check
  */
-export function isNotNull<T>(x: T | null): x is T {
-  return x !== null;
+export function isNotNull<T>(val: T | null): val is T {
+  return val !== null;
 }
 
 /**

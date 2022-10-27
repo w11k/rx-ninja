@@ -72,16 +72,16 @@ class ExecuteLatestOnIdleOperator<T, R> implements Operator<T, ExecuteLatestOnId
     let latestEvent: T;
     let shouldComplete = false;
 
-    const onMergedNext = async (x: T) => {
+    const onMergedNext = async (val: T) => {
       if (this.idle.value) {
         this.idle.next(false);
-        subscriber.next(new StartedEvent(x));
+        subscriber.next(new StartedEvent(val));
 
         try {
-          const result =  await this.fun(x);
-          subscriber.next(new FinishedEvent(x, result));
+          const result =  await this.fun(val);
+          subscriber.next(new FinishedEvent(val, result));
         } catch (e) {
-          subscriber.next(new ErrorEvent(x, e));
+          subscriber.next(new ErrorEvent(val, e));
         } finally {
           this.idle.next(true);
         }
@@ -99,7 +99,7 @@ class ExecuteLatestOnIdleOperator<T, R> implements Operator<T, ExecuteLatestOnId
         if (hasLatestEvent) {
           subscriber.next(new SkippedEvent(latestEvent));
         }
-        latestEvent = x;
+        latestEvent = val;
         hasLatestEvent = true;
       }
     };

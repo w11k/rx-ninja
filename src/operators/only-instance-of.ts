@@ -8,8 +8,8 @@ import { Newable } from "../utils/types";
  * @param clazz the class to check
  */
 export function isInstanceOf<A>(clazz: Newable<A>) {
-  return function<B>(x: A | B): x is A {
-    return x instanceof clazz;
+  return function<B>(val: A | B): val is A {
+    return val instanceof clazz;
   };
 }
 
