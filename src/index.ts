@@ -21,6 +21,7 @@ export * from "./operators/skip-some-property-null";
 export * from "./operators/skip-some-property-undefined";
 export * from "./operators/skip-until-completion-and-continue-with";
 export * from "./operators/take-until-completion";
+export * from "./operators/start-with";
 
 export * from "./subjects/callable-subject";
 export * from "./subjects/transforming-subject";
