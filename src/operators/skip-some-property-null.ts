@@ -15,7 +15,7 @@ import { entries } from "../utils/functions";
  *
  * @param obj object to check
  */
-export function hasNoNullProperties<T>(obj: T): obj is { [P in keyof T]: NonNull<T[P]> } {
+export function hasNoNullProperties<T extends object>(obj: T): obj is { [P in keyof T]: NonNull<T[P]> } {
   const hasNull = entries(obj)
       .some(x => x[1] === null);
 
@@ -44,7 +44,7 @@ export function hasNoNullProperties<T>(obj: T): obj is { [P in keyof T]: NonNull
  *
  * value { a: null, b: 'foo' } will be skipped
  */
-export function skipSomePropertyNull<T>() {
+export function skipSomePropertyNull<T extends object>() {
   return function operatorFunction(source: Observable<T>) {
     return source.pipe(filter(hasNoNullProperties));
   };

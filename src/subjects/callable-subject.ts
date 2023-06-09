@@ -5,7 +5,7 @@ function identity<T>(obj: T): T {
 }
 
 function delegateAllProperties(target: any, source: any) {
-    // tslint:disable-next-line:forin
+    // eslint-disable-next-line guard-for-in
     for (const propName in source) {
         // noinspection JSUnfilteredForInLoop
         let prop = source[propName];
