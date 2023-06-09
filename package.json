@@ -83,5 +83,8 @@
     "doc:git_commit": "git commit -m \"generated documentation\"",
     "doc:deploy": "gh-pages -t --dotfiles -d doc",
     "bump": "bump --commit \"bump version to v\" --no-verify package.json package-lock.json"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
