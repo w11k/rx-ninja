@@ -3,7 +3,7 @@ import {readdir, readFileSync, writeFileSync} from "fs";
 import {join} from "path";
 import {parseMarbleDiagramSpecification} from "@swirly/parser";
 import {DiagramStyles} from "@swirly/types";
-import * as SVGO from "svgo";
+import { optimize } from "svgo";
 
 const styles: DiagramStyles = {
     frame_width: 20,
@@ -15,8 +15,7 @@ const styles: DiagramStyles = {
 };
 
 const optimizeXml = async (unoptXml: string): Promise<string> => {
-    const svgo = new SVGO({ plugins: [{ removeViewBox: false }] });
-    const { data } = await svgo.optimize(unoptXml);
+    const { data } = await optimize(unoptXml);
     return data;
 };
 
