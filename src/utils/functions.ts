@@ -4,7 +4,7 @@
  *
  * @param obj
  */
-export function entries<T>(obj: T): [string, any][] {
+export function entries<T extends object>(obj: T): [string, any][] {
   const ownProps = Object.keys(obj);
   let i = ownProps.length;
   const resArray = new Array(i);
