@@ -1,5 +1,11 @@
 # rx-ninja Changelog
 
+## 5.0.0
+
+* update dependencies
+* remove ts-lint rules
+* use ES-Lint
+
 ## 4.5.3
 
 * renamed all function parameters with name 'x' to e.g. 'val' to avoid IntelliJ's smart error messages like "'height' should probably not be passed as parameter 'x'"
