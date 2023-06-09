@@ -14,7 +14,7 @@ import { entries } from "../utils/functions";
  *
  * @param obj object to check
  */
-export function hasNoNilProperties<T>(obj: T): obj is { [P in keyof T]: NonNil<T[P]> } {
+export function hasNoNilProperties<T extends object>(obj: T): obj is { [P in keyof T]: NonNil<T[P]> } {
   const hasNil = entries(obj)
       .some(x => x[1] === null || x[1] === undefined);
 
@@ -43,7 +43,7 @@ export function hasNoNilProperties<T>(obj: T): obj is { [P in keyof T]: NonNil<T
  *
  * value { a: null, b: 'foo' } will be skipped
  */
-export function skipSomePropertyNil<T>() {
+export function skipSomePropertyNil<T extends object>() {
   return function operatorFunction(source: Observable<T>) {
     return source.pipe(filter(hasNoNilProperties));
   };

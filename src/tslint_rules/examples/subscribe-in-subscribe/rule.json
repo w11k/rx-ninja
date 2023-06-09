@@ -1,8 +1,0 @@
-{
-  "rulesDirectory": [
-    "../../../../dist/bundle/tslint_rules"
-  ],
-  "rules": {
-    "rx-ninja-subscribe-in-subscribe": true
-  }
-}

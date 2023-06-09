@@ -15,7 +15,7 @@ import { entries } from "../utils/functions";
  *
  * @param obj object to check
  */
-export function hasNoUndefinedProperties<T>(obj: T): obj is { [P in keyof T]: NonUndefined<T[P]> } {
+export function hasNoUndefinedProperties<T extends object>(obj: T): obj is { [P in keyof T]: NonUndefined<T[P]> } {
   const hasUndefined = entries(obj)
       .some(x => x[1] === undefined);
 
@@ -44,7 +44,7 @@ export function hasNoUndefinedProperties<T>(obj: T): obj is { [P in keyof T]: No
  *
  * value { a: undefined, b: 'foo' } will be skipped
  */
-export function skipSomePropertyUndefined<T>() {
+export function skipSomePropertyUndefined<T extends object>() {
   return function operatorFunction(source: Observable<T>) {
     return source.pipe(filter(hasNoUndefinedProperties));
   };

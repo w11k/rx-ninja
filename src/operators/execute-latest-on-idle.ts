@@ -115,6 +115,7 @@ class ExecuteLatestOnIdleOperator<T, R> implements Operator<T, ExecuteLatestOnId
       this.idle.complete();
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     const noop = () => {};
 
     const onSourceCompleted = () => {
