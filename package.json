@@ -24,9 +24,6 @@
     "LICENSE",
     "README.md"
   ],
-  "dependencies": {
-    "@phenomnomnominal/tsquery": "^4.1.1"
-  },
   "devDependencies": {
     "@swirly/parser": "^0.15.2",
     "@swirly/renderer-node": "^0.15.2",
