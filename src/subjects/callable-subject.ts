@@ -5,7 +5,7 @@ function identity<T>(obj: T): T {
 }
 
 function delegateAllProperties(target: any, source: any) {
-    // eslint-disable-next-line guard-for-in
+     
     for (const propName in source) {
         // noinspection JSUnfilteredForInLoop
         let prop = source[propName];
@@ -48,7 +48,7 @@ export function createCallableSubject<I>(): CallableSubject<I, I>;
 /**
  * TODO: add documentation
  */
-export function createCallableSubject<I, O>(base: Subject<I>): CallableSubject<I, I>;
+export function createCallableSubject<I>(base: Subject<I>): CallableSubject<I, I>;
 
 /**
  * TODO: add documentation

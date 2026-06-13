@@ -2,7 +2,7 @@ import {renderMarbleDiagram} from "@swirly/renderer-node";
 import {readdir, readFileSync, writeFileSync} from "fs";
 import {join} from "path";
 import {parseMarbleDiagramSpecification} from "@swirly/parser";
-import {DiagramStyles} from "@swirly/types";
+import type {DiagramStyles} from "@swirly/types";
 import { optimize } from "svgo";
 
 const styles: DiagramStyles = {

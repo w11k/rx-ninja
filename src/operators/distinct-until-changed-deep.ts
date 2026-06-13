@@ -38,7 +38,7 @@ export function deepEqual(a: any, b: any, maxDepth: number, actualDepth: number 
         return false;
     }
 
-    for (let key in a) {
+    for (const key in a) {
         if (!(key in b)) {
             return false;
         }

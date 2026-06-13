@@ -1,5 +1,13 @@
 # rx-ninja Changelog
 
+## 6.0.0
+
+* modernize toolchain & dev dependencies (RxJS 7, ESLint 9 flat config + typescript-eslint 8, TypeScript 5.9, Mocha 11, Sinon 22, TypeDoc 0.28, np 11)
+* migrate ESLint to flat config (`eslint.config.js`); remove legacy `.eslintrc.js` and the deprecated `@typescript-eslint/eslint-plugin-tslint`
+* verify RxJS 7 compatibility while keeping the `rxjs >=6.0.0` peer range (RxJS 6 still supported); public API unchanged
+* fix doc generation for current TypeDoc (`media` option removed) and `@swirly/types` ESM interop; replace `mkdirp` with `shx mkdir -p`
+* remove dead Travis CI badge and the obsolete `spec/mocha.opts`
+
 ## 5.0.0
 
 * update dependencies

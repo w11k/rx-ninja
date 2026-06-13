@@ -48,7 +48,7 @@ export function shareReplayUntilAllUnsubscribed<T>(): OperatorFunction<T, T> {
       }
 
       if (replayLatestValue) {
-        subscriber.next(latestValue);
+        subscriber.next(latestValue as T);
       }
       if (replayLatestError) {
         subscriber.error(latestError);
