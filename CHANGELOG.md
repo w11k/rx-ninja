@@ -1,5 +1,9 @@
 # rx-ninja Changelog
 
+## 6.0.1
+
+* remove the unnecessary TypeScript peer dependency; TypeScript is only used to build rx-ninja, and the published declarations work with TypeScript 6 and 7
+
 ## 6.0.0
 
 * modernize toolchain & dev dependencies (RxJS 7, ESLint 9 flat config + typescript-eslint 8, TypeScript 5.9, Mocha 11, Sinon 22, TypeDoc 0.28, np 11)

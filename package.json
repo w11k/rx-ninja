@@ -1,6 +1,6 @@
 {
   "name": "@w11k/rx-ninja",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "license": "Apache-2.0",
   "author": "W11K GmbH",
   "contributors": [
@@ -58,8 +58,7 @@
     "version-bump-prompt": "^5.0.7"
   },
   "peerDependencies": {
-    "rxjs": ">=6.0.0",
-    "typescript": "^3 || ^4 || ^5 || ^6"
+    "rxjs": ">=6.0.0"
   },
   "scripts": {
     "np": "np",
